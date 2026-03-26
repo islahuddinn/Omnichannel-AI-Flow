@@ -1,0 +1,937 @@
+/* @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Old .dark block removed — consolidated into the active .dark block below */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+
+/* src/app/globals.css */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.8rem;
+  
+  /* Light Mode - Fresh Ocean & Coral Theme */
+  --background: oklch(0.98 0.008 220);
+  --foreground: oklch(0.18 0.04 240);
+  
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 240);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 240);
+  
+  --primary: oklch(0.58 0.24 250);
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.68 0.20 180);
+  --secondary-foreground: oklch(0.99 0 0);
+  
+  --muted: oklch(0.95 0.01 220);
+  --muted-foreground: oklch(0.48 0.03 240);
+  
+  --accent: oklch(0.75 0.20 250);
+  --accent-foreground: oklch(0.99 0 0);
+  
+  /* Light Mode - Professional Light Blue */
+  --destructive: oklch(0.65 0.18 250);
+  --destructive-foreground: oklch(0.99 0 0);
+  --destructive-hover: oklch(0.75 0.20 250);
+  --destructive-hover-foreground: oklch(0.99 0 0);
+  
+  --border: oklch(0.90 0.01 220);
+  --input: oklch(0.94 0.01 220);
+  --ring: oklch(0.58 0.24 250);
+  
+  /* Fresh Chart Colors */
+  --chart-1: oklch(0.60 0.24 250);
+  --chart-2: oklch(0.70 0.22 180);
+  --chart-3: oklch(0.75 0.20 250);
+  --chart-4: oklch(0.68 0.22 150);
+  --chart-5: oklch(0.75 0.20 85);
+  
+  /* Sidebar */
+  --sidebar: oklch(0.97 0.01 220);
+  --sidebar-foreground: oklch(0.20 0.04 240);
+  --sidebar-primary: oklch(0.58 0.24 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0.01 220);
+  --sidebar-accent-foreground: oklch(0.20 0.04 240);
+  --sidebar-border: oklch(0.88 0.01 220);
+  --sidebar-ring: oklch(0.58 0.24 250);
+  --accent-gradient: none;
+}
+
+.dark {
+  /* Dark Mode — Premium Soft Dark (inspired by Linear/Vercel/Raycast) */
+  /* Slightly warmer than pure black, with a subtle blue undertone for depth */
+  --background: oklch(0.145 0.014 255);
+  --foreground: oklch(0.96 0.004 250);
+
+  /* Cards sit clearly above the background */
+  --card: oklch(0.19 0.016 255);
+  --card-foreground: oklch(0.96 0.004 250);
+
+  /* Popovers/dropdowns — slightly brighter than cards for clear layering */
+  --popover: oklch(0.215 0.016 255);
+  --popover-foreground: oklch(0.96 0.004 250);
+
+  --primary: oklch(0.72 0.19 250);
+  --primary-foreground: oklch(0.98 0 0);
+
+  --secondary: oklch(0.55 0.12 250);
+  --secondary-foreground: oklch(0.96 0.004 250);
+
+  /* Muted — used for hover states, badges, subtle backgrounds */
+  --muted: oklch(0.23 0.018 255);
+  --muted-foreground: oklch(0.62 0.025 250);
+
+  --accent: oklch(0.72 0.19 250);
+  --accent-foreground: oklch(0.98 0 0);
+
+  /* Destructive — soft red that doesn't scream */
+  --destructive: oklch(0.65 0.20 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --destructive-hover: oklch(0.32 0.015 255);
+  --destructive-hover-foreground: oklch(0.92 0.01 250);
+
+  /* Borders — visible but soft, not harsh lines */
+  --border: oklch(0.28 0.022 255);
+  --input: oklch(0.21 0.018 255);
+  --ring: oklch(0.72 0.19 250);
+
+  /* Chart Colors — vibrant enough to pop on dark backgrounds */
+  --chart-1: oklch(0.72 0.19 250);
+  --chart-2: oklch(0.68 0.18 180);
+  --chart-3: oklch(0.75 0.16 85);
+  --chart-4: oklch(0.65 0.20 310);
+  --chart-5: oklch(0.70 0.18 150);
+
+  /* Sidebar — slightly darker than background for depth */
+  --sidebar: oklch(0.135 0.014 255);
+  --sidebar-foreground: oklch(0.92 0.004 250);
+  --sidebar-primary: oklch(0.72 0.19 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.21 0.018 255);
+  --sidebar-accent-foreground: oklch(0.92 0.004 250);
+  --sidebar-border: oklch(0.24 0.018 255);
+  --sidebar-ring: oklch(0.72 0.19 250);
+  --accent-gradient: none;
+}
+
+/* Accent gradient utility — use on buttons, headers, etc. */
+.accent-gradient {
+  background: var(--accent-gradient, var(--primary));
+}
+
+/* When a gradient accent is active, apply gradient to primary buttons and key elements */
+[data-accent-gradient="true"] .bg-primary:not(.no-gradient) {
+  background: var(--accent-gradient) !important;
+}
+[data-accent-gradient="true"] .from-primary {
+  --tw-gradient-from: var(--primary);
+}
+[data-accent-gradient="true"] .border-primary {
+  border-image: var(--accent-gradient) 1;
+}
+[data-accent-gradient="true"] .ring-primary {
+  --tw-ring-color: var(--primary);
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
+  outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+html {
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+#__next {
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth color transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.theme-changing * {
+  transition: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Scrollbar utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overflow-wrap-break-word {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.container-no-overflow {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Custom scrollbar styling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--foreground) 30%, transparent) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--foreground) 30%, transparent);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--foreground) 45%, transparent);
+}
+
+.dark .scrollbar-thin {
+  scrollbar-color: color-mix(in oklch, var(--foreground) 25%, transparent) transparent;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--foreground) 25%, transparent);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--foreground) 40%, transparent);
+}
+
+/* Global scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--foreground) 30%, transparent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--foreground) 30%, transparent);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--foreground) 45%, transparent);
+}
+
+.dark * {
+  scrollbar-color: color-mix(in oklch, var(--foreground) 25%, transparent) transparent;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--foreground) 25%, transparent);
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--foreground) 40%, transparent);
+}
+
+/* Mobile optimizations */
+@media (max-width: 1024px) {
+  .conversation-sidebar {
+    max-width: 320px;
+  }
+}
+
+/* Utility classes */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.backdrop-blur-smooth {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.message-text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  line-break: normal;
+  hyphens: none;
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+.message-text-short {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+.message-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromLeft 0.3s ease-out;
+}
+
+.animate-slide-out {
+  animation: slideOutToLeft 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Tap highlight removal */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Global Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+  background-color: var(--input);
+  border-color: var(--border);
+  color: var(--foreground);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 15%, transparent);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+input[type="search"]::placeholder,
+input[type="url"]::placeholder,
+textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Dark mode input styling */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="tel"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="search"],
+.dark input[type="url"],
+.dark textarea,
+.dark select {
+  background-color: var(--input);
+  border-color: var(--border);
+  color: var(--foreground);
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="tel"]:focus,
+.dark input[type="password"]:focus,
+.dark input[type="number"]:focus,
+.dark input[type="search"]:focus,
+.dark input[type="url"]:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 20%, transparent);
+}
+
+/* PhoneInput specific styling */
+.dark .phone-input-container input,
+.dark .phone-input-container button {
+  background-color: var(--input) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .phone-input-container input::placeholder {
+  color: var(--muted-foreground) !important;
+}
+
+.dark .phone-input-container button:hover {
+  background-color: var(--accent) !important;
+}
+
+.dark [data-radix-popper-content-wrapper] input,
+.dark [data-radix-popper-content-wrapper] button {
+  background-color: var(--popover) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+/* ===== DESTRUCTIVE/WARNING BUTTON & TEXT STYLING ===== */
+
+/* Destructive buttons - consistent styling */
+.bg-destructive {
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+.bg-destructive:hover {
+  background-color: var(--destructive-hover);
+  color: var(--destructive-hover-foreground);
+}
+
+.text-destructive {
+  color: var(--destructive);
+}
+
+.border-destructive {
+  border-color: var(--destructive);
+}
+
+/* ===== DROPDOWN & MENU HOVER FIXES ===== */
+
+/* Fix for dropdown/select items hover */
+.dark [data-highlighted],
+.dark [data-state="checked"],
+.dark [aria-selected="true"] {
+  color: var(--foreground) !important;
+}
+
+/* Dark mode - Smoky gray hover for destructive items */
+.dark .hover\:bg-destructive:hover,
+.dark [class*="destructive"]:hover {
+  background-color: var(--destructive-hover) !important;
+  color: var(--destructive-hover-foreground) !important;
+}
+
+/* Dark mode dropdown menu destructive items - Smoky gray */
+.dark [role="menuitem"][class*="destructive"]:hover,
+.dark [role="option"][class*="destructive"]:hover,
+.dark [data-radix-collection-item][class*="destructive"]:hover {
+  background-color: oklch(0.30 0.01 240) !important;
+  color: oklch(0.90 0.01 240) !important;
+}
+
+/* Select/Combobox item hover states */
+.dark [role="option"]:hover,
+.dark [role="option"][data-highlighted] {
+  background-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+/* Dark mode destructive options in dropdowns - Smoky gray */
+.dark [role="option"].text-destructive:hover,
+.dark [role="menuitem"].text-destructive:hover {
+  background-color: oklch(0.28 0.01 240) !important;
+  color: oklch(0.88 0.01 240) !important;
+}
+
+/* Light mode dropdown destructive items - Light blue */
+[role="menuitem"][class*="destructive"]:hover,
+[role="option"][class*="destructive"]:hover,
+[data-radix-collection-item][class*="destructive"]:hover {
+  background-color: oklch(0.90 0.15 250) !important;
+  color: oklch(0.50 0.20 250) !important;
+}
+
+/* Button destructive hover */
+.dark button.bg-destructive:hover,
+.dark .btn-destructive:hover,
+.dark button[class*="destructive"]:hover {
+  background-color: oklch(0.32 0.01 240) !important;
+  color: oklch(0.92 0.01 240) !important;
+}
+
+button.bg-destructive:hover,
+.btn-destructive:hover,
+button[class*="destructive"]:hover {
+  background-color: var(--destructive-hover) !important;
+  color: var(--destructive-hover-foreground) !important;
+}
+
+/* Dark mode list items with delete/remove - Smoky gray */
+.dark li[class*="delete"]:hover,
+.dark li[class*="remove"]:hover,
+.dark div[class*="delete"]:hover,
+.dark div[class*="remove"]:hover {
+  background-color: oklch(0.25 0.01 240 / 0.8) !important;
+  color: oklch(0.88 0.01 240) !important;
+}
+
+/* Light mode list items - Light blue */
+li[class*="delete"]:hover,
+li[class*="remove"]:hover,
+div[class*="delete"]:hover,
+div[class*="remove"]:hover {
+  background-color: oklch(0.90 0.15 250) !important;
+  color: oklch(0.50 0.20 250) !important;
+}
+
+/* Radix UI Command menu, Dropdown menu */
+.dark [cmdk-item][data-selected="true"],
+.dark [data-radix-menu-content] [data-highlighted] {
+  background-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+/* Dark mode Radix dropdown-menu destructive - Smoky gray */
+.dark [data-radix-menu-content] [data-highlighted][class*="destructive"] {
+  background-color: oklch(0.30 0.01 240) !important;
+  color: oklch(0.90 0.01 240) !important;
+}
+
+/* Light mode Radix destructive - Light blue */
+[data-radix-menu-content] [data-highlighted][class*="destructive"] {
+  background-color: oklch(0.90 0.15 250) !important;
+  color: oklch(0.50 0.20 250) !important;
+}
+
+/* Icons remain visible on hover - prevent white fill */
+[class*="destructive"]:hover svg,
+.text-destructive:hover svg,
+.hover\:bg-destructive:hover svg {
+  color: inherit !important;
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+/* Dark mode Shadcn/Radix DropdownMenuItem destructive - Smoky gray */
+.dark [data-radix-collection-item][data-variant="destructive"]:hover,
+.dark [data-radix-collection-item][data-variant="destructive"][data-highlighted] {
+  background-color: oklch(0.30 0.01 240) !important;
+  color: oklch(0.90 0.01 240) !important;
+}
+
+/* Light mode Shadcn/Radix destructive - Light blue */
+[data-radix-collection-item][data-variant="destructive"]:hover,
+[data-radix-collection-item][data-variant="destructive"][data-highlighted] {
+  background-color: oklch(0.90 0.15 250) !important;
+  color: oklch(0.50 0.20 250) !important;
+}
+
+/* Dark mode context menu destructive - Smoky gray */
+.dark [role="menuitem"][data-variant="destructive"]:hover,
+.dark [role="menuitem"][data-variant="destructive"]:focus {
+  background-color: oklch(0.30 0.01 240) !important;
+  color: oklch(0.90 0.01 240) !important;
+}
+
+/* Light mode context menu destructive - Light blue */
+[role="menuitem"][data-variant="destructive"]:hover,
+[role="menuitem"][data-variant="destructive"]:focus {
+  background-color: oklch(0.90 0.15 250) !important;
+  color: oklch(0.50 0.20 250) !important;
+}
+
+/* Table row delete/remove hover */
+.dark tr:hover .text-destructive {
+  color: oklch(0.85 0.01 240) !important;
+}
+
+tr:hover .text-destructive {
+  color: oklch(0.60 0.20 250) !important;
+}
+
+/* Dark mode Alert/Badge destructive - Smoky gray */
+.dark .alert-destructive,
+.dark .badge-destructive {
+  background-color: oklch(0.22 0.01 240);
+  color: oklch(0.88 0.01 240);
+  border-color: oklch(0.35 0.01 240);
+}
+
+/* Light mode Alert/Badge - Light blue */
+.alert-destructive,
+.badge-destructive {
+  background-color: oklch(0.90 0.15 250);
+  color: oklch(0.50 0.20 250);
+  border-color: oklch(0.80 0.18 250);
+}
+
+.dark .alert-destructive:hover,
+.dark .badge-destructive:hover {
+  background-color: oklch(0.28 0.01 240) !important;
+  color: oklch(0.92 0.01 240) !important;
+}
+
+.alert-destructive:hover,
+.badge-destructive:hover {
+  background-color: oklch(0.85 0.18 250) !important;
+  color: oklch(0.45 0.20 250) !important;
+}
+
+/* React Flow Dark Mode Fixes */
+.dark .react-flow__controls {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.dark .react-flow__controls-button {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  fill: var(--foreground);
+}
+
+.dark .react-flow__controls-button:last-child {
+  border-bottom: none;
+}
+
+.dark .react-flow__controls-button:hover {
+  background-color: var(--muted);
+}
+
+.dark .react-flow__controls-button svg {
+  fill: currentColor;
+}
+
+/* Focus states for accessibility */
+.dark [class*="destructive"]:focus,
+.dark .text-destructive:focus {
+  outline: 2px solid oklch(0.50 0.01 240);
+  outline-offset: 2px;
+}
+
+[class*="destructive"]:focus,
+.text-destructive:focus {
+  outline: 2px solid oklch(0.65 0.20 250);
+  outline-offset: 2px;
+}
+
+/* Ensure hover works on nested elements */
+[class*="destructive"]:hover *,
+.hover\:bg-destructive:hover * {
+  color: inherit !important;
+}
+
+/* ===== GLOBAL ICON HOVER FIX ===== */
+/* Prevent icons from being filled with white/light colors on hover */
+/* This ensures icons maintain their original appearance when parent elements are hovered */
+
+/* General rule: stroke-based icons should never be filled */
+/* This prevents icons from being filled with white when parent elements are hovered */
+svg[stroke],
+svg[stroke-width],
+svg[fill="none"] {
+  fill: none !important;
+}
+
+/* Prevent white fill on hover - most icons are stroke-based (like Lucide React) */
+/* Apply to all SVGs on hover unless they explicitly have a fill attribute set */
+*:hover svg[stroke],
+*:hover svg[stroke-width],
+*:hover svg[fill="none"],
+button:hover svg:not([fill]):not([fill="currentColor"]),
+a:hover svg:not([fill]):not([fill="currentColor"]),
+[role="button"]:hover svg:not([fill]):not([fill="currentColor"]),
+[class*="hover"]:hover svg:not([fill]):not([fill="currentColor"]) {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+/* Override destructive hover rules to prevent white fill on icons */
+[class*="destructive"]:hover svg,
+.text-destructive:hover svg,
+.hover\:bg-destructive:hover svg {
+  fill: none !important;
+  stroke: currentColor !important;
+  color: inherit !important;
+}
+
+/* Button hover states - preserve icon appearance */
+/* Most button icons are stroke-based, so prevent fill */
+button:hover svg:not([fill]):not([fill="currentColor"]),
+button[class*="ghost"]:hover svg:not([fill]):not([fill="currentColor"]),
+button[class*="outline"]:hover svg:not([fill]):not([fill="currentColor"]),
+button[class*="primary"]:hover svg:not([fill]):not([fill="currentColor"]),
+button[class*="secondary"]:hover svg:not([fill]):not([fill="currentColor"]) {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+/* Dark mode button hover - prevent white fill */
+.dark button:hover svg:not([fill]):not([fill="currentColor"]),
+.dark button[class*="ghost"]:hover svg:not([fill]):not([fill="currentColor"]) {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+/* ===== TipTap Email Signature Editor ===== */
+.tiptap {
+  outline: none;
+}
+.tiptap p {
+  margin: 0.25em 0;
+}
+.tiptap ul, .tiptap ol {
+  padding-left: 1.5em;
+  margin: 0.25em 0;
+}
+.tiptap ul { list-style-type: disc; }
+.tiptap ol { list-style-type: decimal; }
+.tiptap a {
+  color: #3B82F6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+.tiptap hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 0.75em 0;
+}
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+  height: 0;
+  white-space: pre-wrap;
+}
+
+/* Active tab styling - teal color for dark theme text */
+.dark .active-tab-teal[data-state="active"] {
+  color: var(--primary) !important;
+}  

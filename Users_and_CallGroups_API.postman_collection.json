@@ -1,0 +1,389 @@
+{
+  "info": {
+    "name": "Users & Call Groups API",
+    "description": "API collection for User Management and Call Groups functionality",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users?page=1&limit=50&role=agent&status=active&search=",
+              "host": ["{{baseUrl}}"],
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number"
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "role",
+                  "value": "agent",
+                  "description": "Filter by role (agent, company_admin, super_admin)"
+                },
+                {
+                  "key": "status",
+                  "value": "active",
+                  "description": "Filter by status (active, inactive, suspended)"
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "Search by name or email"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"departments\": [\"departmentId1\", \"departmentId2\"],\n  \"permissions\": {\n    \"canCreateUsers\": false,\n    \"canDeleteUsers\": false\n  },\n  \"preferences\": {\n    \"theme\": \"light\",\n    \"language\": \"en\",\n    \"notifications\": {\n      \"email\": true,\n      \"desktop\": true,\n      \"sound\": true\n    }\n  },\n  \"callCenter\": {\n    \"call_center\": \"on\",\n    \"inbound_calls\": \"yes\",\n    \"outbound_calls\": \"yes\",\n    \"outbound_phone_number\": [\"+1234567890\"],\n    \"primary_outbound_phone_number\": \"+1234567890\",\n    \"role_in_call_center\": \"operator\",\n    \"call_access\": \"full\",\n    \"recording_downloads\": true,\n    \"waiting_in_line\": true,\n    \"playback_during_paused\": true,\n    \"playback\": true\n  },\n  \"chat\": {\n    \"chat_feature\": \"on\",\n    \"role_in_chat_feature\": \"agent\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId",
+              "host": ["{{baseUrl}}"],
+              "path": ["users", ":userId"],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"newemail@example.com\",\n  \"phone\": \"+1234567890\",\n  \"status\": \"active\",\n  \"departments\": [\"departmentId1\"],\n  \"callCenter\": {\n    \"call_center\": \"on\",\n    \"inbound_calls\": \"yes\",\n    \"outbound_calls\": \"yes\",\n    \"recording_downloads\": true\n  },\n  \"chat\": {\n    \"chat_feature\": \"on\",\n    \"role_in_chat_feature\": \"agent\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId",
+              "host": ["{{baseUrl}}"],
+              "path": ["users", ":userId"],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update User Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"available\",\n  \"type\": \"call\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["users", ":userId", "status"],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Update call or chat status. Type: 'call' or 'chat'. Status for call: available, outbound, occupied, notavailable, offline. Status for chat: available, occupied, notavailable, viewonly, offline"
+          }
+        },
+        {
+          "name": "Get Users with Call Feature",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/with-call-feature?status=available",
+              "host": ["{{baseUrl}}"],
+              "path": ["users", "with-call-feature"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "available",
+                  "description": "Optional: Filter by call status (available, outbound, occupied, notavailable, offline)"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Call Groups",
+      "item": [
+        {
+          "name": "Get All Call Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/call-groups",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups"]
+            }
+          }
+        },
+        {
+          "name": "Create Call Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"groupName\": \"Support Team\",\n  \"incomingRoutingStrategy\": \"round-robin\",\n  \"timeToRingOperator\": \"30\",\n  \"allowCallsWaitingInLine\": true,\n  \"musicOnHold\": true,\n  \"incomingCallsWaitingOptions\": \"hold\",\n  \"redirectToOccupiedOperators\": false,\n  \"outboundPhoneNumbers\": [\"+1234567890\", \"+0987654321\"],\n  \"primaryOutboundNumber\": \"+1234567890\",\n  \"exceptionOutboundNumbers\": [\"userId1\"],\n  \"assignedUsers\": [\"userId1\", \"userId2\"],\n  \"musicFileId\": \"audioFileId\",\n  \"musicFileUrl\": \"https://example.com/music.mp3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/call-groups",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups"]
+            }
+          }
+        },
+        {
+          "name": "Get Call Group by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/call-groups/:groupId",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups", ":groupId"],
+              "variable": [
+                {
+                  "key": "groupId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Call Group",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"groupName\": \"Support Team Updated\",\n  \"incomingRoutingStrategy\": \"longest-idle\",\n  \"timeToRingOperator\": \"45\",\n  \"allowCallsWaitingInLine\": true,\n  \"musicOnHold\": false,\n  \"assignedUsers\": [\"userId1\", \"userId2\", \"userId3\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/call-groups/:groupId",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups", ":groupId"],
+              "variable": [
+                {
+                  "key": "groupId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Call Group",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/call-groups/:groupId",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups", ":groupId"],
+              "variable": [
+                {
+                  "key": "groupId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User Call Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/call-groups/user",
+              "host": ["{{baseUrl}}"],
+              "path": ["call-groups", "user"]
+            },
+            "description": "Get all call groups for the authenticated user"
+          }
+        }
+      ]
+    }
+  ]
+}

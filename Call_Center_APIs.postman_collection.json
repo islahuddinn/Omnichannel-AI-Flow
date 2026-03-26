@@ -1,0 +1,812 @@
+{
+  "info": {
+    "name": "Call Center APIs",
+    "description": "Complete API collection for Call Center features: Phone Numbers, Call Routes, Audio Files, Call Status Tabs, Call Logs, and Call Groups",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "phoneNumberId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "statusId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "callLogId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "groupId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "audioFileId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Phone Numbers",
+      "item": [
+        {
+          "name": "Get All Phone Numbers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/phone-numbers?page=1&limit=10&search=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phone-numbers"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "Search in phone number or internal name",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all phone numbers with pagination and search"
+          }
+        },
+        {
+          "name": "Create Phone Number",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"+1234567890\",\n  \"internalName\": \"Main Office Line\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/phone-numbers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phone-numbers"]
+            },
+            "description": "Create a new phone number"
+          }
+        },
+        {
+          "name": "Update Phone Number",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"+1234567890\",\n  \"internalName\": \"Updated Name\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/phone-numbers/{{phoneNumberId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phone-numbers", "{{phoneNumberId}}"]
+            },
+            "description": "Update a phone number"
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Call Routes",
+      "item": [
+        {
+          "name": "Create or Update Call Routing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumberId\": \"{{phoneNumberId}}\",\n  \"flowData\": {\n    \"action\": \"route\",\n    \"destination\": \"group\",\n    \"groupId\": \"{{groupId}}\"\n  },\n  \"isLoop\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-routes",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-routes"]
+            },
+            "description": "Create or update call routing for a phone number"
+          }
+        },
+        {
+          "name": "Get Call Routing by Phone Number",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-routes/{{phoneNumberId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-routes", "{{phoneNumberId}}"]
+            },
+            "description": "Get call routing configuration for a phone number"
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Audio Files",
+      "item": [
+        {
+          "name": "Get All Audio Files",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/audio-files",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "audio-files"]
+            },
+            "description": "Get all audio files"
+          }
+        },
+        {
+          "name": "Upload Audio File",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "is_default",
+                  "value": "false",
+                  "type": "text",
+                  "description": "Set as default audio file"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/audio-files",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "audio-files"]
+            },
+            "description": "Upload an audio file (MP3, WAV, etc.)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Call Status Tabs",
+      "item": [
+        {
+          "name": "Get All Call Status Records",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-status-tabs?page=1&limit=10&sortBy=time&sortOrder=DESC",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-status-tabs"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "time",
+                  "description": "Sort field (time, phoneNumber, status, direction, duration, userId)"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "DESC",
+                  "description": "Sort order (ASC or DESC)"
+                },
+                {
+                  "key": "status",
+                  "value": "",
+                  "description": "Filter by status",
+                  "disabled": true
+                },
+                {
+                  "key": "direction",
+                  "value": "",
+                  "description": "Filter by direction",
+                  "disabled": true
+                },
+                {
+                  "key": "phoneNumber",
+                  "value": "",
+                  "description": "Filter by phone number",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "Search across phoneNumber, status, direction",
+                  "disabled": true
+                },
+                {
+                  "key": "userId",
+                  "value": "",
+                  "description": "Filter by user ID (admins only)",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all call status records with pagination, filtering, and search"
+          }
+        },
+        {
+          "name": "Create Call Status Record",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"answered\",\n  \"phoneNumber\": \"+1234567890\",\n  \"direction\": \"incoming\",\n  \"time\": \"2024-01-15T10:30:00Z\",\n  \"duration\": 120\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-status-tabs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-status-tabs"]
+            },
+            "description": "Create a new call status record"
+          }
+        },
+        {
+          "name": "Get Call Status by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-status-tabs/{{statusId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-status-tabs", "{{statusId}}"]
+            },
+            "description": "Get a single call status record by ID"
+          }
+        },
+        {
+          "name": "Update Call Status Record",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"answered\",\n  \"duration\": 180\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-status-tabs/{{statusId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-status-tabs", "{{statusId}}"]
+            },
+            "description": "Update a call status record"
+          }
+        },
+        {
+          "name": "Delete Call Status Record",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-status-tabs/{{statusId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-status-tabs", "{{statusId}}"]
+            },
+            "description": "Delete a call status record"
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Call Logs",
+      "item": [
+        {
+          "name": "Get All Call Logs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-logs?page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-logs"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "operator_id",
+                  "value": "",
+                  "description": "Filter by operator ID (comma-separated for multiple)",
+                  "disabled": true
+                },
+                {
+                  "key": "caller_number",
+                  "value": "",
+                  "description": "Filter by caller number (comma-separated for multiple)",
+                  "disabled": true
+                },
+                {
+                  "key": "reciever_number",
+                  "value": "",
+                  "description": "Filter by receiver number (comma-separated for multiple)",
+                  "disabled": true
+                },
+                {
+                  "key": "group_id",
+                  "value": "",
+                  "description": "Filter by group ID (comma-separated for multiple)",
+                  "disabled": true
+                },
+                {
+                  "key": "start_date",
+                  "value": "",
+                  "description": "Filter by start date (ISO format)",
+                  "disabled": true
+                },
+                {
+                  "key": "end_date",
+                  "value": "",
+                  "description": "Filter by end date (ISO format)",
+                  "disabled": true
+                },
+                {
+                  "key": "operator_name",
+                  "value": "",
+                  "description": "Filter by operator name (comma-separated for multiple)",
+                  "disabled": true
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "description": "Search across caller number, receiver number, operator name",
+                  "disabled": true
+                },
+                {
+                  "key": "filter",
+                  "value": "",
+                  "description": "Filter by direction (incoming, outgoing, allcalls)",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all call logs with filtering, pagination, and search. Returns call logs with statistics."
+          }
+        },
+        {
+          "name": "Create or Update Call Log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"human\",\n  \"callId\": \"call-12345\",\n  \"userId\": \"{{userId}}\",\n  \"transcript\": \"Call transcript text\",\n  \"summary\": \"Call summary\",\n  \"cdrData\": {\n    \"call_id\": \"call-12345\",\n    \"sourcenum\": \"+1234567890\",\n    \"destinationnum\": \"+0987654321\",\n    \"direction\": \"in\",\n    \"disposition\": \"ANSWERED\",\n    \"duration\": 120,\n    \"calldate\": \"2024-01-15T10:30:00Z\",\n    \"operator_id\": \"{{userId}}\",\n    \"group_id\": \"{{groupId}}\",\n    \"mfile\": \"/var/spool/asterisk/recording.mp3\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-logs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-logs"]
+            },
+            "description": "Create or update a call log. If type is 'human', it will process recording and call voice bot API. If type is 'voicebot', it will update existing call log with transcript and summary."
+          }
+        },
+        {
+          "name": "Get Agent Call Logs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-logs/agent?page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-logs", "agent"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "caller_number",
+                  "value": "",
+                  "description": "Filter by caller number",
+                  "disabled": true
+                },
+                {
+                  "key": "reciever_number",
+                  "value": "",
+                  "description": "Filter by receiver number",
+                  "disabled": true
+                },
+                {
+                  "key": "group_id",
+                  "value": "",
+                  "description": "Filter by group ID",
+                  "disabled": true
+                },
+                {
+                  "key": "start_date",
+                  "value": "",
+                  "description": "Filter by start date",
+                  "disabled": true
+                },
+                {
+                  "key": "end_date",
+                  "value": "",
+                  "description": "Filter by end date",
+                  "disabled": true
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "description": "Search query",
+                  "disabled": true
+                },
+                {
+                  "key": "filter",
+                  "value": "",
+                  "description": "Filter by direction",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get call logs for an agent. Access is controlled based on agent's call_access setting: 'only-calls-by-him', 'calls-by-him-and-group', or 'all-calls'."
+          }
+        },
+        {
+          "name": "Delete Call Log",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-logs/{{callLogId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-logs", "{{callLogId}}"]
+            },
+            "description": "Delete a call log by ID"
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Call Groups",
+      "item": [
+        {
+          "name": "Get All Call Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups"]
+            },
+            "description": "Get all call groups for the company"
+          }
+        },
+        {
+          "name": "Create Call Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"groupName\": \"Sales Team\",\n  \"assignedUsers\": [\"{{userId}}\"],\n  \"incomingRoutingStrategy\": \"round-robin\",\n  \"timeToRingOperator\": 30,\n  \"allowCallsWaitingInLine\": true,\n  \"musicOnHold\": true,\n  \"incomingCallsWaitingOptions\": \"queue\",\n  \"redirectToOccupiedOperators\": false,\n  \"outboundPhoneNumbers\": [\"+1234567890\"],\n  \"primaryOutboundNumber\": \"+1234567890\",\n  \"exceptionOutboundNumbers\": [],\n  \"musicFileUrl\": \"https://example.com/music.mp3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups"]
+            },
+            "description": "Create a new call group"
+          }
+        },
+        {
+          "name": "Get Call Group by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups/{{groupId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups", "{{groupId}}"]
+            },
+            "description": "Get a single call group by ID"
+          }
+        },
+        {
+          "name": "Update Call Group",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"groupName\": \"Updated Sales Team\",\n  \"assignedUsers\": [\"{{userId}}\"],\n  \"incomingRoutingStrategy\": \"least-recent\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups/{{groupId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups", "{{groupId}}"]
+            },
+            "description": "Update a call group"
+          }
+        },
+        {
+          "name": "Delete Call Group",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups/{{groupId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups", "{{groupId}}"]
+            },
+            "description": "Delete a call group"
+          }
+        },
+        {
+          "name": "Get User Call Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/call-groups/user",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "call-groups", "user"]
+            },
+            "description": "Get all call groups for the authenticated user"
+          }
+        }
+      ]
+    }
+  ]
+}

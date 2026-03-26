@@ -1,0 +1,3942 @@
+AI Documentation - 24/07/2025
+
+
+ALL TASKS FOR KATKA:
+1. Protocol Templates (Section 15.1)
+Provide complete protocol templates in all 4 languages (EN/SK/CZ/PL) for:
+* Diagnostic Only Protocol
+* Standard Work Protocol
+* Work with Surcharge Protocol
+* Surcharge Agreement Protocol
+* Multi-visit Protocols
+* Special Diagnostic Protocol (when price calculated later)
+2. Salesforce Field Names (Section 15.2)
+Confirm exact API field names for:
+Diagnostic Fields:
+* Estimated work time ? [Field name?]
+* Kilometers per visit ? [Field name?]
+* Estimated visits ? [Field name?]
+* Material description ? [Field name?]
+* Material cost ? [Field name?]
+EFA Invoice Fields:
+* Amount without VAT ? [Field name?]
+* VAT rate ? [Field name?]
+* Delivery date ? [Field name?]
+* Variable symbol ? [Field name?]
+* Invoice file attachment ? [Field name?]
+3. Status Mapping (Sections 10.2 & 15.2)
+
+* Provide exact mapping between app statuses and Salesforce Deal stages
+* Which app statuses = SF status "Planned"?
+* Which app statuses = SF status "Completed"?
+* Are there any other SF statuses used?
+4. Custom Fields Creation (Section 12.2)
+Verify and create these fields in Salesforce:
+* All GPS tracking fields (Job_Start_Time_1-5, GPS coordinates, etc.)
+* Status control fields (HM_Status c, Komunikacia_doplatku c, etc.)
+* Material processing fields
+* Multi-visit planning fields
+5. AI Configuration (Section 15.3)
+Provide the exact prompt/rules for material categorization AI:
+* What items = "drobný materiál"?
+* What items = "náhradné diely a materiál"?
+* Edge cases handling
+* Price parsing rules
+* VAT handling logic
+6. Automation Verification (Section 15.4)
+Confirm these Salesforce automations exist and work:
+* Calculator trigger when diagnostic submitted
+* IFA creation when approved
+* EFA validation automation
+* Protocol processing for paper uploads
+* All status change automations
+7. Missing Translations (Section 15.5)
+Provide any missing translations for:
+
+* Error messages
+* Special status descriptions
+* Help text for complex fields
+* Tooltip descriptions
+* Legal disclaimers
+8. Business Rules Clarification (Section 15.6)
+Confirm:
+* Maximum job duration limits
+* Maximum materials per job
+* Surcharge approval limits
+* Time limits for each status
+* Escalation procedures
+9. Additional Specific Tasks:
+* Check if "Historia navstev" field should be JSON or text format
+* Verify existing AI for protocol processing works correctly
+* Provide Polish brand name (currently marked as "To be determined")
+* Confirm all field names match between SF and Omni sync
+Note: These items are clearly marked throughout the documentation with "NOTE FOR KATKA" for easy searching.
+
+
+2.2) template emailu
+
+
+
+
+Handyman Mobile Application Documentation B2A Insurance Department - Complete User Guide Document Version: Final 1.0
+
+Date: July 2025
+Purpose: Complete specification for mobile app development
+
+
+
+Table of Contents
+1. Introduction - What This App Does
+2. Getting Started - Login System
+3. Home Screen - Your Daily Dashboard
+4. Bottom Navigation Menu
+5. Job Details - Smart Navigation System
+6. Complete Job Workflow - Every Single Step
+7. Protocol Creation - All Types
+8. Invoice Process
+9. All App Sections
+10. Status System Reference
+11. Notifications System
+12. Technical Implementation
+13. Language Reference
+14. Error Messages and Edge Cases
+15. Items for Katka to Provide
+16. Testing & Support
+17. Future Enhancements
+18. Conclusion
+19. Document Information
+20. Quick Reference Guide
+
+
+
+1. Introduction - What This App Does {#1-introduction}
+
+This mobile application is designed for handymen working with insurance companies (B2A department). Later, we will make it work with other 2 departments, B2B and B2C, for now B2A only. In B2A process It replaces all paper forms, phone calls, and manual processes with a simple step-by-step digital system.
+Think of it as a GPS for work of handyman - it shows you exactly what to do next, tracks everything automatically, and makes sure nothing gets missed. You cannot make mistakes because the app only shows you what you need to do right now.
+Key Benefits For Handymen:
+* No more paper forms to carry or lose
+* Automatic time tracking for accurate payment
+* GPS verification proves you were at the job
+* Digital signatures from customers instantly
+* Clear communication with office
+* Automatic invoice creation
+* Know your job status in real-time
+For Company:
+* 90% paper elimination
+* 75% fewer payment disputes
+* Real-time job tracking
+* Automated invoicing
+* Happier customers
+* Lower operational costs
+* Complete audit trail
+For Customers:
+* Transparent pricing before work starts
+* Digital documentation via email
+
+* Faster service completion
+* Professional experience
+* Clear protocols of work done
+How It Works - work flow for handyman
+1. Receive Job - New jobs appear in your app
+2. Schedule - Call customer and set appointment
+3. Navigate - GPS guides you to location
+4. Start Work - One click to begin tracking
+5. Diagnostic - Fill simple form with photos
+6. Get Approval - System handles pricing approval
+7. Complete Work - Follow step-by-step process
+8. Sign Digitally - Customer signs on phone
+9. Invoice - Created automatically
+10. Get Paid - Money in your account
+Important Requirements
+* Internet Required - App needs constant connection
+* Smartphone - Android or iOS
+* GPS Enabled - For location verification
+* Camera - For required photos
+
+
+
+2. Getting Started - Login System {#2-getting-started}
+2.1 Who Controls Your Access
+Administrator controls who can use the app through Salesforce (the main system). They manage two important settings in your profile:
+HM App Setting:
+* None = Not set up yet (waiting for activation)
+
+* Active = You can login and use the app
+* Deactivated = You cannot login (app is blocked)
+
+
+HM APP Login Setting:
+* None = No action taken
+* Send/Re-send login = System sends you email with login details
+* Reset login = System sends you email to create new password
+
+
+2.2 How to Login
+First Time Login Process:
+1. Your administrator activates your account in Salesforce
+2. You receive an email containing:
+* - this email needs to be done in EN, SK, CZ and PL language (Katka)
+o Special link to download/open app
+o Your email address (this is your username)
+o Special link to login
+o Temporary password (you must change it)
+1. Click the link in the email
+2. App opens to login screen
+3. Enter your email and temporary password
+4. App logs you in automatically
+5. You're ready to work!
+Login Screen:
+
+
++-----------------------------+
+¦	Company Logo	¦
+
+¦	¦
+¦ Welcome to Your App	¦
+¦	¦
+¦ Email:	¦
+¦ [	]	¦
+¦	¦
+¦ Password:	¦
+¦ [	]	¦
+¦	¦
+¦ [Login]	¦
+¦	¦
+¦ Forgot password?	¦
++-----------------------------+
+* we should do it nicely background image, happy handyman or so (we can do that when it will be ready)
+Language Texts:
+* EN: Welcome to Your App / Email / Password / Login / Forgot password?
+* SK: Vitajte vo vašej aplikácii / Email / Heslo / Prihlásit sa / Zabudli ste heslo?
+* CZ: Vítejte ve vaší aplikaci / Email / Heslo / Prihlásit se / Zapomneli jste heslo?
+* PL: Witamy w Twojej aplikacji / Email / Haslo / Zaloguj sie / Zapomniales hasla?
+2.3 Forgot Password Process
+If you forget your password:
+1. Click "Forgot password?" link on login screen
+2. Enter your email address
+3. Click Send
+4. Check your email inbox (also spam folder)
+
+5. Click the reset link in email
+6. Create new password (must be strong)
+7. Login with new password
+Password Reset Screen:
+
+
++-----------------------------+
+¦ Reset Your Password	¦
+¦	¦
+¦ Enter your email address  ¦
+¦ to receive reset link:	¦
+¦	¦
+¦ Email:	¦
+¦ [	]	¦
+¦	¦
+¦ [Send Reset Link]	¦
+¦	¦
+¦ Back to login	¦
++-----------------------------+
+Language Texts:
+* EN: Reset Your Password / Enter your email address to receive reset link / Send Reset Link / Back to login
+* SK: Obnovit heslo / Zadajte emailovú adresu pre zaslanie odkazu / Poslat odkaz na obnovenie / Spät na prihlásenie
+* CZ: Obnovit heslo / Zadejte emailovou adresu pro zaslání odkazu / Poslat odkaz na obnovení / Zpet na prihlášení
+* PL: Zresetuj haslo / Wprowadz adres email aby otrzymac link / Wyslij link resetujacy
+/ Powrót do logowania
+
+2.4 Change Password Anytime
+You can change your password whenever you want:
+1. Go to Profile section (bottom menu)
+2. Click "Change password" button
+3. Enter current password
+4. Enter new password twice
+5. Click Save
+6. Use new password next time
+2.5 Internet Connection Required
+Important: This app requires constant internet connection to work! If you lose connection, you'll see:
+
++-----------------------------+
+¦   No Internet Connection ¦
+¦	¦
+¦ This app requires internet ¦
+¦ connection to work.	¦
+¦	¦
+¦ Please check:	¦
+¦ • WiFi connection	¦
+¦ • Mobile data	¦
+¦ • Airplane mode is OFF	¦
+¦	¦
+¦ [Try Again]	¦
++-----------------------------+
+Language Texts:
+
+* EN: No Internet Connection / This app requires internet connection to work / Please check / WiFi connection / Mobile data / Airplane mode is OFF / Try Again
+* SK: Žiadne internetové pripojenie / Táto aplikácia vyžaduje internetové pripojenie / Skontrolujte prosím / WiFi pripojenie / Mobilné dáta / Letový režim je VYPNUTÝ / Skúsit znova
+* CZ: Žádné internetové pripojení / Tato aplikace vyžaduje internetové pripojení /
+Zkontrolujte prosím / WiFi pripojení / Mobilní data / Letový režim je VYPNUTÝ / Zkusit znovu
+* PL: Brak polaczenia internetowego / Ta aplikacja wymaga polaczenia internetowego
+/ Sprawdz / Polaczenie WiFi / Dane mobilne / Tryb samolotowy jest WYLACZONY / Spróbuj ponownie
+
+
+3. Home Screen - Your Daily Dashboard {#3-home-screen}
+3.1 Screen Layout Overview
+When you successfully login, you see your main work dashboard:
+* in the TODAY, and TOMORROW, make there also the date, so example: Today 23.7.2025, Tomorrow 24.7.2025, and then make it a day like Monday 25.7.2025 ... etc, thank you
+* "More job cards" - like on the screen, ignore it, here is the place, where the handman will just scroll down and will see all the future and present jobs (more in section 3.4)
+
+
++-----------------------------+
+¦  [Company Logo]	¦
+¦	¦
+¦ Hello, [Your Name]	¦
+¦	¦
+¦ --------------------------- ¦
+¦	TODAY	¦
+¦ --------------------------- ¦
+
+¦	¦
+¦ +-------------------------+ ¦
+¦ ¦ Blocked drain kitchen ¦ ¦
+¦ ¦  John Smith	¦ ¦
+¦ ¦  +421 903 123 456	¦ ¦
+¦ ¦  Main St 123, BA	¦ ¦
+¦ ¦ ?   14:00	¦ ¦
+¦ ¦ [Schedule appointment] ¦ ¦
+¦ ¦ ? ?	¦ ¦
+¦ ¦	¦ ¦
+¦ ¦ [Navigate] [Call]	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ --------------------------- ¦
+¦	TOMORROW	¦
+¦ --------------------------- ¦
+¦	¦
+¦ [More job cards...]	¦
+¦	¦
++-----------------------------+ [  ][  ][  ][  ][  ][  ]
+3.2 Company Branding
+The app shows different company names based on your country (set in Salesforce):
+* Slovakia: Hodinový Manžel
+* Czech Republic: Zlatí Remeslníci
+
+* Poland: Maz Na Godziny
+3.3 Greeting Section
+Personal greeting appears in your language based on country setting:
+* EN: "Hello, [Your Name]"
+* SK: "Dobrý den, [Your Name]"
+* CZ: "Dobrý den, [Your Name]"
+* PL: "Dzien dobry, [Your Name]"
+Notification Bell (  ):
+* No dot = No new notifications
+* Red dot = New notifications
+* Number badge = Count of unread items
+3.4 Jobs Organization
+Jobs appear in this specific order to help you prioritize:
+1. Unscheduled Jobs (Always at Top)
+* These have no date/time yet
+* Status shows "Schedule appointment" (Highlighted with orange/red color)
+* Action needed: Call customer and arrange visit
+EN: Call customer and arrange visit
+SK: Zavolajte zákazníkovi a dohodnite si návštevu CZ: Zavolejte zákazníkovi a domluvte si návštevu PL: Zadzwon do klienta i umów wizyte
+
+2. Today's Jobs
+* Shows label: "TODAY" / "DNES" / "DNES" / "DZISIAJ"
+* Sorted by time (earliest first)
+* Current time highlighted
+
+* Shows remaining time until appointment
+
+
+3. Tomorrow's Jobs
+* Shows label: "TOMORROW" / "ZAJTRA" / "ZÍTRA" / "JUTRO"
+* Also sorted by time
+* Helps you plan ahead
+
+
+4. Future Jobs
+* Shows day name + date
+* Example: "Wednesday 19.07.2025"
+* Days displayed in your language
+* Sorted chronologically
+
+
+3.5 Job Card Information
+Each job card displays essential information:
+* basically, when handyman will click on the CARD INFORMATION, he will get into the detail of the deal where he can do some action with that deal, and he should be able to fast navigate back, so either he will click the "home" button or any other button,
+or there might be some "back arrow" to go back where he came from (exactly, even if he did scroll down in many deals, it will put him back)
+
+
+
++-----------------------------+
+¦ Blocked drain kitchen	¦ <- Problem description
+¦  John Smith	¦ <- Customer name
+¦   +421 903 123 456	¦ <- Phone number
+¦  Main St 123, BA	¦ <- Address
+
+¦ ?   14:00	¦ <- Appointment time
+¦	¦
+¦ [SCHEDULED - READY TO START]¦ <- Current status (prominent)
+¦ ? ?	¦ <- Progress indicators - i will provide the progress indicator below
+¦	¦
+¦ [  OPEN JOB DETAILS]	¦ <- Single action button
++-----------------------------+
+Status Display Examples:
+For unscheduled job:
+
+
+
+¦ [SCHEDULE APPOINTMENT]	¦ <- Status
+¦ ? ?	¦
+¦	¦
+¦ [  CALL CUSTOMER]	¦ <- Action button For job in progress:
+
+
+
+¦ [DIAGNOSTIC IN PROGRESS]  ¦ <- Status
+¦ ? ?	¦
+¦	¦
+¦ [  CONTINUE DIAGNOSTIC] ¦ <- Action button For job waiting approval:
+
+¦ [WAITING FOR APPROVAL]	¦ <- Status
+¦ ? ?	¦
+¦	¦
+¦ [  VIEW STATUS]	¦ <- Action button
+
+
+PROGRESS BAR SYSTEM DOCUMENTATION
+Progress Bar Design
+Replace the progress circles (? ?) with a visual progress bar that shows completion percentage:
+
+
+
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦  John Smith	¦
+¦   +421 903 123 456	¦
+¦  Main St 123, BA	¦
+¦ ?   14:00	¦
+¦	¦
+¦ [DIAGNOSTIC IN PROGRESS] ¦
+¦	¦
+¦ Progress: 35%	¦
+¦  [¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦]  ¦
+¦	¦
+¦ [   CONTINUE DIAGNOSTIC]  ¦
++-----------------------------+
+
+Progress Percentage Mapping Status ? Progress % ? Color:
+1. Schedule appointment ? 0% ? Gray (not started)
+2. Scheduled ? 10% ? Green
+3. Diagnostic running ? 25% ? Green
+4. Calculating ? 35% ? Green
+5. Continue work (any type) ? 50% ? Green
+6. Protocol creation ? 70% ? Green
+7. Protocol signed ? 80% ? Green
+8. Invoice process ? 90% ? Green
+9. Invoice paid ? 100% ? Green ?
+10. Cancelled ? 100% ? Red ?
+Special Cases:
+* Waiting statuses ? Keep current % but add pulsing animation
+* Diagnostic only (refused) ? Jump to 90% ? Green
+* Multi-visit ? Incremental progress per visit
+Visual Examples New Job (0%):
+
+
+
+
+Progress: 0%
+[¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] (Gray - not started)
+Work in Progress (50%):
+
+Progress: 50%
+[¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] (Green - active)
+Waiting for Approval (35% with pulse):
+
+
+
+
+Progress: 35% - Waiting
+[¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] (Green with pulse animation)
+Completed Successfully (100%):
+
+
+
+
+Progress: 100% ?
+[¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] (Green - completed)
+Cancelled Job (100%):
+
+
+
+
+Progress: 100% ?
+[¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] (Red - cancelled)
+Multi-Visit Progress Calculation
+For jobs with multiple visits:
+* Visit 1 complete: 30%
+* Visit 2 complete: 50%
+* Visit 3 complete: 70%
+
+* Protocol signed: 80%
+* Invoice process: 90%
+* Paid: 100%
+Progress Bar Specifications Visual Design:
+* Height: 8px
+* Width: Full card width minus padding
+* Border radius: 4px
+* Background: Light gray (#E0E0E0)
+* Fill colors:
+o Green (#4CAF50) - normal progress
+o Red (#F44336) - cancelled
+o Animation: Pulse effect for waiting states
+Text Display:
+* Show percentage above bar
+* Add status text for context
+* Special indicators:
+o ? for successful completion
+o ? for cancellation
+o for waiting states
+Implementation in Job Cards
+Compact View (Home/Deals list):
+
+
+
+
++-----------------------------+
+
+¦ Blocked drain kitchen	¦
+¦ John Smith • 14:00	¦
+¦	¦
+¦ DIAGNOSTIC IN PROGRESS	¦
+¦ 35% [¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦] ¦
+¦	¦
+¦ [   CONTINUE DIAGNOSTIC]  ¦
++-----------------------------+
+Detailed View (Job detail screen):
+
+
+* this should be a detail that is viewed in the detail of the deal
+
+
++-----------------------------+
+¦ Overall Progress: 35%	¦
+¦  [¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦]  ¦
+¦	¦
+¦ ? Appointment scheduled	¦
+¦ ? Work started	¦
+¦ ? Diagnostic in progress ¦
+¦ ? Waiting for approval	¦
+¦ ? Protocol creation	¦
+¦ ? Invoice & payment	¦
++-----------------------------+
+Benefits of This System
+1. Instant Visual Feedback - See job progress at a glance
+2. Motivation - Handymen see progress building
+
+3. Clear Status - Percentage + color + text = no confusion
+4. Waiting Indication - Pulse shows something pending
+5. Completion Clarity - Green 100% vs Red 100% instantly different
+Language Texts for Progress Progress:
+* EN: Progress
+* SK: Priebeh
+* CZ: Prubeh
+* PL: Postep
+Waiting:
+* EN: Waiting
+* SK: Caká sa
+* CZ: Ceká se
+* PL: Oczekiwanie
+Completed:
+* EN: Completed
+* SK: Dokoncené
+* CZ: Dokonceno
+* PL: Zakonczone
+Cancelled:
+* EN: Cancelled
+* SK: Zrušené
+* CZ: Zrušeno
+* PL: Anulowane
+
+
+
+This progress bar system provides much better visual feedback than simple circles and gives handymen a clear sense of how far along each job is. The color coding (green for progress, red for cancelled) makes status immediately clear even from a distance.
+
+
+3.6 Smart Action Button
+Every job card has ONE smart action button that changes based on current status:
+Before Appointment Set:
+
+
+
+
+
+[  CALL CUSTOMER]
+* EN: Call Customer
+* SK: Zavolat zákazníka
+* CZ: Zavolat zákazníka
+* PL: Zadzwon do klienta
+* Action: Opens phone dialer
+After Appointment Set (Not Started):
+
+
+
+
+
+[  OPEN JOB DETAILS]
+* EN: Open Job Details
+* SK: Otvorit detaily
+* CZ: Otevrít detaily
+* PL: Otwórz szczególy
+* Action: Opens job detail screen with Navigate/Call options
+
+Work Started:
+
+
+
+
+
+[   CONTINUE WORK]
+* EN: Continue Work
+* SK: Pokracovat v práci
+* CZ: Pokracovat v práci
+* PL: Kontynuuj prace
+* Action: Opens current work step
+Waiting States:
+
+
+
+
+
+[  VIEW STATUS]
+* EN: View Status
+* SK: Zobrazit stav
+* CZ: Zobrazit stav
+* PL: Zobacz status
+* Action: Shows current waiting screen
+Ready for Protocol:
+
+
+
+
+
+[  CREATE PROTOCOL]
+* EN: Create Protocol
+
+* SK: Vytvorit protokol
+* CZ: Vytvorit protokol
+* PL: Utwórz protokól
+* Action: Opens protocol creation
+Ready for Invoice:
+
+
+
+
+
+[  COMPLETE INVOICE]
+* EN: Complete Invoice
+* SK: Dokoncit faktúru
+* CZ: Dokoncit fakturu
+* PL: Zakoncz fakture
+* Action: Opens invoice process
+* 
+3.7 Real-time Updates
+The home screen updates automatically when:
+* New job assigned to you
+* Job status changes
+* Customer confirms appointment
+* Office sends updates
+* Payment processed
+
+
+3.8 Status Display on Home Screen
+Each job card prominently displays the current status at the top of the card information. The status appears in a colored badge that makes it immediately visible:
+
+Status Colors:
+* Red: Urgent action needed (Schedule appointment)
+* Orange: Waiting for something
+* Blue: In progress
+* Green: Ready for next step
+* Gray: Completed
+All Possible Status Displays:
+1. Here are the translations with English added:
+2. SCHEDULE APPOINTMENT (Red)
+o EN: SCHEDULE APPOINTMENT
+o SK: DOHODNÚT TERMÍN
+o CZ: DOMLUVIT TERMÍN
+o PL: UMÓW TERMIN
+3. SCHEDULED - READY (Green)
+o EN: SCHEDULED - READY
+o SK: NAPLÁNOVANÉ - PRIPRAVENÉ
+o CZ: NAPLÁNOVÁNO - PRIPRAVENO
+o PL: ZAPLANOWANE - GOTOWE
+4. DIAGNOSTIC IN PROGRESS (Blue)
+o EN: DIAGNOSTIC IN PROGRESS
+o SK: PREBIEHA DIAGNOSTIKA
+o CZ: PROBÍHÁ DIAGNOSTIKA
+o PL: TRWA DIAGNOSTYKA
+5. CALCULATING (Orange)
+o EN: CALCULATING
+o SK: PREBIEHA VÝPOCET
+
+o CZ: PROBÍHÁ VÝPOCET
+o PL: OBLICZANIE
+6. CONTINUE WORK (Green)
+o EN: CONTINUE WORK
+o SK: POKRACUJ V PRÁCI
+o CZ: POKRACUJ V PRÁCI
+o PL: KONTYNUUJ PRACE
+7. WAITING - APPROVAL (Orange)
+o EN: WAITING FOR APPROVAL
+o SK: CAKÁ SA NA SCHVÁLENIE
+o CZ: CEKÁ SE NA SCHVÁLENÍ
+o PL: CZEKA - ZATWIERDZENIE
+8. PROTOCOL READY (Green)
+o EN: PROTOCOL READY
+o SK: PROTOKOL PRIPRAVENÝ
+o CZ: PROTOKOL PRIPRAVEN
+o PL: PROTOKÓL GOTOWY
+9. INVOICE PENDING (Orange)
+o EN: INVOICE PENDING
+o SK: FAKTÚRA CAKÁ
+o CZ: FAKTURA CEKÁ
+o PL: FAKTURA OCZEKUJE
+10. COMPLETED (Gray)
+o EN: COMPLETED
+o SK: DOKONCENÉ
+o CZ: DOKONCENO
+
+o PL: ZAKONCZONE
+
+
+
+
+
+
+4. Bottom Navigation Menu {#4-bottom-navigation}
+Always visible at the bottom of screen, providing quick access to all app sections:
+
+
++-----------------------------+
+¦	¦
+¦	[Main Content Area]	¦
+¦	¦
++-----------------------------¦
+¦               ¦
+¦ Home Deals Cal Msg Call Prof¦
++-----------------------------+
+4.1 Menu Items
+1. Home 
+* EN: Home
+* SK: Domov
+* CZ: Domov
+* PL: Dom
+* Shows: Today's priority jobs and new assignments
+2. Deals 
+* EN: Deals
+* SK: Zákazky
+* CZ: Zakázky
+
+* PL: Zlecenia
+* Shows: ALL your jobs (past, present, future) with search and filter
+3. Calendar 
+* EN: Calendar
+* SK: Kalendár
+* CZ: Kalendár
+* PL: Kalendarz
+* Shows: Visual calendar view of scheduled jobs
+4. Messages 
+* EN: Messages
+* SK: Správy
+* CZ: Zprávy
+* PL: Wiadomosci
+* Shows: Chat communication with office support
+5. Call us 
+* EN: Call us
+* SK: Zavolat
+* CZ: Zavolat
+* PL: Zadzwon
+* Shows: Quick dial to support numbers
+6. Profile 
+* EN: Profile
+* SK: Profil
+* CZ: Profil
+* PL: Profil
+* Shows: Your personal information and settings
+
+4.2 Active Section Indication
+* Active section highlighted in company color
+* Other sections appear greyed out
+* Badge notifications on relevant sections
+
+
+
+5. Job Details - Smart Navigation System {#5-job-details}
+
+
+VISIT MANAGEMENT - EXPLAINED SIMPLY
+1. What Happens When Handyman Wants to Delete a Visit
+Imagine this scenario: John the handyman planned 3 visits to fix a toilet. But after visit 1, he realizes he doesn't need visit 3. What does he do?
+In the App: John goes to the job details and sees:
+* Visit 1 ? Done
+* Visit 2 ? Tomorrow
+   * Visit 3 ? Next week [  Delete button] When John clicks Delete:
+
+
+
+
++-----------------------------+
+¦ Why delete this visit?	¦
+¦	¦
+¦ [I don't need this visit ¦
+¦ because I'll finish	¦
+¦ tomorrow	] ¦
+¦	¦
+
+¦ [? Send to Office]	¦
+¦ [? Keep Visit]	¦
++-----------------------------+
+What Actually Happens:
+1. John's message goes to the office
+2. Office staff see a new task: "John wants to delete visit 3"
+3. Office reviews and approves
+4. Visit 3 disappears from John's app
+5. Customer gets updated
+2. How Dates Work (The Smart Calendar) Think of it like a moving spotlight:
+The main calendar in the system always shows the NEXT appointment. It's like a spotlight that moves forward.
+Example:
+* Monday (Visit 1): System shows "Next appointment: Monday"
+* After Monday is done: System automatically updates to "Next appointment: Wednesday" (Visit 2)
+* The Monday date is saved in history, but the spotlight moved on
+In Simple Terms:
+* There's ONE main calendar that always shows what's coming next
+* There are 5 "photo albums" that save what happened on each visit
+* When visit 1 is done, its date goes into "album 1" and the main calendar updates to show visit 2
+
+
+
+
+
+ADMIN CONTROL SYSTEM - SIMPLE EXPLANATION
+
+How Admins Control Jobs from Salesforce
+Think of it like a control panel with dropdown menus for each visit: The Control Fields in Salesforce
+For Each Visit (1-5), create ONE control field:
+
+
+
+
+Visit_1_Admin_Action c (Picklist) Visit_2_Admin_Action c (Picklist) Visit_3_Admin_Action c (Picklist) Visit_4_Admin_Action c (Picklist) Visit_5_Admin_Action c (Picklist) Dropdown Options:
+* None (default)
+* Delete Visit
+* Force Complete
+* Reset Status
+How It Works - Real Examples Example 1: Deleting Visit 3
+1. Admin opens deal in Salesforce
+2. Goes to Visit 3 section
+3. Changes Visit_3_Admin_Action c from "None" to "Delete Visit"
+4. Saves record
+What Happens Automatically:
+* All Visit 3 fields get cleared
+* Visit 3 data moves to history field
+
+* Total visits reduced by 1
+* Handyman's app updates instantly
+* Progress bar recalculates
+Example 2: Force Completing Visit 2
+1. Admin changes Visit_2_Admin_Action c to "Force Complete"
+2. Saves record
+What Happens:
+* Visit 2 status ? "Completed"
+* System moves to Visit 3
+* Time tracking filled with admin note
+   * Handyman sees visit marked done Complete Field Structure for Salesforce New Section: HM APP Admin Controls
+
+
+
+
+=== VISIT 1 CONTROLS ===
+Visit_1_Admin_Action  c (Picklist)
+- None / Delete Visit / Force Complete / Reset Status Visit_1_Admin_Note c (Text)
+- For admin comments
+Visit_1_Deleted_History  c (Long Text)
+- Auto-filled when deleted
+=== VISIT 2 CONTROLS ===
+[Same fields for Visit 2]
+=== VISIT 3 CONTROLS ===
+
+[Same fields for Visit 3]
+=== VISIT 4 CONTROLS ===
+[Same fields for Visit 4]
+=== VISIT 5 CONTROLS ===
+[Same fields for Visit 5]
+=== GENERAL CONTROLS ===
+Force_Complete_Job  c (Checkbox)
+- Yes = Skip all remaining visits Diagnostic_History c (Long Text)
+- Stores all previous diagnostics
+Admin_Override_Active  c (Checkbox)
+- Auto-set when any action taken Automation Rules (Simple Version) Rule 1: When Admin Deletes a Visit
+
+
+
+
+WHEN: Visit_X_Admin_Action  c = "Delete Visit" DO:
+1. Copy all Visit X data to Visit_X_Deleted_History c
+2. Clear all Visit X fields
+3. Reduce Total_Visits_Planned	c by 1
+4. Reset Visit_X_Admin_Action c to "None"
+Rule 2: When Admin Force Completes
+
+WHEN: Visit_X_Admin_Action  c = "Force Complete" DO:
+1. Set Visit_X_Status c = "Completed"
+2. Add note "Completed by Admin" to history
+3. Move to next visit or invoice
+4. Reset Visit_X_Admin_Action c to "None"
+Rule 3: Diagnostic Changes
+
+
+
+
+WHEN: Diagnostic fields change DO:
+1. Save old diagnostic to Diagnostic_History c
+2. Calculate price difference
+3. Create Case:
+- Subject: "Diagnostic Changed"
+- Description: AI summary of changes
+ - Old price vs New price What Handyman Sees When Admin Deletes Visit:
+* Visit disappears from timeline
+* Progress bar updates
+* No error or confusion
+When Admin Force Completes:
+
+
+
++-----------------------------+
+¦ ? Visit 2 - Completed	¦
+¦ (Completed by office)	¦
++-----------------------------+
+Safety Rules
+Cannot Delete or Change:
+* Completed visits (already done)
+* Currently active visit (being worked on)
+* Visits with signed protocols
+CAN Delete or Change:
+* Future planned visits
+* Visits in "Planned" status only
+Case Creation for Diagnostic Changes Automatic Case Creation:
+
+
+
+
+Subject: Diagnostic Changed - [Deal Name] Priority: Normal (if no price change)
+Priority: High (if price increased) Body:
+=== DIAGNOSTIC CHANGE SUMMARY ===
+Deal: [Deal Number] Handyman: [Name]
+
+Changed at: [Date/Time] PRICE IMPACT:
+Old: 150€ New: 150€
+Difference: 0€ WHAT CHANGED:
+[AI Summary Here]
+- Added: New valve needed
+- Removed: Cleaning service
+- Modified: 2 hours ? 3 hours ACTION REQUIRED:
+No price change - Information only
+================================
+For Katka - AI Summary Task
+Create AI prompt for diagnostic comparison:
+
+
+
+
+"Compare these two diagnostics and create a bullet-point summary:
+- What was added?
+- What was removed?
+- What was modified?
+- Time estimate change?
+- Material changes?
+Make it short and clear for admin review."
+The Complete Flow
+
+1. Handyman changes diagnostic ?
+2. Calculator runs ?
+3. Case created (always) ?
+4. If price up: Wait for approval ?
+5. If price same/down: Continue work ?
+6. Admin can override anytime ?
+7. Everything tracked in history
+
+
+
+
+
+
+
+5.1 Revolutionary Step-by-Step Design
+Unlike traditional apps with multiple confusing tabs, our app uses smart navigation that:
+* Shows only what you need right now
+* Prevents mistakes by hiding future steps
+* Guides you through each stage
+* Maintains complete focus on current task
+
+
+Job Detail Header
+When opening any job detail, the current status is always prominently displayed at the top:
+
+
+
++-----------------------------+
+¦ [? Back]	¦
+¦	¦
+¦ Blocked drain kitchen	¦
+
+¦	¦
+¦ [DIAGNOSTIC IN PROGRESS] ¦ <- Large status badge
+¦	¦
+¦ Customer: John Smith	¦
+¦ Address: Main St 123, BA ¦
+¦	¦
+¦ [Current action screen...] ¦
++-----------------------------+
+The status badge uses the same colors and text as on the home screen, providing consistent visual feedback about the job's current state.
+
+
+These adjustments ensure that:
+1. Status is always visible and prominent
+2. Only ONE action button per job card
+3. Button intelligently changes based on status
+4. Navigate/Call are available inside job details when needed
+5. Consistent experience across Home and Deals sections
+
+
+5.2 How Smart Navigation Works Traditional App (Confusing):
+
+[Info][Diagnostic][Photos][Protocol][Invoice]
+? User can jump anywhere = mistakes
+Our App (Smart):
+
+
+Current Step Only ? Complete ? Next Step Appears
+
+?
+Previous steps become read-only
+5.3 Visual Flow Examples Before Starting Work:
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦ Status: Scheduled	¦
+¦	¦
+¦ Customer Details:	¦
+¦ John Smith	¦
+¦ +421 903 123 456	¦
+¦ Main St 123, BA	¦
+¦	¦
+¦ Appointment: Today 14:00  ¦
+¦	¦
+¦	[  START WORK]	¦
+¦	¦
+¦ [Navigate] [Call Customer] ¦
++-----------------------------+
+During Diagnostic:
+
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦ Status: Diagnostic running ¦
+¦	¦
+
+¦ ? Work started at 14:00	¦
+¦ --------------------------- ¦
+¦	¦
+¦ [Diagnostic Form Fields] ¦
+¦	¦
+¦	[SUBMIT DIAGNOSTIC]	¦
++-----------------------------+
+After Diagnostic Approved:
+
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦ Status: Continue work	¦
+¦	¦
+¦ ? Work started at 14:00	¦
+¦ ? Diagnostic submitted	¦
+¦ ? Price approved	¦
+¦ --------------------------- ¦
+¦	¦
+¦ You can continue with work ¦
+¦	¦
+¦	[WORK FINISHED]	¦
++-----------------------------+
+UNDERSTANDING THE VISIT SYSTEM - SIMPLE EXPLANATION
+What's the Problem We're Solving?
+Imagine you're a handyman and you need to fix a broken toilet. Sometimes you can't fix it in one visit:
+
+* Visit 1: You check what's wrong and order parts
+* Visit 2: Parts arrived, you install them
+* Visit 3: You test everything works
+Right now, the system treats each visit like a completely different job. That's confusing!
+What's Our Solution?
+We create ONE main job (fixing the toilet) and attach multiple visits to it. Like a book with chapters!
+How Does This Work in Simple Terms?
+Think of it like this:
+The Main Job = The whole book
+* Customer: John Smith
+* Problem: Broken toilet
+* Total price: 200 EUR
+* Overall progress: 66% done
+Each Visit = A chapter in the book
+* Chapter 1: Diagnostic (July 15)
+* Chapter 2: Installation (July 20)
+* Chapter 3: Testing (July 22)
+
+
+
+
+
+
++-----------------------------+
+¦ [? Back]	¦
+¦	¦
+¦ Blocked drain kitchen	¦
+
+¦ Customer: John Smith	¦
+¦	¦
+¦ [VISIT 2 OF 3 - IN PROGRESS]¦
+¦	¦
+¦ Overall Progress: 50%	¦
+¦  [¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦]  ¦
+¦	¦
++-----------------------------¦
+¦  VISIT TIMELINE	¦
++-----------------------------¦
+¦ ? Visit 1 - Jul 15	¦
+¦ Diagnostic & Initial work ¦
+¦ 2.5 hours	¦
+¦ [View Protocol ?]	¦
+¦	¦
+¦ ? Visit 2 - TODAY	¦
+¦ Material installation	¦
+¦ Started 14:00	¦
+¦ [ACTIVE NOW]	¦
+¦	¦
+¦ ? Visit 3 - Jul 22	¦
+¦ Final testing	¦
+¦ Scheduled 10:00	¦
+¦ [Not started]	¦
++-----------------------------¦
+¦	¦
+
+¦ [  CONTINUE CURRENT WORK] ¦
++-----------------------------+
+Expanded Protocol View
+When clicking "View Protocol ?":
+
+
+
+
+
++-----------------------------¦
+¦ ? Visit 1 - Jul 15	¦
+¦ Diagnostic & Initial work ¦
+¦ 2.5 hours	¦
+¦ +-------------------------+ ¦
+¦ ¦ Protocol Summary:	¦ ¦
+¦ ¦ • Drain blockage found ¦ ¦
+¦ ¦ • Materials: 45 EUR	¦ ¦
+¦ ¦ • Next visit needed	¦ ¦
+¦ ¦	¦ ¦
+¦ ¦ [  Open Full Protocol] ¦ ¦
+¦ ¦ [ •   View Photos]	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ ? Visit 2 - TODAY	¦
+¦ Material installation	¦
+¦ Started 14:00	¦
+¦ [ACTIVE NOW]	¦
++-----------------------------+
+
+Calendar Behavior
+In the calendar view, show ALL visits but link to the same deal:
+
+
+
+
+
++-----------------------------+
+¦  My Calendar	¦
+¦	¦
+¦ July 15:	¦
+¦ +-------------------------+ ¦
+¦ ¦ Drain - Smith (Visit 1) ¦ ¦
+¦ ¦ ? Completed	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ July 20 (Today):	¦
+¦ +-------------------------+ ¦
+¦ ¦ Drain - Smith (Visit 2) ¦ ¦
+¦ ¦ ? In Progress	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ July 22:	¦
+¦ +-------------------------+ ¦
+¦ ¦ Drain - Smith (Visit 3) ¦ ¦
+¦ ¦ ? Scheduled	¦ ¦
+¦ +-------------------------+ ¦
++-----------------------------+
+
+Important: Clicking ANY visit opens the SAME main deal, just scrolled to that visit.
+Salesforce Structure Main Deal Object:
+* All original fields
+* Overall status
+* Total amounts
+* Overall progress %
+
+
+1. Deal c (Master-Detail to Main Deal) = this should be paired already with the SF deal, so perhaps, no need for this, we can discuss
+* What it is: A link that connects this visit to the main job
+* Real example: "This visit belongs to Job #12345 - Smith's broken toilet"
+* Why we need it: So we know which job this visit is part of
+
+
+ALL OF THIS MIGHT BE CREATD FOR EACH VISIT IN SF, AS FIELDS TO SYNCH FROM OMNI APP
+2. Visit_Number c (1, 2, 3...)
+* What it is: Which visit is this? First? Second? Third?
+* Real example: "This is visit number 2 out of 3"
+* Why we need it: To keep visits in order
+3. Visit_Date c
+* What it is: What day is this visit scheduled?
+* Real example: "July 20, 2025"
+* Why we need it: So everyone knows when to show up
+4. Visit_Status c
+* What it is: What's happening with this specific visit?
+* Real example: "Completed" or "Scheduled" or "In Progress"
+
+* Why we need it: To track each visit separately
+5. Start_Time c
+* What it is: When did the handyman actually start working?
+* Real example: "14:30" (2:30 PM)
+* Why we need it: To track work hours for payment
+6. End_Time c
+* What it is: When did the handyman finish?
+* Real example: "16:45" (4:45 PM)
+* Why we need it: To know how long the work took
+7. GPS_Start_Lat c & GPS_Start_Long c
+* What it is: Where was the handyman when work started?
+* Real example: "48.1486° N, 17.1077° E" (coordinates for Bratislava)
+* Why we need it: To verify they were at the right address
+8. Protocol_Link c
+* What it is: Where is the signed document for this visit stored?
+* Real example: "Link to PDF file: Protocol_Visit2_July20.pdf"
+* Why we need it: To find the paperwork quickly
+9. Photos_Before c
+* What it is: Pictures taken before starting work this visit
+* Real example: "3 photos showing the broken parts"
+* Why we need it: Evidence of the problem
+10. Photos_After c
+* What it is: Pictures taken after finishing work this visit
+* Real example: "2 photos showing the repair completed"
+* Why we need it: Proof of work done
+11. Work_Description c
+
+* What it is: What exactly did the handyman do during this visit?
+* Real example: "Installed new valve and tested water pressure"
+* Why we need it: Clear record of work performed
+12. Materials_Used c
+* What it is: What parts/materials were used in this visit?
+* Real example: "1x valve (45 EUR), 2x seals (5 EUR)"
+* Why we need it: To track costs per visit
+
+
+Real-Life Example
+Let's say you're fixing Mrs. Johnson's heating:
+Main Job:
+* Fix heating system
+* Total estimate: 300 EUR
+* Expected visits: 3
+Visit 1 (Diagnostic):
+* Date: Monday July 15
+* Started: 10:00 AM
+* Ended: 11:30 AM
+* What happened: Checked system, found broken pump
+* Materials: None (just diagnostic)
+* Photos before: 5 pictures of broken pump
+* Protocol: Signed by Mrs. Johnson
+* Status: Completed
+Visit 2 (Repair):
+* Date: Wednesday July 17
+* Started: 2:00 PM
+
+* Ended: 4:30 PM
+* What happened: Replaced pump, cleaned system
+* Materials: New pump (150 EUR), cleaning fluid (10 EUR)
+* Photos after: 3 pictures of new pump installed
+* Protocol: Signed by Mrs. Johnson
+* Status: Completed
+Visit 3 (Testing):
+* Date: Friday July 19
+* Scheduled: 9:00 AM
+* What will happen: Test heating for 2 hours
+* Status: Scheduled (not done yet)
+
+
+Expanded Protocol View
+When clicking "View Protocol ?":
+
+
+
+
+
++-----------------------------¦
+¦ ? Visit 1 - Jul 15	¦
+¦ Diagnostic & Initial work ¦
+¦ 2.5 hours	¦
+¦ +-------------------------+ ¦
+¦ ¦ Protocol Summary:	¦ ¦
+¦ ¦ • Drain blockage found ¦ ¦
+¦ ¦ • Materials: 45 EUR	¦ ¦
+¦ ¦ • Next visit needed	¦ ¦
+
+¦ ¦	¦ ¦
+¦ ¦ [  Open Full Protocol] ¦ ¦
+¦ ¦ [ •   View Photos]	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ ? Visit 2 - TODAY	¦
+¦ Material installation	¦
+¦ Started 14:00	¦
+¦ [ACTIVE NOW]	¦
++-----------------------------+
+Calendar Behavior
+In the calendar view, show ALL visits but link to the same deal:
+
+
+
+
+
++-----------------------------+
+¦  My Calendar	¦
+¦	¦
+¦ July 15:	¦
+¦ +-------------------------+ ¦
+¦ ¦ Drain - Smith (Visit 1) ¦ ¦
+¦ ¦ ? Completed	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ July 20 (Today):	¦
+¦ +-------------------------+ ¦
+
+¦ ¦ Drain - Smith (Visit 2) ¦ ¦
+¦ ¦ ? In Progress	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ July 22:	¦
+¦ +-------------------------+ ¦
+¦ ¦ Drain - Smith (Visit 3) ¦ ¦
+¦ ¦ ? Scheduled	¦ ¦
+¦ +-------------------------+ ¦
++-----------------------------+
+Important: Clicking ANY visit opens the SAME main deal, just scrolled to that visit.
+Salesforce Structure Main Deal Object:
+* All original fields
+* Overall status
+* Total amounts
+* Overall progress %
+Visit Object (New):
+
+
+
+
+Visit  c
++-- Deal  c (Master-Detail to Main Deal)
++-- Visit_Number  c (1, 2, 3...)
++-- Visit_Date  c
++-- Visit_Status  c
+
++-- Start_Time  c
++-- End_Time  c
++-- GPS_Start_Lat  c
++-- GPS_Start_Long c
++-- Protocol_Link c
++-- Photos_Before  c
++-- Photos_After  c
++-- Work_Description  c
++-- Materials_Used  c
+Home Screen Display
+For multi-visit jobs, show current/next visit:
+
+
+
+
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦ John Smith • Visit 2 of 3 ¦ <- Visit indicator
+¦  Main St 123, BA	¦
+¦ ?   Today 14:00	¦
+¦	¦
+¦ [VISIT 2 - IN PROGRESS]	¦
+¦ Overall: 50% [¦¦¦¦¦¦¦¦¦¦¦] ¦
+¦	¦
+¦ [  CONTINUE VISIT 2]	¦
++-----------------------------+
+
+Protocol Storage & Access In Salesforce:
+* Each visit has its own protocol in Files - we will store it in SF, and should have acces in the HM APP to it, but, we should know, by name, which protocol belongs to which visit
+* Linked to Visit object
+* Also linked to main Deal
+* Naming: "Protocol_Deal#_Visit#_Date"
+In App:
+* Access all protocols from timeline
+* Quick preview in collapsed view
+* Full view opens PDF
+* Download option for offline
+Navigation Flow
+
+
+
+
+Home Screen
+  ? Click job card Main Deal Screen
+? Shows visit timeline
+? Current visit highlighted
+  ? Click "Continue Current Work" Current Visit Actions
+? Complete visit
+? Auto-return to main deal
+? Shows next visit ready
+
+Special Considerations Progress Calculation:
+* Each visit contributes to overall %
+* Formula: (Completed Visits / Total Visits) × 70% + Protocol/Invoice %
+Status Management:
+* Main deal status reflects current visit
+* Historical visit statuses preserved
+* Clear indication which visit is active
+Notifications:
+* "Visit 1 complete, Visit 2 scheduled for tomorrow"
+* "Reminder: Visit 3 today at 10:00"
+* "All visits complete, ready for final invoice"
+
+
+5.4 Multi-Visit Job History
+For jobs requiring multiple visits, a history icon appears:
+
+
++-----------------------------+
+¦  Visit History	¦
+¦	¦
+¦ ? Visit 1: 15.07 (2h)	¦
+¦ Diagnostic + initial work ¦
+¦ Material ordered	¦
+¦	¦
+¦ ? Visit 2: 17.07 (1.5h) ¦
+¦ Material purchase	¦
+¦ Partial installation	¦
+
+¦	¦
+¦ ? Visit 3: Today	¦
+¦ Complete installation	¦
+¦ Testing and cleanup	¦
++-----------------------------+
+
+
+
+6. Complete Job Workflow - Every Single Step {#6-job-workflow}
+6.1 New Job Without Appointment When a new job is assigned to you: Initial Screen:
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦	¦
+¦ Status: Schedule appointment¦
+¦	¦
+¦ Customer needs appointment. ¦
+¦ Please call to schedule.  ¦
+¦	¦
+¦ Customer: John Smith	¦
+¦ Phone: +421 903 123 456	¦
+¦ Address: Main St 123, BA ¦
+¦	¦
+¦ [  CALL CUSTOMER]	¦
+¦	¦
+¦ Date & Time:	¦
+
+¦ [	]	¦
++-----------------------------+
+Language Texts:
+* EN: Schedule appointment / Customer needs appointment. Please call to schedule
+/ CALL CUSTOMER / Date & Time
+* SK: Dohodnút termín / Zákazník potrebuje termín. Zavolajte prosím / ZAVOLAT KLIENTA / Dátum a cas
+* CZ: Domluvit termín / Zákazník potrebuje termín. Zavolejte prosím / ZAVOLAT KLIENTA / Datum a cas
+* PL: Umów termin / Klient potrzebuje terminu. Prosze zadzwonic / ZADZWON DO KLIENTA / Data i czas
+Process:
+1. Click "Call Customer" button
+2. Phone app opens with customer number
+3. Speak with customer to agree date/time
+4. Return to app
+5. Click edit icon   next to Date & Time
+6. Select agreed date and time
+7. Click Save
+What happens next:
+* Job status changes to "Scheduled"
+* Job moves to appropriate day in your list
+* Customer receives SMS confirmation
+* You receive reminder notification
+6.2 Starting Work at Customer Location Arrival Screen:
+
++-----------------------------+
+¦ Blocked drain kitchen	¦
+¦	¦
+¦ Status: Scheduled	¦
+¦	¦
+¦ Scheduled for:	¦
+¦ Today at 14:00	¦
+¦	¦
+¦ Customer: John Smith	¦
+¦ Phone: +421 903 123 456	¦
+¦ Address: Main St 123, BA ¦
+¦	¦
+¦ [  START WORK]	¦
+¦	¦
+¦ [Navigate] [Call Customer] ¦
++-----------------------------+
+Language Texts:
+* EN: Scheduled / Scheduled for / Today at / START WORK
+* SK: Plánovaná / Naplánované na / Dnes o / ZACAT PRÁCU
+* CZ: Plánovaná / Naplánováno na / Dnes v / ZACÍT PRÁCI
+* PL: Zaplanowane / Zaplanowane na / Dzis o / ROZPOCZNIJ PRACE
+When you click "Start Work":
+1. GPS Verification:
+o App records your current location
+o Compares with customer address
+o If distance > 500m: Office receives alert
+
+o Important: Work continues regardless!
+2. Time Tracking Starts:
+o Exact start time recorded
+o Field Job_Start_Time_1 c populated
+o Used for accurate payment calculation
+3. Status Updates:
+o Changes to "Diagnostic in progress"
+o Screen automatically shows diagnostic form
+6.3 Diagnostic Form - Complete Details Main Diagnostic Screen:
+
++-----------------------------+
+¦ Diagnostics	¦
+¦	¦
+¦ Status: Diagnostic running ¦
+¦	¦
+¦ Scope of Work & Materials ¦
+¦	¦
+¦ Estimated work time*	¦
+¦ [	] hours	¦
+¦	¦
+¦ Kilometers per visit*	¦
+¦ [	] km	¦
+¦	¦
+¦ Estimated visits*	¦
+¦ [? 1 ]	¦
+
+¦	¦
+¦ Material 1:	¦
+¦ Description: [	] ¦
+¦ Price: [	] EUR excl VAT ¦
+¦	¦
+¦ [+ Add Material]	¦
+¦	¦
+¦ Photos before repair*	¦
+¦ [ •   Add Photos]	¦
+¦ Min 1, Max 5 (10MB each)  ¦
+¦	¦
+¦ [SUBMIT DIAGNOSTIC]	¦
++-----------------------------+
+6.4 Diagnostic Form Field Details Estimated Work Time:
+* EN: Estimated work time / hours
+* SK: Odhadovaný cas práce / hodín
+* CZ: Odhadovaný cas práce / hodin
+* PL: Szacowany czas pracy / godzin
+Kilometers per Visit:
+* EN: Kilometers per visit / km
+* SK: Pocet km na 1 návštevu / km
+* CZ: Pocet km na 1 návštevu / km
+* PL: Liczba km na 1 wizyte / km
+Estimated Visits:
+* EN: Estimated visits
+
+* SK: Odhadovaný pocet výjazdov
+* CZ: Odhadovaný pocet výjezdu
+* PL: Szacowana liczba wizyt
+Material Fields:
+* EN: Material / Description / Price / EUR excl VAT / EUR incl VAT
+* SK: Materiál / Popis / Cena / EUR bez DPH / EUR s DPH
+* CZ: Materiál / Popis / Cena / EUR bez DPH / EUR s DPH
+* PL: Material / Opis / Cena / EUR bez VAT / EUR z VAT
+Important VAT Logic:
+* If handyman is VAT payer: "Price: EUR excl VAT"
+* If NOT VAT payer: "Price: EUR incl VAT"
+Add Material Button:
+* EN: + Add Material
+* SK: + Pridat materiál
+* CZ: + Pridat materiál
+* PL: + Dodaj material
+Photos Section:
+* EN: Photos before repair / Add Photos / Min 1, Max 5 (10MB each)
+* SK: Fotky pred opravou / Pridat fotky / Min 1, Max 5 (10MB každá)
+* CZ: Fotky pred opravou / Pridat fotky / Min 1, Max 5 (10MB každá)
+* PL: Zdjecia przed naprawa / Dodaj zdjecia / Min 1, Max 5 (10MB kazde)
+
+
+CTA: Submit Diagnostics
+* make sure to translate this to SK, CZ, PL, use good AI for that, and if you find such things accross the app, use the ai, to fill the languages, thank you
+6.5 Multiple Visits Planning
+
+When "Estimated visits" is more than 1:
+
+
+¦ Reason for next visit:	¦
+¦ [? Select reason	] ¦
+¦	¦
+¦ Material purchase hours:  ¦
+¦ [	] hours	¦
+Dropdown Options:
+* EN: Spare part on order / Complex repair / Material purchase
+* SK: Náhradný diel na objednávku / Zložitá oprava / Nákup materiálu
+* CZ: Náhradní díl na objednávku / Složitá oprava / Nákup materiálu
+* PL: Czesc zamienna na zamówienie / Skomplikowana naprawa / Zakup materialu
+6.6 Special Cases
+Cannot Calculate Price Now:
+
+
+? I need to prepare complex price calculation
+* EN: I need to prepare complex price calculation
+* SK: Musím pripravit komplexnú cenovú ponuku
+* CZ: Musím pripravit komplexní cenovou nabídku
+* PL: Musze przygotowac kompleksowa wycene
+This allows saving diagnostic without prices, to complete later at home.
+6.7 After Diagnostic Submission Calculation Screen:
+
++-----------------------------+
+¦  Calculating...	¦
+
+¦	¦
+¦ Please wait while we	¦
+¦ calculate the costs	¦
+¦	¦
+¦ [Loading animation]	¦
++-----------------------------+
+Language Texts:
+* EN: Calculating... / Please wait while we calculate the costs
+* SK: Prebieha kalkulácia... / Pockajte prosím, kým vypocítame náklady
+* CZ: Probíhá kalkulace... / Pockejte prosím, než vypocítáme náklady
+* PL: Obliczanie... / Prosze czekac, obliczamy koszty
+6.8 Calculation Results - Three Scenarios Scenario A: No Extra Payment Needed
+
++-----------------------------+
+¦  Price Approved	¦
+¦	¦
+¦ Status: Continue work -	¦
+¦ no client surcharge	¦
+¦	¦
+¦ Client pays no extra.	¦
+¦ You can continue work.	¦
+¦	¦
+¦  IMPORTANT NOTICE:	¦
+¦ If scope or price changes ¦
+¦ during work, you must	¦
+
+¦ contact us immediately!	¦
+¦	¦
+¦ [? I ACKNOWLEDGE]	¦
++-----------------------------+
+Language Texts:
+* EN: Price Approved / Continue work - no client surcharge / Client pays no extra. You can continue work / IMPORTANT NOTICE / If scope or price changes during work, you must contact us immediately! / I ACKNOWLEDGE
+* SK: Cena schválená / Pokracuj v práci - bez doplatku klienta / Klient nedopláca nic navyše. Môžete pokracovat v práci / DÔLEŽITÉ UPOZORNENIE / Ak sa pocas práce zmení rozsah alebo cena, musíte nás okamžite kontaktovat! / BERIEM NA VEDOMIE
+* CZ: Cena schválena / Pokracuj v práci - bez doplatku klienta / Klient nedoplácí nic navíc. Mužete pokracovat v práci / DULEŽITÉ UPOZORNENÍ / Pokud se behem práce zmení rozsah nebo cena, musíte nás okamžite kontaktovat! / BERU NA VEDOMÍ
+* PL: Cena zatwierdzona / Kontynuuj prace - bez doplaty klienta / Klient nie doplaca
+dodatkowo. Mozesz kontynuowac prace / WAZNE POWIADOMIENIE / Jesli zakres lub cena zmieni sie podczas pracy, musisz natychmiast skontaktowac sie z nami! / PRZYJMUJE DO WIADOMOSCI
+After acknowledging:
+
+
++-----------------------------+
+¦ Status: Continue work	¦
+¦	¦
+¦ You can perform repair	¦
+¦	¦
+¦ [   WORK FINISHED -	¦
+¦ CREATE PROTOCOL]	¦
++-----------------------------+
+Scenario B1: Extra Payment Required - Waiting
+
++-----------------------------+
+¦  Waiting for approval	¦
+¦	¦
+¦ Status: Wait - contacting ¦
+¦ client about surcharge	¦
+¦	¦
+¦ Calculated surcharge:	¦
+¦ 45.00 EUR	¦
+¦	¦
+¦ We are contacting client  ¦
+¦ for surcharge approval.	¦
+¦ Please wait for info.	¦
+¦	¦
+¦   SMS will inform you	¦
++-----------------------------+
+Language Texts:
+* EN: Waiting for approval / Wait - contacting client about surcharge / Calculated surcharge / We are contacting client for surcharge approval. Please wait for info / SMS will inform you
+* SK: Caká sa na schválenie / Cakajte - komunikujeme s klientom o doplatku / Vypocítaný doplatok / Kontaktujeme klienta pre schválenie doplatku. Pockajte prosím na informácie / SMS vás bude informovat
+* CZ: Ceká se na schválení / Cekejte - komunikujeme s klientem o doplatku /
+Vypocítaný doplatek / Kontaktujeme klienta pro schválení doplatku. Pockejte prosím na informace / SMS vás bude informovat
+
+* PL: Oczekiwanie na zatwierdzenie / Czekaj - kontaktujemy sie z klientem w sprawie doplaty / Obliczona doplata / Kontaktujemy sie z klientem w celu zatwierdzenia
+doplaty. Prosze czekac na informacje / SMS poinformuje Cie
+Scenario B2: Extra Payment - Approved
+
+
++-----------------------------+
+¦   Surcharge Approved	¦
+¦	¦
+¦ Status: Continue work -	¦
+¦ with client surcharge	¦
+¦	¦
+¦ Client approved surcharge: ¦
+¦ 45.00 EUR	¦
+¦	¦
+¦ [  SIGN SURCHARGE	¦
+¦ AGREEMENT]	¦
++-----------------------------+
+Language Texts:
+* EN: Surcharge Approved / Continue work - with client surcharge / Client approved surcharge / SIGN SURCHARGE AGREEMENT
+* SK: Doplatok schválený / Pokracuj v práci - s doplatkom klienta / Klient schválil doplatok / PODPÍSAT SÚHLAS S DOPLATKOM
+* CZ: Doplatek schválen / Pokracuj v práci - s doplatkem klienta / Klient schválil doplatek / PODEPSAT SOUHLAS S DOPLATKEM
+* PL: Doplata zatwierdzona / Kontynuuj prace - z doplata klienta / Klient zatwierdzil doplate / PODPISZ ZGODE NA DOPLATE
+NOTE FOR KATKA: Create separate surcharge agreement protocol template.
+Scenario B3: Extra Payment - Refused
+
++-----------------------------+
+¦   Surcharge Refused	¦
+¦	¦
+¦ Status: Finish with	¦
+¦ diagnostic only	¦
+¦	¦
+¦ Client refused surcharge. ¦
+¦ Finish work with diagnostic ¦
+¦ and get protocol signed.  ¦
+¦	¦
+¦ [  CREATE DIAGNOSTIC	¦
+¦ PROTOCOL]	¦
++-----------------------------+
+Language Texts:
+* EN: Surcharge Refused / Finish with diagnostic only / Client refused surcharge. Finish work with diagnostic and get protocol signed / CREATE DIAGNOSTIC PROTOCOL
+* SK: Doplatok zamietnutý / Ukoncenie diagnostikou / Klient zamietol doplatok. Ukoncite prácu diagnostikou a dajte podpísat protokol / VYTVORIT PROTOKOL DIAGNOSTIKY
+* CZ: Doplatek zamítnut / Ukoncení diagnostikou / Klient zamítl doplatek. Ukoncete práci diagnostikou a nechte podepsat protokol / VYTVORIT PROTOKOL DIAGNOSTIKY
+* PL: Doplata odrzucona / Zakonczenie diagnostyka / Klient odrzucil doplate. Zakoncz prace diagnostyka i daj podpisac protokól / UTWÓRZ PROTOKÓL DIAGNOSTYKI
+6.9 Customer Unreachable Scenario
+
++-----------------------------+
+¦   Could not reach client ¦
+¦	¦
+¦ Status: Waiting for	¦
+¦ client price approval	¦
+¦	¦
+¦ We couldn't reach client  ¦
+¦ yet. We'll inform you.	¦
+¦	¦
+¦ Next steps:	¦
+¦ • If at client: wait,	¦
+¦ we'll contact you	¦
+¦ • If away: we'll notify	¦
+¦ when we reach client	¦
++-----------------------------+
+Language Texts:
+* EN: Could not reach client / Waiting for client price approval / We couldn't reach client yet. We'll inform you / Next steps / If at client: wait, we'll contact you / If away: we'll notify when we reach client
+* SK: Nepodarilo sa dovolat / Cakáme na schválenie ceny klientom / Zatial sa nám nepodarilo spojit s klientom. Budeme vás informovat / Dalšie kroky / Ak ste u klienta, cakajte prosím, budeme vás kontaktovat / Ak ste mimo klienta, ozveme sa hned ako sa spojíme s klientom
+* CZ: Nepodarilo se dovolat / Cekáme na schválení ceny klientem / Zatím se nám nepodarilo spojit s klientem. Budeme vás informovat / Další kroky / Pokud jste u klienta, cekejte prosím, budeme vás kontaktovat / Pokud jste mimo klienta, ozveme se hned jak se spojíme s klientem
+* PL: Nie udalo sie dodzwonic / Czekamy na zatwierdzenie ceny przez klienta / Nie udalo nam sie jeszcze skontaktowac z klientem. Poinformujemy Cie / Nastepne
+
+kroki / Jesli jestes u klienta, poczekaj, skontaktujemy sie z Toba / Jesli jestes poza klientem, powiadomimy gdy skontaktujemy sie z klientem
+6.10 Customer Unreachable - Resolution What happens in Salesforce:
+* Operator sets Komunikacia_doplatku c = "Nedovolané"
+* System waits for customer contact
+* When reached, field updates to "Schválený" or "Neschválený"
+If you're AT customer location when approved:
+* Notification arrives
+* Screen shows approval
+* Continue with work
+If you're NOT at customer location when approved:
+* Notification to schedule next visit
+* Screen to enter new appointment
+If surcharge NOT approved (any location):
+* Since diagnostic protocol already signed
+* Process continues to job closure
+* No additional work needed
+6.11 Complete Price Calculation at Home
+If "Complex price calculation needed" was selected:
+
+
++-----------------------------+
+¦   Complete Diagnostic	¦
+¦	¦
+¦ Status: Waiting for	¦
+¦ client price approval	¦
+
+¦	¦
+¦ You can now complete	¦
+¦ the price calculation:	¦
+¦	¦
+¦ [  COMPLETE PRICE	¦
+¦ CALCULATION]	¦
++-----------------------------+
+Language Texts:
+* EN: Complete Diagnostic / You can now complete the price calculation / COMPLETE PRICE CALCULATION
+* SK: Dokoncit diagnostiku / Môžete teraz dokoncit cenovú ponuku / DOKONCIT CENOVÚ PONUKU
+* CZ: Dokoncit diagnostiku / Mužete nyní dokoncit cenovou nabídku / DOKONCIT CENOVOU NABÍDKU
+* PL: Zakoncz diagnostyke / Mozesz teraz dokonczyc wycene / ZAKONCZ WYCENE
+6.12 Multiple Visit Jobs - Complete Process First Visit - Planning Next:
+When multiple visits needed:
+
+
++-----------------------------+
+¦  Plan Next Visit	¦
+¦	¦
+¦ Status: No surcharge -	¦
+¦ plan next visit	¦
+¦	¦
+¦ Reason: Material purchase ¦
+¦	¦
+
+¦ When will you return:	¦
+¦ Date: [ .  .	]	¦
+¦ Time: [  :  ]	¦
+¦	¦
+¦ ? Date to be agreed	¦
+¦	¦
+¦ [  SAVE & CONTINUE	¦
+¦ TO PROTOCOL]	¦
++-----------------------------+
+Language Texts:
+* EN: Plan Next Visit / When will you return / Date / Time / Date to be agreed / SAVE & CONTINUE TO PROTOCOL
+* SK: Naplánovat dalšiu návštevu / Kedy sa vrátite / Dátum / Cas / Termín sa ešte dohodne / ULOŽIT A POKRACOVAT NA PROTOKOL
+* CZ: Naplánovat další návštevu / Kdy se vrátíte / Datum / Cas / Termín bude domluven / ULOŽIT A POKRACOVAT NA PROTOKOL
+* PL: Zaplanuj nastepna wizyte / Kiedy wrócisz / Data / Czas / Termin do uzgodnienia / ZAPISZ I PRZEJDZ DO PROTOKOLU
+Second Visit Start:
+
+
++-----------------------------+
+¦  Visit 2 of 3	¦
+¦	¦
+¦ History:	¦
+¦ ? Visit 1: 15.07 (2h)	¦
+¦ Diagnostic + start	¦
+¦	¦
+
+¦ Status: Scheduled	¦
+¦	¦
+¦ [  START WORK]	¦
++-----------------------------+ After starting subsequent visit:
+
++-----------------------------+
+¦ Continue Work	¦
+¦	¦
+¦ Approved price from	¦
+¦ diagnostic	¦
+¦	¦
+¦ Is price still the same?  ¦
+¦	¦
+¦ [  YES, PRICE UNCHANGED] ¦
+¦	¦
+¦ [  NO, PRICE CHANGED]	¦
++-----------------------------+
+Language Texts:
+* EN: Continue Work / Approved price from diagnostic / Is price still the same? / YES, PRICE UNCHANGED / NO, PRICE CHANGED
+* SK: Pokracovanie práce / Schválená cena z diagnostiky / Je cena stále rovnaká? / ÁNO, CENA SA NEMENÍ / NIE, CENA JE INÁ
+* CZ: Pokracování práce / Schválená cena z diagnostiky / Je cena stále stejná? / ANO, CENA SE NEMENÍ / NE, CENA JE JINÁ
+* PL: Kontynuacja pracy / Zatwierdzona cena z diagnostyki / Czy cena jest nadal taka sama? / TAK, CENA BEZ ZMIAN / NIE, CENA SIE ZMIENILA
+
+
+
+7. Protocol Creation - All Types {#7-protocol-creation}
+7.1 Understanding Protocols
+Protocols are official documents confirming work performed. They serve as:
+* Legal proof of work done
+* Customer acknowledgment
+* Insurance documentation
+* Payment basis
+7.2 Protocol Types
+1. Diagnostic Only Protocol - When customer refuses repair cost
+2. Standard Work Protocol - Normal completed repair
+3. Work with Surcharge Protocol - Repair with approved extra payment
+4. Surcharge Agreement Protocol - Customer approval document for extra cost
+5. Multi-visit Protocol - One protocol per each visit
+6. Special Diagnostic Protocol - When price calculated later at home
+NOTE FOR KATKA: Please provide complete protocol templates in all 4 languages with exact fields, legal texts, and formatting requirements.
+7.3 Protocol Creation Process Diagnostic Only Protocol
+Used when customer refuses surcharge or repair not cost-effective:
+
+
++-----------------------------+
+¦  Protocol - Diagnostic ¦
+¦	¦
+¦ Date: 22.07.2025	¦
+¦ Time: 14:00 - 14:45	¦
+
+¦	¦
+¦ Diagnostic performed:	¦
+¦ [Pre-filled from system] ¦
+¦	¦
+¦ Reason repair not done:*  ¦
+¦ [	]	¦
+¦	¦
+¦ Photos before repair:	¦
+¦ [ •  ][ •  ][ •  ] 3 photos	¦
+¦	¦
+¦ Handyman notes:	¦
+¦ [	]	¦
+¦	¦
+¦ Customer notes:	¦
+¦ [	]	¦
+¦	¦
+¦ [  SIGN PROTOCOL]	¦
++-----------------------------+
+Language Texts:
+* EN: Protocol - Diagnostic / Date / Time / Diagnostic performed / Reason repair not done / Photos before repair / photos / Handyman notes / Customer notes / SIGN PROTOCOL
+* SK: Protokol - Diagnostika / Dátum / Cas / Vykonaná diagnostika / Dôvod nevykonania opravy / Fotografie pred opravou / fotky / Poznámka majstra / Poznámka klienta / PODPÍSAT PROTOKOL
+* CZ: Protokol - Diagnostika / Datum / Cas / Provedená diagnostika / Duvod
+neprovedení opravy / Fotografie pred opravou / fotky / Poznámka mistra / Poznámka klienta / PODEPSAT PROTOKOL
+
+* PL: Protokól - Diagnostyka / Data / Czas / Wykonana diagnostyka / Powód niewykonania naprawy / Zdjecia przed naprawa / zdjecia / Uwagi majstra / Uwagi klienta / PODPISZ PROTOKÓL
+Important: Always requires minimum 1 "before" photo from diagnostic phase.
+Standard Work Protocol
+Used for normal repair completion without extra charges:
+
+
++-----------------------------+
+¦  Protocol - Work Done	¦
+¦	¦
+¦ Date: 22.07.2025	¦
+¦ Time: 14:00 - 16:30	¦
+¦	¦
+¦ Work performed:	¦
+¦ [Pre-filled from system] ¦
+¦	¦
+¦ Materials used:	¦
+¦ [Pre-filled from diagnostic]¦
+¦	¦
+¦ Photos after repair:*	¦
+¦ [ •   Add Photos]	¦
+¦ Min 1, Max 5	¦
+¦	¦
+¦ Handyman notes:	¦
+¦ [	]	¦
+¦	¦
+
+¦ Customer notes:	¦
+¦ [	]	¦
+¦	¦
+¦ [  SIGN PROTOCOL]	¦
++-----------------------------+
+Language Texts:
+* EN: Protocol - Work Done / Work performed / Materials used / Photos after repair / Add Photos
+* SK: Protokol - Práca hotová / Vykonaná práca / Použitý materiál / Fotografie po oprave / Pridat fotky
+* CZ: Protokol - Práce dokoncena / Provedená práce / Použitý materiál / Fotografie po oprave / Pridat fotky
+* PL: Protokól - Praca zakonczona / Wykonana praca / Uzyte materialy / Zdjecia po naprawie / Dodaj zdjecia
+Note: Only "after" photos needed - "before" photos already captured during diagnostic.
+7.4 Digital Signature Process
+Customer signs directly on handyman's phone:
+
+
++-----------------------------+
+¦ Customer Signature	¦
+¦	¦
+¦ +-------------------------+ ¦
+¦ ¦	¦ ¦
+¦ ¦	¦ ¦
+¦ ¦ [Customer draws	¦ ¦
+¦ ¦ signature with	¦ ¦
+¦ ¦ finger here]	¦ ¦
+
+¦ ¦	¦ ¦
+¦ ¦	¦ ¦
+¦ +-------------------------+ ¦
+¦	¦
+¦ [Clear] [Confirm Signature] ¦
++-----------------------------+
+Language Texts:
+* EN: Customer Signature / Clear / Confirm Signature
+* SK: Podpis klienta / Vymazat / Potvrdit podpis
+* CZ: Podpis klienta / Vymazat / Potvrdit podpis
+* PL: Podpis klienta / Wyczysc / Potwierdz podpis
+7.5 Digital Signature Failure
+If digital signature not possible:
+
+
++-----------------------------+
+¦   Digital signature	¦
+¦ not possible	¦
+¦	¦
+¦ Choose option:	¦
+¦	¦
+¦ [  TRY DIGITAL	¦
+¦ SIGNATURE AGAIN]	¦
+¦	¦
+¦ [  USE PAPER	¦
+¦ PROTOCOL]	¦
++-----------------------------+
+
+Language Texts:
+* EN: Digital signature not possible / Choose option / TRY DIGITAL SIGNATURE AGAIN
+/ USE PAPER PROTOCOL
+* SK: Digitálny podpis nie je možný / Vyberte možnost / SKÚSIT ZNOVA DIGITÁLNY PODPIS / POUŽIT PAPIEROVÝ PROTOKOL
+* CZ: Digitální podpis není možný / Vyberte možnost / ZKUSIT ZNOVU DIGITÁLNÍ PODPIS / POUŽÍT PAPÍROVÝ PROTOKOL
+* PL: Podpis cyfrowy niemozliwy / Wybierz opcje / SPRÓBUJ PONOWNIE PODPIS CYFROWY / UZYJ PROTOKOLU PAPIEROWEGO
+7.6 Paper Protocol Process
+When using paper protocol:
+
+
++-----------------------------+
+¦  Paper Protocol	¦
+¦	¦
+¦ Follow these steps:	¦
+¦	¦
+¦ 1. Print protocol	¦
+¦ 2. Get customer signature ¦
+¦ 3. Take photo of entire	¦
+¦ signed document	¦
+¦ 4. Upload photo here	¦
+¦	¦
+¦ [ •   UPLOAD PROTOCOL	¦
+¦ PHOTO]	¦
+¦	¦
+¦ System recognizes this	¦
+
+¦ as paper protocol	¦
++-----------------------------+
+Language Texts:
+* EN: Paper Protocol / Follow these steps / Print protocol / Get customer signature / Take photo of entire signed document / Upload photo here / UPLOAD PROTOCOL PHOTO / System recognizes this as paper protocol
+* SK: Papierový protokol / Postupujte takto / Vytlacte protokol / Dajte podpísat klientovi / Odfotografujte celý podpísaný dokument / Nahrajte fotku sem / NAHRAT FOTKU PROTOKOLU / Systém rozpozná, že ide o papierový protokol
+* CZ: Papírový protokol / Postupujte takto / Vytisknete protokol / Nechte podepsat klientem / Vyfotte celý podepsaný dokument / Nahrajte fotku sem / NAHRÁT FOTKU PROTOKOLU / Systém rozpozná, že jde o papírový protokol
+* PL: Protokól papierowy / Postepuj zgodnie z krokami / Wydrukuj protokól / Uzyskaj podpis klienta / Zrób zdjecie calego podpisanego dokumentu / Przeslij zdjecie tutaj / PRZESLIJ ZDJECIE PROTOKOLU / System rozpozna, ze to protokól papierowy
+7.7 What Happens After Protocol
+1. Digital Protocol:
+o PDF generated with embedded signature
+o Email sent to customer automatically
+o PDF uploaded to Salesforce Files
+o Status updates in real-time
+2. Paper Protocol:
+o Photo uploaded to system
+o AI processes image (OCR)
+o Data extracted to fields
+o Manual review if needed
+o Same workflow continues
+3. Both Types:
+
+o 15-minute timer starts
+o Invoice preparation begins
+o Notifications sent
+o Next steps activated
+
+
+
+8. Invoice Process {#8-invoice-process}
+8.1 Waiting Period After Protocol
+After protocol is signed and uploaded:
+
+
++-----------------------------+
+¦  Preparing Summary	¦
+¦	¦
+¦ Status: Preparing	¦
+¦ invoice documentation	¦
+¦	¦
+¦ Protocol successfully sent. ¦
+¦ Work summary will be ready ¦
+¦ in 15 minutes.	¦
+¦	¦
+¦ ? ?   Time remaining: 14:32  ¦
++-----------------------------+
+Language Texts:
+* EN: Preparing Summary / Preparing invoice documentation / Protocol successfully sent. Work summary will be ready in 15 minutes / Time remaining
+* SK: Príprava súhrnu / Pripravujeme podklady pre fakturáciu / Protokol bol úspešne odoslaný. Súhrn práce bude pripravený o 15 minút / Zostáva
+
+* CZ: Príprava souhrnu / Pripravujeme podklady pro fakturaci / Protokol byl úspešne odeslán. Souhrn práce bude pripraven za 15 minut / Zbývá
+* PL: Przygotowanie podsumowania / Przygotowujemy dokumenty do faktury /
+Protokól zostal pomyslnie wyslany. Podsumowanie pracy bedzie gotowe za 15 minut
+/ Pozostalo
+8.2 Work Summary Approval
+After 15 minutes, summary appears:
+
+
++-----------------------------+
+¦  Work Summary	¦
+¦	¦
+¦ Work:	¦
+¦ 2.5 hours × 25 EUR = 62.50 ¦
+¦	¦
+¦ Material:	¦
+¦ Valve + seal = 23.40	¦
+¦	¦
+¦ Transport:	¦
+¦ 24 km × 0.30 EUR = 7.20	¦
+¦	¦
+¦ --------------------------- ¦
+¦ TOTAL: 93.10 EUR	¦
+¦	¦
+¦ Do you agree with summary? ¦
+¦	¦
+¦ [  I AGREE]	¦
+¦	¦
+
+¦ [  I DISAGREE]	¦
++-----------------------------+
+Language Texts:
+* EN: Work Summary / Work / hours / Material / Transport / TOTAL / Do you agree with summary? / I AGREE / I DISAGREE
+* SK: Súhrn práce / Práca / hodiny / Materiál / Doprava / CELKOM / Súhlasíte s týmto súhrnom? / SÚHLASÍM / NESÚHLASÍM
+* CZ: Souhrn práce / Práce / hodiny / Materiál / Doprava / CELKEM / Souhlasíte s tímto souhrnem? / SOUHLASÍM / NESOUHLASÍM
+* PL: Podsumowanie pracy / Praca / godziny / Material / Transport / RAZEM / Czy zgadzasz sie z podsumowaniem? / ZGADZAM SIE / NIE ZGADZAM SIE
+8.3 Disagreement Process
+If handyman disagrees:
+
+
++-----------------------------+
+¦   Reason for Disagreement ¦
+¦	¦
+¦ Describe the issue:*	¦
+¦ [	]	¦
+¦ [	]	¦
+¦ [	]	¦
+¦	¦
+¦ [  SEND]	¦
++-----------------------------+
+Language Texts:
+* EN: Reason for Disagreement / Describe the issue / SEND
+* SK: Dôvod nesúhlasu / Popíšte problém / ODOSLAT
+
+* CZ: Duvod nesouhlasu / Popište problém / ODESLAT
+   * PL: Powód niezgody / Opisz problem / WYSLIJ After sending:
+
++-----------------------------+
+¦   Message Sent	¦
+¦	¦
+¦ Your message was sent to  ¦
+¦ our support. We will	¦
+¦ contact you about solution. ¦
+¦	¦
+¦ Status: Invoice not	¦
+¦ approved - we'll contact ¦
+¦ you	¦
+¦	¦
+¦ [OK]	¦
++-----------------------------+
+This creates a support case in Salesforce for resolution.
+8.4 Choose Invoice Type
+If agreed with summary:
+
+
++-----------------------------+
+¦  Invoicing	¦
+¦	¦
+¦ Choose invoice type:	¦
+¦	¦
+
+¦ [  INTERNAL INVOICE	¦
+¦ (IFA)	¦
+¦ We create the invoice for you]	¦
+¦	¦
+¦ [  EXTERNAL INVOICE	¦
+¦ (EFA)	¦
+¦ I will use my own	¦
+¦ invoice]	¦
++-----------------------------+
+Language Texts:
+* EN: Invoicing / Choose invoice type / INTERNAL INVOICE (IFA) / For contractors without own invoicing / EXTERNAL INVOICE (EFA) / I have my own company and invoice
+* SK: Fakturácia / Vyberte typ faktúry / INTERNÁ FAKTÚRA (IFA) / Pre SZCO bez vlastnej fakturácie / EXTERNÁ FAKTÚRA (EFA) / Mám vlastnú firmu a faktúru
+* CZ: Fakturace / Vyberte typ faktury / INTERNÍ FAKTURA (IFA) / Pro OSVC bez vlastní fakturace / EXTERNÍ FAKTURA (EFA) / Mám vlastní firmu a fakturu
+* PL: Fakturowanie / Wybierz typ faktury / FAKTURA WEWNETRZNA (IFA) / Dla wykonawców bez wlasnego fakturowania / FAKTURA ZEWNETRZNA (EFA) / Mam wlasna firme i fakture
+8.5 Internal Invoice (IFA) Process
+After choosing IFA:
+
+
++-----------------------------+
+¦  Summary - IFA	¦
+¦	¦
+¦ Work:	¦
+¦ 2.5 hours × 25 EUR = 62.50 ¦
+
+¦	¦
+¦ Material:	¦
+¦ Valve + seal = 23.40	¦
+¦	¦
+¦ Transport:	¦
+¦ 24 km × 0.30 EUR = 7.20	¦
+¦	¦
+¦ --------------------------- ¦
+¦ TOTAL: 93.10 EUR	¦
+¦	¦
+¦ [  I AGREE]	¦
+¦	¦
+¦ [   I DISAGREE -	¦
+¦ CONTACT ME]	¦
++-----------------------------+
+Language Texts:
+* EN: Summary - IFA / I AGREE / I DISAGREE - CONTACT ME
+* SK: Súhrn - IFA / SÚHLASÍM / NESÚHLASÍM - KONTAKTUJTE MA
+* CZ: Souhrn - IFA / SOUHLASÍM / NESOUHLASÍM - KONTAKTUJTE ME
+* PL: Podsumowanie - IFA / ZGADZAM SIE / NIE ZGADZAM SIE - SKONTAKTUJ SIE ZE MNA
+If agrees:
+* Status changes to: "Invoice will be issued in few days"
+* IFA generated automatically at 3:00 AM
+* Payment processed on Friday
+* Notification when paid
+
+8.6 External Invoice (EFA) Process
+NOTE FOR KATKA: Please provide exact field names from existing EFA form in Salesforce.
+
+
++-----------------------------+
+¦  Your Invoice - EFA	¦
+¦	¦
+¦ Amount without VAT:*	¦
+¦ [	] EUR	¦
+¦	¦
+¦ VAT rate:*	¦
+¦ [? Select rate ]	¦
+¦	¦
+¦ Delivery date:*	¦
+¦ [  .  .	]	¦
+¦	¦
+¦ Variable symbol:*	¦
+¦ [	]	¦
+¦	¦
+¦ Upload your invoice:*	¦
+¦ [ Choose file]	¦
+¦	¦
+¦ [  SEND INVOICE]	¦
++-----------------------------+
+8.7 VAT Rates by Country Slovakia (2025 rates):
+* 0% (Exempt)
+
+* 10% (Reduced rate)
+* 20% (Standard rate)
+Czech Republic:
+* 0% (Exempt)
+* 10% (First reduced rate)
+* 15% (Second reduced rate)
+* 21% (Standard rate)
+Poland:
+* 0% (Exempt)
+* 5% (Super reduced rate)
+* 8% (Reduced rate)
+* 23% (Standard rate)
+Language Texts:
+* EN: Your Invoice - EFA / Amount without VAT / VAT rate / Select rate / Delivery date / Variable symbol / Upload your invoice / Choose file / SEND INVOICE
+* SK: Vaša faktúra - EFA / Suma bez DPH / Sadzba DPH / Vyberte sadzbu / Dátum dodania / Variabilný symbol / Nahrajte vašu faktúru / Vybrat súbor / ODOSLAT FAKTÚRU
+* CZ: Vaše faktura - EFA / Cástka bez DPH / Sazba DPH / Vyberte sazbu / Datum dodání / Variabilní symbol / Nahrajte vaši fakturu / Vybrat soubor / ODESLAT FAKTURU
+* PL: Twoja faktura - EFA / Kwota bez VAT / Stawka VAT / Wybierz stawke / Data
+dostawy / Symbol zmienny / Przeslij swoja fakture / Wybierz plik / WYSLIJ FAKTURE
+Important Notes:
+* "Delivery date" = when work was completed (not invoice creation date)
+* Handyman creates own invoice with these details
+* System creates internal invoice for accounting
+* Salesforce automation validates all data
+
+* Same approval process as IFA follows
+
+
+
+9. All App Sections {#9-app-sections}
+9.1 Deals Section - Complete Job Management
+Access via bottom menu: Deals 
+This section shows ALL your jobs - past, present, and future.
+
+
++-----------------------------+
+¦  All Jobs	¦
+¦	¦
+¦ •   [Search...]	¦
+¦	¦
+¦ Filter: [? All	]	¦
+¦	¦
+¦ --------------------------- ¦
+¦ Today (3)	¦
+¦ --------------------------- ¦
+¦	¦
+¦ [Job card 1 - 14:00]	¦
+¦ [Job card 2 - 16:30]	¦
+¦ [Job card 3 - 18:00]	¦
+¦	¦
+¦ --------------------------- ¦
+¦ This Week (8)	¦
+¦ --------------------------- ¦
+¦	¦
+
+¦ [More job cards...]	¦
+¦	¦
+¦ --------------------------- ¦
+¦ Last Month (24)	¦
+¦ --------------------------- ¦
++-----------------------------+
+Language Texts:
+* EN: All Jobs / Search / Filter / All / Today / This Week / Last Month
+* SK: Všetky zákazky / Hladat / Filtrovat / Všetky / Dnešné / Tento týžden / Minulý mesiac
+* CZ: Všechny zakázky / Hledat / Filtrovat / Všechny / Dnešní / Tento týden / Minulý mesíc
+* PL: Wszystkie zlecenia / Szukaj / Filtruj / Wszystkie / Dzisiejsze / Ten tydzien / Ostatni miesiac
+Filter Options:
+* EN: All / Unscheduled / Today / This week / This month / Completed / Cancelled
+* SK: Všetky / Neplánované / Dnešné / Tento týžden / Tento mesiac / Dokoncené / Zrušené
+* CZ: Všechny / Neplánované / Dnešní / Tento týden / Tento mesíc / Dokoncené / Zrušené
+* PL: Wszystkie / Niezaplanowane / Dzisiejsze / Ten tydzien / Ten miesia
+
+
+* PL: Wszystkie / Niezaplanowane / Dzisiejsze / Ten tydzien / Ten miesiac / Zakonczone / Anulowane
+Search Functionality: Search works by:
+* Customer name
+* Address
+* Phone number
+
+* Job description
+
+
+Status Display in Deals: Each job card in the Deals section shows the same prominent status badge as on the Home screen. This allows handymen to quickly scan through all their jobs and see current status without opening each one. The same smart action button appears on each card, taking them directly to the appropriate screen.
+9.2 Calendar View
+Access via bottom menu: Calendar 
+Visual representation of your schedule:
+
+
+
+
+
++-----------------------------+
+¦  My Calendar	¦
+¦	¦
+¦ < July 20-22, 2025 >	¦
+¦	¦
+¦ Mon Tue Wed	¦
+¦ 20	21	22	¦
++-----------------------------¦
+¦ 09:00	¦
+¦ +---+	+---+	¦
+¦ 10:00¦Job¦	¦Job¦	¦
+¦ ¦#1 ¦ +---+¦#3 ¦	¦
+¦ 11:00+---+ ¦Job¦+---+	¦
+¦	¦#2 ¦	¦
+¦ 12:00	+---+	¦
+
+¦	¦
+¦ 13:00 +---------+	¦
+¦	¦ Break ¦	¦
+¦ 14:00 +---------+	¦
+¦	¦
+¦ 15:00	+-------+	¦
+¦	¦ Job #4 ¦	¦
+¦ 16:00	+-------+	¦
++-----------------------------+
+Language Texts:
+* EN: My Calendar / Mon / Tue / Wed / Thu / Fri / Sat / Sun / Break
+* SK: Môj kalendár / Po / Ut / St / Št / Pi / So / Ne / Prestávka
+* CZ: Muj kalendár / Po / Út / St / Ct / Pá / So / Ne / Prestávka
+* PL: Mój kalendarz / Pon / Wt / Sr / Czw / Pt / Sob / Niedz / Przerwa
+Features:
+* 3-day view by default
+* Swipe left/right for more days
+* Job blocks show estimated duration
+* Tap any job to see full details
+* Different colors for different statuses
+9.3 Messages - Chat with Office
+Access via bottom menu: Messages 
+Direct communication with support office:
+
++-----------------------------+
+¦  Messages	¦
+¦ Online Support	¦
++-----------------------------¦
+¦	¦
+¦ Support (10:23):	¦
+¦ +---------------------+	¦
+¦ ¦ Hello, you have	¦	¦
+¦ ¦ new job for	¦	¦
+¦ ¦ tomorrow at 14:00 ¦	¦
+¦ +---------------------+	¦
+
+¦¦¦You (10:25): ? ¦¦+-------------+¦¦¦ OK, I see it ¦	¦¦¦ in the app ¦	¦¦+-------------+¦¦¦¦ [Type message...]	  ¦
++-----------------------------+
+Language Texts:
+* EN: Messages / Online Support / Type message
+* SK: Správy / Online podpora / Napíšte správu
+* CZ: Zprávy / Online podpora / Napište zprávu
+* PL: Wiadomosci / Wsparcie online / Wpisz wiadomosc
+Features:
+
+* Real-time messaging
+* Push notifications for new messages
+* Complete message history
+* Can send photos/files
+* Read receipts
+* Support available during business hours
+9.4 Call Us - Quick Support
+Access via bottom menu: Call us 
+Direct phone support for urgent issues:
+
+
+
+
+
++-----------------------------+
+¦  Call Support	¦
+¦	¦
+¦ Insurance Department	¦
+¦ (B2A)	¦
+¦	¦
+¦ [  CALL NOW]	¦
+¦	¦
+¦ SK: +421 2 222 006 09	¦
+¦ CZ: +420 277 278 610	¦
+¦	¦
+¦ Working hours:	¦
+¦ Mon-Fri: 8:00 - 17:00	¦
+¦ Sat-Sun: Closed	¦
+
++-----------------------------+
+Language Texts:
+* EN: Call Support / Insurance Department / CALL NOW / Working hours / Mon-Fri / Sat-Sun: Closed
+* SK: Zavolat podporu / Oddelenie poistných udalostí / VOLAT TERAZ / Pracovná doba
+/ Po-Pi / So-Ne: Zatvorené
+* CZ: Zavolat podporu / Oddelení pojistných událostí / VOLAT NYNÍ / Pracovní doba / Po-Pá / So-Ne: Zavreno
+* PL: Zadzwon do wsparcia / Dzial ubezpieczen / ZADZWON TERAZ / Godziny pracy / Pon-Pt / Sob-Niedz: Zamkniete
+Note: When B2B/B2C departments are added later, this screen will first show department selection.
+9.5 Profile - Your Information
+Access via bottom menu: Profile 
+View and manage your personal information:
+
+
+
+
+
++-----------------------------+
+¦  My Profile	¦
+¦	¦
+¦ [  Edit Profile]	¦
+¦	¦
+¦ Personal Data	¦
+¦ --------------------------- ¦
+¦ Name: John Smith	¦
+¦ Phone: +421 903 123 456	¦
+
+¦ Email: john@example.com	¦
+¦ Address: Main St 123, BA ¦
+¦	¦
+¦ Company Data	¦
+¦ --------------------------- ¦
+¦ Company: Smith SZCO	¦
+¦ ICO: 12345678	¦
+¦ DIC: 2012345678	¦
+¦ IC DPH: SK2012345678	¦
+¦ VAT payer: Yes	¦
+¦	¦
+¦ Price List	¦
+¦ --------------------------- ¦
+¦ 1st hour: 25.00 EUR	¦
+¦ Next hour: 20.00 EUR	¦
+¦ 1 km: 0.30 EUR	¦
+¦	¦
+¦ [  Change Password]	¦
+¦ [  Log Out]	¦
++-----------------------------+
+Language Texts:
+* EN: My Profile / Edit Profile / Personal Data / Name / Phone / Email / Address / Company Data / Company / VAT payer / Yes / No / Price List / 1st hour / Next hour / Change Password / Log Out
+* SK: Môj profil / Upravit profil / Osobné údaje / Meno / Telefón / Email / Adresa /
+Firemné údaje / Firma / Platca DPH / Áno / Nie / Cenník / 1. hodina / Dalšia hodina / Zmenit heslo / Odhlásit sa
+
+* CZ: Muj profil / Upravit profil / Osobní údaje / Jméno / Telefon / Email / Adresa / Firemní údaje / Firma / Plátce DPH / Ano / Ne / Ceník / 1. hodina / Další hodina / Zmenit heslo / Odhlásit se
+* PL: Mój profil / Edytuj profil / Dane osobowe / Imie / Telefon / Email / Adres / Dane firmowe / Firma / Platnik VAT / Tak / Nie / Cennik / 1. godzina / Nastepna godzina / Zmien haslo / Wyloguj sie
+Functions:
+* Edit Profile: Opens external form in browser with unique link
+* Change Password: In-app password change
+* Log Out: Ends session and returns to login
+
+
+
+10. Status System Reference {#10-status-system}
+10.1 Complete List of App Statuses
+All statuses that handyman sees in the app with their meanings:
+1. Schedule appointment
+* SK: Dohodnút termín
+* CZ: Domluvit termín
+* PL: Umów termin
+* Meaning: New job needs appointment
+* Action: Call customer immediately
+2. Scheduled
+* SK: Plánovaná
+* CZ: Plánovaná
+* PL: Zaplanowane
+* Meaning: Has date/time, waiting for appointment
+* Next: Arrive and start work
+3. Scheduled - agree date
+
+* SK: Plánovaná - dohodnite dátum
+* CZ: Plánovaná - domluvte datum
+* PL: Zaplanowane - uzgodnij date
+* Meaning: Multi-visit job needs next appointment
+* Action: Call customer for next visit date
+4. Diagnostic running
+* SK: Prebieha diagnostika
+* CZ: Probíhá diagnostika
+* PL: Trwa diagnostyka
+* Meaning: Currently filling diagnostic form
+* Next: Submit diagnostic
+5. Calculating - wait
+* SK: Prebieha kalkulácia - cakajte
+* CZ: Probíhá kalkulace - cekejte
+* PL: Obliczanie - czekaj
+* Meaning: System calculating costs
+* Duration: Usually 5-30 seconds
+6. Continue work - no surcharge
+* SK: Pokracuj v práci - bez doplatku klienta
+* CZ: Pokracuj v práci - bez doplatku klienta
+* PL: Kontynuuj prace - bez doplaty klienta
+* Meaning: No extra payment needed
+* Next: Complete work and create protocol
+7. Wait - contacting client
+* SK: Cakajte - komunikujeme s klientom doplatok
+* CZ: Cekejte - komunikujeme s klientem doplatek
+
+* PL: Czekaj - kontaktujemy sie z klientem
+* Meaning: Office calling customer about surcharge
+* Next: Wait for notification
+8. Waiting for price approval
+* SK: Cakáme na schválenie ceny klientom
+* CZ: Cekáme na schválení ceny klientem
+* PL: Czekamy na zatwierdzenie ceny
+* Meaning: Customer unreachable, trying again
+* Next: Wait for update
+9. Continue work - with surcharge
+* SK: Pokracuj v práci - s doplatkom klienta
+* CZ: Pokracuj v práci - s doplatkem klienta
+* PL: Kontynuuj prace - z doplata klienta
+* Meaning: Surcharge approved by customer
+* Next: Sign agreement, then work
+10. Finish with diagnostic
+* SK: Ukoncenie diagnostikou - neschválený doplatok
+* CZ: Ukoncení diagnostikou - neschválený doplatek
+* PL: Zakonczenie diagnostyka - niezatwierdzona doplata
+* Meaning: Customer refused surcharge
+* Next: Create diagnostic protocol only
+11. Preparing invoice docs
+* SK: Pripravujeme podklady pre fakturáciu
+* CZ: Pripravujeme podklady pro fakturaci
+* PL: Przygotowujemy dokumenty do faktury
+* Meaning: 15-minute processing after protocol
+
+* Next: Review work summary
+12. Invoice in few days
+* SK: Do pár dní vystavíme za vás faktúru
+* CZ: Za pár dní vystavíme za vás fakturu
+* PL: W ciagu kilku dni wystawimy fakture
+* Meaning: Invoice approved, will be created
+* Next: Wait for payment
+13. Invoice will be paid soon
+* SK: Faktúra bude coskoro zaplatená
+* CZ: Faktura bude brzy zaplacena
+* PL: Faktura zostanie wkrótce oplacona
+* Meaning: Invoice issued, awaiting payment
+* Next: Payment on Friday
+14. Invoice paid
+* SK: FA uhradená
+* CZ: FA uhrazena
+* PL: FA oplacona
+* Meaning: Payment received
+* Status: Job complete!
+15. Invoice disputed - contact
+* SK: Neschválili ste faktúru - budeme vás kontaktovat
+* CZ: Neschválili jste fakturu - budeme vás kontaktovat
+* PL: Nie zatwierdziles faktury - skontaktujemy sie
+* Meaning: Problem with invoice
+* Next: Support will call you
+10.2 Status Mapping to Salesforce
+
+NOTE FOR KATKA: Please provide exact mapping between app statuses and Salesforce Deal stages.
+Current understanding:
+* App statuses 1-10 ? SF Status "Planned"
+* App statuses 11-15 ? SF Status "Completed"
+
+
+
+11. Notifications System {#11-notifications}
+11.1 Complete List of Push Notifications
+All notifications that handyman receives with exact text:
+1. New Job Assigned
+
+
+
+
+
+  New job assigned Check the app for details
+* SK: Nová zákazka pridelená / Skontrolujte aplikáciu
+* CZ: Nová zakázka pridelena / Zkontrolujte aplikaci
+* PL: Nowe zlecenie przydzielone / Sprawdz aplikacje
+* Opens: Job detail screen
+2. Job Reminder - Today
+
+
+
+
+
+  Job scheduled for today [Customer name] at [time]
+* SK: Zákazka naplánovaná na dnes / [Meno zákazníka] o [cas]
+
+* CZ: Zakázka naplánována na dnes / [Jméno zákazníka] v [cas]
+* PL: Zlecenie zaplanowane na dzis / [Imie klienta] o [czas]
+* Opens: Job detail screen
+3. GPS Verification Failed
+
+
+
+
+
+  Location verification failed Continue with work
+* SK: Overenie lokácie zlyhalo / Pokracujte v práci
+* CZ: Overení lokace selhalo / Pokracujte v práci
+* PL: Weryfikacja lokalizacji nie powiodla sie / Kontynuuj prace
+* Opens: Current job screen
+4. Calculator Complete - No Surcharge
+
+
+
+
+
+  Price approved Continue with work
+* SK: Cena schválená / Pokracujte v práci
+* CZ: Cena schválena / Pokracujte v práci
+* PL: Cena zatwierdzona / Kontynuuj prace
+* Opens: Work continuation screen
+5. Calculator Complete - Surcharge Needed
+
+  Contacting client Wait for approval
+* SK: Kontaktujeme klienta / Pockajte na schválenie
+* CZ: Kontaktujeme klienta / Pockejte na schválení
+* PL: Kontaktujemy klienta / Czekaj na zatwierdzenie
+* Opens: Waiting screen
+6. Surcharge Approved
+
+
+
+
+
+  Surcharge approved: [amount] EUR Continue with work
+* SK: Doplatok schválený: [suma] EUR / Pokracujte v práci
+* CZ: Doplatek schválen: [cástka] EUR / Pokracujte v práci
+* PL: Doplata zatwierdzona: [kwota] EUR / Kontynuuj prace
+* Opens: Surcharge agreement screen
+7. Surcharge Refused
+
+
+
+
+
+   Surcharge refused
+Create diagnostic protocol
+* SK: Doplatok zamietnutý / Vytvorte protokol diagnostiky
+* CZ: Doplatek zamítnut / Vytvorte protokol diagnostiky
+* PL: Doplata odrzucona / Utwórz protokól diagnostyki
+
+* Opens: Diagnostic protocol screen
+8. Client Still Unreachable
+
+
+
+
+
+  Still trying to reach client We'll update you soon
+* SK: Stále sa pokúšame dovolat / Budeme vás informovat
+* CZ: Stále se pokoušíme dovolat / Budeme vás informovat
+* PL: Nadal próbujemy sie dodzwonic / Poinformujemy Cie
+* Opens: Current status screen
+9. New Message from Office
+
+
+
+
+
+  New message from support Tap to read
+* SK: Nová správa od podpory / Kliknite pre cítanie
+* CZ: Nová zpráva od podpory / Kliknete pro ctení
+* PL: Nowa wiadomosc od wsparcia / Kliknij aby przeczytac
+* Opens: Messages section
+10. Protocol Upload Success
+
+
+
+
+
+   Protocol successfully sent
+
+Invoice ready in 15 minutes
+* SK: Protokol úspešne odoslaný / Faktúra bude za 15 minút
+* CZ: Protokol úspešne odeslán / Faktura bude za 15 minut
+* PL: Protokól pomyslnie wyslany / Faktura za 15 minut
+* Opens: Waiting screen
+11. Invoice Summary Ready
+
+
+
+
+
+  Work summary ready Please review and approve
+* SK: Súhrn práce pripravený / Skontrolujte a schválte
+* CZ: Souhrn práce pripraven / Zkontrolujte a schvalte
+* PL: Podsumowanie pracy gotowe / Sprawdz i zatwierdz
+* Opens: Summary approval screen
+12. Invoice Will Be Issued
+
+
+
+
+
+  Invoice will be issued Payment on Friday
+* SK: Faktúra bude vystavená / Platba v piatok
+* CZ: Faktura bude vystavena / Platba v pátek
+* PL: Faktura zostanie wystawiona / Platnosc w piatek
+* Opens: Invoice status screen
+13. Payment Received
+
+
+
+
+
+  Payment received Job complete
+* SK: Platba prijatá / Zákazka dokoncená
+* CZ: Platba prijata / Zakázka dokoncena
+* PL: Platnosc otrzymana / Zlecenie zakonczone
+* Opens: Completed job screen
+14. Support Case Created
+
+
+
+
+
+  Support case created We'll contact you soon
+* SK: Vytvorený prípad podpory / Budeme vás kontaktovat
+* CZ: Vytvoren prípad podpory / Budeme vás kontaktovat
+* PL: Utworzono zgloszenie / Skontaktujemy sie wkrótce
+* Opens: Current job screen
+11.2 Notification Settings
+Users can control notifications in phone settings:
+* All notifications on/off
+* Sound on/off
+* Vibration on/off
+* Show on lock screen
+Important: Critical notifications (price approval, new job) always show.
+
+
+
+12. Technical Implementation {#12-technical-implementation}
+12.1 System Architecture Overview:
+
+
+
+
+Native App (iOS/Android)
+? Contains ?
+Responsive Web Application
+  ? Connects via API ? Omnichannel Platform
+  ? Syncs real-time ? Salesforce (Master Data) Key Components:
+* Native Apps: iOS and Android wrappers
+* Web Application: React-based responsive site
+* Omnichannel: NodeJS backend platform
+* Salesforce: Master database and automation
+* AI Services: Python bots for calculations
+Data Flow:
+1. Handyman actions in app
+2. Data sent to Omnichannel
+3. Omnichannel syncs with Salesforce
+4. Salesforce triggers automations
+5. Results flow back to app
+
+6. Real-time updates displayed
+12.2 Salesforce Custom Fields
+NOTE FOR KATKA: Please verify all field names and create any missing ones.
+GPS and Time Tracking Fields
+
+
+
+
+Job_Start_Time_1 c (DateTime) Job_Start_Time_2 c (DateTime) Job_Start_Time_3 c (DateTime) Job_Start_Time_4 c (DateTime) Job_Start_Time_5 c (DateTime) Job_End_Time_1 c (DateTime) Job_End_Time_2 c (DateTime) Job_End_Time_3 c (DateTime) Job_End_Time_4 c (DateTime) Job_End_Time_5 c (DateTime)
+GPS_Start_Latitude  c (Number - 6 decimal places) GPS_Start_Longitude  c (Number - 6 decimal places) GPS_End_Latitude  c (Number - 6 decimal places) GPS_End_Longitude  c (Number - 6 decimal places) GPS_Distance_From_Customer  c (Number - meters) Date_on_Protocol_1  c (Date)
+Date_on_Protocol_2 c (Date) Date_on_Protocol_3 c (Date) Date_on_Protocol_4  c (Date)
+
+Date_on_Protocol_5  c (Date)
+Status and Process Control Fields
+
+
+
+
+HM_Status  c (Picklist)
+- Values: All 15 statuses listed in Section 10 Komunikacia_doplatku c (Picklist)
+- Empty (default)
+- Schválený (Approved)
+- Neschválený (Refused)
+- Nedovolané (Unreachable)
+Suhlas_majstra_s_fakturaciou  c (Picklist)
+- Empty (default)
+- Súhlasím (Agree)
+- Nesúhlasím (Disagree)
+Len_diagnostika  c (Checkbox)
+- True when diagnostic only Historia_navstev c (Long Text Area)
+- Format: "Visit 1: [date] - [duration] - [work done]"
+Material Processing Fields
+
+
+
+
+Popis_a_cena_materialu_z_HM_APP  c (Long Text Area)
+- Stores all materials as entered by handyman
+
+1_Cena_za_drobny_material_hm  c (Currency)
+- Sum of small materials after AI processing
+1_Cena_za_nahradne_diely_a_material_hm   c (Currency)
+- Sum of spare parts after AI processing
+Multi-Visit Planning Fields
+
+
+
+
+Pocet_km_na_1_navstevu  c (Number)
+- Kilometers for one visit
+Dovod_dalsej_navstevy  c (Picklist)
+- Náhradný diel na objednávku
+- Zložitá oprava
+- Nákup materiálu
+Pocet_hodin_nakupu  c (Number)
+- Hours for material purchase
+EFA Invoice Fields
+NOTE FOR KATKA: Please provide exact field names from existing form.
+12.3 AI Components Detail
+Material Categorization AI (Miško's Python Bot)
+Purpose: Automatically categorize and sum materials
+Trigger: Field Popis_a_cena_materialu_z_HM_APP  c populated
+Process:
+1. Reads text field with all materials
+2. Parses each line:
+o Material name/description
+
+o Price (with or without VAT)
+3. AI categorizes each item:
+o Drobný materiál: Screws, tape, small fittings, gaskets
+o Náhradné diely: Valves, pipes, major components
+4. Sums each category separately
+5. Writes totals to respective fields
+Output:
+* 1_Cena_za_drobny_material_hm c = sum of small items
+* 1_Cena_za_nahradne_diely_a_material_hm  c = sum of parts
+NOTE FOR KATKA: Please provide exact categorization rules/prompt for AI.
+Calculator (Python Bot with AI) = dont forget to make sure that multivisits will be calculated properly
+Purpose: Determine if surcharge needed
+Trigger: Status changes to "odoslal údaje po diagnostike"
+Inputs:
+* Work hours × handyman hourly rate
+* Material costs (from AI categorization)
+* Kilometers × km rate
+* Insurance coverage limits
+* Customer contract terms
+* Historical data
+Process:
+1. Calculate total cost
+2. Compare with insurance limits
+3. Check special contract terms
+4. Determine surcharge amount
+
+5. Update Salesforce field
+Output:
+* Vypocitany_doplatok c = 0 (no surcharge) or amount
+* Triggers appropriate status change
+Protocol Processing AI
+Purpose: Process paper protocols
+For uploaded paper protocols:
+1. OCR recognition of photo
+2. Extract all text and numbers
+3. Identify signature presence
+4. Map to digital protocol fields
+5. Flag as "paper protocol" type
+6. Continue standard workflow
+Validation:
+* All required fields present
+* Signature detected
+* Amounts match diagnostic
+* Date/time logical
+NOTE FOR KATKA: Confirm this AI component exists and works.
+12.4 Key Automation Flows New Job Assignment
+
+
+
+
+Salesforce: Deal created with handyman assigned
+?
+
+Omnichannel: Receives via API sync
+?
+App: Shows at top of home screen
+?
+Status: "Dohodnút termín"
+?
+Notification: "New job assigned"
+Diagnostic Submission
+
+
+
+
+App: Handyman submits diagnostic
+?
+Omnichannel: Sends to Salesforce
+?
+Salesforce: Fields populated
+?
+Python Bot: Calculator triggered
+?
+Calculation: Total cost vs limits
+?
+Field Update: Vypocitany_doplatok  c
+?
+Status Change: Based on amount
+?
+App: Shows appropriate screen
+
+Customer Unreachable Flow
+
+
+
+
+Office: Cannot reach customer
+?
+Salesforce: Komunikacia_doplatku  c = "Nedovolané"
+?
+App: Status "Waiting for approval"
+?
+Later: Customer contacted
+?
+Field Update: "Schválený" or "Neschválený"
+?
+Notification: Sent to handyman
+?
+App: Shows next action
+Multi-Visit Tracking
+
+
+
+
+Visit 1: Diagnostic + initial work
+?
+Protocol 1: Signed and uploaded
+?
+Historia_navstev  c: Updated with visit details
+
+?
+Next date: Scheduled or "to be agreed"
+?
+Visit 2: New start time tracking
+?
+Price check: Same or different?
+?
+Continue: Based on price validation
+12.5 Security Considerations Authentication:
+* Email + password login
+* Secure token storage
+* Session timeout after inactivity (90 days)
+* Forced logout on app uninstall
+Data Protection:
+* All API calls use HTTPS
+* No sensitive data stored locally
+* Photos compressed before upload
+* Personal data encrypted
+Access Control:
+* Handyman sees only own jobs
+* Cannot edit closed jobs
+* Cannot see other handymen
+* Limited to assigned department
+
+
+
+13. Language Reference {#13-language-reference}
+
+13.1 Complete UI Text Reference All texts organized by screen/section: Login Screen
+
+
+
+
+Welcome to Your App
+Vitajte vo vašej aplikácii (SK) Vítejte ve vaší aplikaci (CZ) Witamy w Twojej aplikacji (PL) Email
+Email (SK/CZ/PL) Password
+Heslo (SK) Heslo (CZ) Haslo (PL) Login
+Prihlásit sa (SK) Prihlásit se (CZ) Zaloguj sie (PL) Forgot password?
+Zabudli ste heslo? (SK) Zapomneli jste heslo? (CZ) Zapomniales hasla? (PL) Common Buttons
+
+
+
+Save / Uložit / Uložit / Zapisz Cancel / Zrušit / Zrušit / Anuluj OK / OK / OK / OK
+Yes / Áno / Ano / Tak No / Nie / Ne / Nie
+Back / Spät / Zpet / Wstecz Next / Dalej / Další / Dalej
+Submit / Odoslat / Odeslat / Wyslij Send / Poslat / Poslat / Wyslij Time References
+
+
+
+
+Today / Dnes / Dnes / Dzis
+Tomorrow / Zajtra / Zítra / Jutro Yesterday / Vcera / Vcera / Wczoraj
+This week / Tento týžden / Tento týden / Ten tydzien
+Last week / Minulý týžden / Minulý týden / Ostatni tydzien This month / Tento mesiac / Tento mesíc / Ten miesiac
+Last month / Minulý mesiac / Minulý mesíc / Ostatni miesiac
+Days of Week
+
+Monday / Pondelok / Pondelí / Poniedzialek Tuesday / Utorok / Úterý / Wtorek
+Wednesday / Streda / Streda / Sroda
+Thursday / Štvrtok / Ctvrtek / Czwartek Friday / Piatok / Pátek / Piatek
+Saturday / Sobota / Sobota / Sobota Sunday / Nedela / Nedele / Niedziela Months
+
+
+
+
+January / Január / Leden / Styczen February / Február / Únor / Luty March / Marec / Brezen / Marzec April / Apríl / Duben / Kwiecien May / Máj / Kveten / Maj
+June / Jún / Cerven / Czerwiec July / Júl / Cervenec / Lipiec August / August / Srpen / Sierpien
+September / September / Zárí / Wrzesien October / Október / Ríjen / Pazdziernik November / November / Listopad / Listopad
+December / December / Prosinec / Grudzien
+13.2 Error Messages No Internet Connection
+
+
+
+No Internet Connection
+Žiadne internetové pripojenie (SK) Žádné internetové pripojení (CZ) Brak polaczenia internetowego (PL)
+This app requires internet connection to work Táto aplikácia vyžaduje internetové pripojenie (SK) Tato aplikace vyžaduje internetové pripojení (CZ)
+Ta aplikacja wymaga polaczenia internetowego (PL) Please check:
+Skontrolujte prosím: (SK) Zkontrolujte prosím: (CZ) Sprawdz: (PL)
+WiFi connection WiFi pripojenie (SK) WiFi pripojení (CZ) Polaczenie WiFi (PL) Mobile data
+Mobilné dáta (SK) Mobilní data (CZ) Dane mobilne (PL) Airplane mode is OFF
+Letový režim je VYPNUTÝ (SK) Letový režim je VYPNUTÝ (CZ)
+Tryb samolotowy jest WYLACZONY (PL)
+
+Try Again
+Skúsit znova (SK) Zkusit znovu (CZ)
+Spróbuj ponownie (PL)
+GPS Permission Required
+
+
+
+
+GPS Permission Required Vyžaduje sa GPS povolenie (SK) Vyžaduje se GPS povolení (CZ) Wymagane uprawnienie GPS (PL)
+This app needs GPS for location verification Aplikácia potrebuje GPS pre overenie lokácie (SK) Aplikace potrebuje GPS pro overení lokace (CZ)
+Aplikacja potrzebuje GPS do weryfikacji lokalizacji (PL) Go to settings and enable location
+Prejdite do nastavení a povolte lokalizáciu (SK) Prejdete do nastavení a povolte lokalizaci (CZ) Przejdz do ustawien i wlacz lokalizacje (PL) Open Settings
+Otvorit nastavenia (SK) Otevrít nastavení (CZ) Otwórz ustawienia (PL) Continue without GPS Pokracovat bez GPS (SK)
+
+Pokracovat bez GPS (CZ) Kontynuuj bez GPS (PL) Upload Failed
+
+
+
+
+Upload Failed Nahrávanie zlyhalo (SK) Nahrávání selhalo (CZ)
+Przesylanie nie powiodlo sie (PL) Photo could not be uploaded. Try:
+Fotka sa nepodarila nahrat. Skúste: (SK) Fotka se nepodarila nahrát. Zkuste: (CZ)
+Nie udalo sie przeslac zdjecia. Spróbuj: (PL) Smaller size (max 10MB)
+Menšiu velkost (max 10MB) (SK) Menší velikost (max 10MB) (CZ) Mniejszy rozmiar (max 10MB) (PL) Better connection
+Lepšie pripojenie (SK) Lepší pripojení (CZ)
+Lepsze polaczenie (PL)
+Different format (JPG, PNG) Iný formát (JPG, PNG) (SK) Jiný formát (JPG, PNG) (CZ) Inny format (JPG, PNG) (PL)
+
+Try Again
+Skúsit znova (SK) Zkusit znovu (CZ)
+Spróbuj ponownie (PL) Choose Different Photo Vybrat inú fotku (SK) Vybrat jinou fotku (CZ) Wybierz inne zdjecie (PL)
+
+
+14. Error Messages and Edge Cases {#14-error-messages}
+14.1 Connection Errors Server Connection Lost
+
+
+
+
++-----------------------------+
+¦   Connection Lost	¦
+¦	¦
+¦ Cannot connect to server. ¦
+¦ Check your connection and ¦
+¦ try again.	¦
+¦	¦
+¦ [Try Again] [Cancel]	¦
++-----------------------------+
+Language Texts:
+
+* EN: Connection Lost / Cannot connect to server. Check your connection and try again / Try Again / Cancel
+* SK: Spojenie stratené / Nedá sa pripojit k serveru. Skontrolujte pripojenie a skúste znova / Skúsit znova / Zrušit
+* CZ: Spojení ztraceno / Nelze se pripojit k serveru. Zkontrolujte pripojení a zkuste znovu / Zkusit znovu / Zrušit
+* PL: Utracono polaczenie / Nie mozna polaczyc sie z serwerem. Sprawdz polaczenie i spróbuj ponownie / Spróbuj ponownie / Anuluj
+Data Sync Failed
+
+
+
+
++-----------------------------+
+¦  Sync Failed	¦
+¦	¦
+¦ Data not synchronized.	¦
+¦ Will retry automatically. ¦
+¦	¦
+¦ [OK]	¦
++-----------------------------+
+Language Texts:
+* EN: Sync Failed / Data not synchronized. Will retry automatically / OK
+* SK: Synchronizácia zlyhala / Dáta neboli synchronizované. Automaticky sa zopakuje
+/ OK
+* CZ: Synchronizace selhala / Data nebyla synchronizována. Automaticky se zopakuje
+/ OK
+* PL: Synchronizacja nie powiodla sie / Dane nie zostaly zsynchronizowane. Ponowna próba automatycznie / OK
+
+14.2 Validation Errors Missing Required Fields
+
+
+
+
++-----------------------------+
+¦   Missing Information	¦
+¦	¦
+¦ Please fill all required  ¦
+¦ fields:	¦
+¦ • Work time	¦
+¦ • Photos (min 1)	¦
+¦	¦
+¦ [OK]	¦
++-----------------------------+
+Language Texts:
+* EN: Missing Information / Please fill all required fields / Work time / Photos (min 1)
+* SK: Chýbajúce informácie / Vyplnte všetky povinné polia / Cas práce / Fotky (min 1)
+* CZ: Chybející informace / Vyplnte všechna povinná pole / Cas práce / Fotky (min 1)
+* PL: Brakujace informacje / Wypelnij wszystkie wymagane pola / Czas pracy / Zdjecia (min 1)
+Invalid Date Selection
+
+
+
+
++-----------------------------+
+
+¦   Invalid Date	¦
+¦	¦
+¦ Cannot schedule in past.  ¦
+¦ Please select future date. ¦
+¦	¦
+¦ [OK]	¦
++-----------------------------+
+Language Texts:
+* EN: Invalid Date / Cannot schedule in past. Please select future date
+* SK: Neplatný dátum / Nemožno naplánovat v minulosti. Vyberte budúci dátum
+* CZ: Neplatné datum / Nelze naplánovat v minulosti. Vyberte budoucí datum
+* PL: Nieprawidlowa data / Nie mozna zaplanowac w przeszlosci. Wybierz przyszla date
+14.3 Process Errors Calculator Timeout
+
+
+
+
++-----------------------------+
+¦   Calculation Taking Long ¦
+¦	¦
+¦ This is taking longer than ¦
+¦ expected. Please wait...  ¦
+¦	¦
+¦ If this continues, contact ¦
+¦ support.	¦
+
+¦	¦
+¦ [Keep Waiting] [Call Support]¦
++-----------------------------+
+Language Texts:
+* EN: Calculation Taking Long / This is taking longer than expected. Please wait... / If this continues, contact support / Keep Waiting / Call Support
+* SK: Výpocet trvá dlho / Trvá to dlhšie ako sa ocakávalo. Pockajte prosím... / Ak to bude pokracovat, kontaktujte podporu / Pokracovat v cakaní / Zavolat podporu
+* CZ: Výpocet trvá dlouho / Trvá to déle než se ocekávalo. Pockejte prosím... / Pokud to bude pokracovat, kontaktujte podporu / Pokracovat v cekání / Zavolat podporu
+* PL: Obliczanie trwa dlugo / To trwa dluzej niz oczekiwano. Prosze czekac... / Jesli to bedzie kontynuowane, skontaktuj sie ze wsparciem / Czekaj dalej / Zadzwon do wsparcia
+Protocol Generation Failed
+
+
+
+
++-----------------------------+
+¦   Protocol Error	¦
+¦	¦
+¦ Cannot generate protocol. ¦
+¦ Try again or use paper	¦
+¦ protocol as backup.	¦
+¦	¦
+¦ [Try Again] [Paper Protocol]¦
++-----------------------------+
+Language Texts:
+
+* EN: Protocol Error / Cannot generate protocol. Try again or use paper protocol as backup / Try Again / Paper Protocol
+* SK: Chyba protokolu / Nedá sa vytvorit protokol. Skúste znova alebo použite papierový protokol / Skúsit znova / Papierový protokol
+* CZ: Chyba protokolu / Nelze vytvorit protokol. Zkuste znovu nebo použijte papírový protokol / Zkusit znovu / Papírový protokol
+* PL: Blad protokolu / Nie mozna wygenerowac protokolu. Spróbuj ponownie lub uzyj protokolu papierowego / Spróbuj ponownie / Protokól papierowy
+14.4 Special Edge Cases Job Cancelled by Office
+
+
+
+
++-----------------------------+
+¦  Job Cancelled	¦
+¦	¦
+¦ This job has been cancelled ¦
+¦ by office. Contact support ¦
+¦ for more information.	¦
+¦	¦
+¦ [OK] [Call Support]	¦
++-----------------------------+
+App Version Outdated
+
+
+
+
++-----------------------------+
+
+¦   Update Required	¦
+¦	¦
+¦ Please update the app to  ¦
+¦ continue using all features.¦
+¦	¦
+¦ [Update Now] [Later]	¦
++-----------------------------+
+
+
+
+15. Items for Katka to Provide {#15-katka-items}
+15.1 Protocol Templates
+Please provide complete protocol templates in all 4 languages (EN/SK/CZ/PL) for:
+1. Diagnostic Only Protocol
+* Header format and legal text
+* All required fields with labels
+* Standard texts for insurance
+* Footer with legal notices
+* Signature placement
+2. Standard Work Protocol
+* Complete structure
+* Auto-filled fields mapping
+* Manual entry fields
+* Legal requirements
+* Customer acknowledgments
+3. Work with Surcharge Protocol
+* Surcharge section format
+* Reference to approval
+
+* Additional legal text
+* Clear payment terms
+4. Surcharge Agreement Protocol
+* Standalone agreement format
+* Legal wording for surcharge
+* Customer consent language
+* Signature requirements
+5. Multi-visit Protocols
+* Visit reference format
+* Running totals display
+* Previous work summary
+* Next visit planning
+6. Special Diagnostic Protocol
+* For price calculated later
+* Text: "Diagnostic performed, price will be calculated and communicated"
+* All language versions
+* Legal validity
+15.2 Salesforce Field Mapping
+Please confirm exact API field names for:
+Diagnostic Fields:
+
+
+
+
+Estimated work time ? [Field name?] Kilometers per visit ? [Field name?] Estimated visits ? [Field name?]
+
+Material description ? [Field name?] Material cost ? [Field name?]
+EFA Invoice Fields:
+
+
+
+
+Amount without VAT ? [Field name?] VAT rate ? [Field name?]
+Delivery date ? [Field name?] Variable symbol ? [Field name?]
+Invoice file attachment ? [Field name?]
+Status Mapping:
+* Which app statuses = SF status "Planned"?
+* Which app statuses = SF status "Completed"?
+* Any other SF statuses used?
+15.3 AI Configuration
+Material Categorization Prompt:
+Please provide the exact prompt/rules for AI to categorize materials:
+* What items = "drobný materiál"?
+* What items = "náhradné diely a materiál"?
+* Edge cases handling
+* Price parsing rules
+* VAT handling logic
+Example prompt structure needed:
+
+"Categorize the following materials into two categories:
+1. Drobný materiál (small items): [definition]
+2. Náhradné diely (spare parts): [definition] Rules:
+- Items under X EUR always go to small materials
+- Items with words [...] go to spare parts
+- etc."
+15.4 Automation Verification
+Please confirm these Salesforce automations exist and work:
+1. Calculator Trigger
+* Trigger: Diagnostic data submitted
+* Action: Call Python calculator
+* Result: Update Vypocitany_doplatok c
+2. IFA Creation
+* Trigger: Suhlas_majstra_s_fakturaciou  c = "Súhlasím"
+* Action: Create IFA at 3:00 AM
+* Result: Status update
+3. EFA Validation
+* Trigger: EFA fields filled
+* Action: Validate data consistency
+* Result: Allow/block invoice creation
+4. Protocol Processing
+* Trigger: Paper protocol uploaded
+* Action: AI processes image
+* Result: Fields populated
+
+5. Status Changes
+* All field ? status mappings
+* Automation timing
+* Error handling
+15.5 Missing Translations
+Please provide any missing translations for:
+* Error messages not covered
+* Special status descriptions
+* Help text for complex fields
+* Tooltip descriptions
+* Legal disclaimers
+15.6 Business Rules Clarification
+Please confirm:
+* Maximum job duration (hours)
+* Maximum materials per job
+* Surcharge approval limits
+* Time limits for each status
+* Escalation procedures
+
+
+
+16. Testing & Support {#16-testing-support}
+16.1 Critical Test Scenarios
+Scenario 1: Simple Job - No Surcharge
+
+
+
+
+1. New job notification arrives
+
+2. Open app, see job at top
+3. Call customer, schedule for today
+4. Navigate to location
+5. Start work (GPS check passes)
+6. Fill diagnostic (2 hours, 1 material)
+7. Submit ? Calculator runs
+8. Result: No surcharge needed
+9. Acknowledge price warning
+10. Complete work
+11. Take after photos
+12. Create standard protocol
+13. Customer signs digitally
+14. Wait 15 minutes
+15. Approve work summary
+16. Choose IFA
+17. Confirm invoice details
+18. Status: Invoice will be issued
+19. Friday: Payment received
+20. Job complete!
+Scenario 2: Complex Job - With Surcharge
+
+
+
+
+1-6. Same as simple job
+7. Submit diagnostic with expensive materials
+8. Calculator result: 75 EUR surcharge
+
+9. Wait screen appears
+10. Office calls customer
+11. Notification: Surcharge approved
+12. Sign surcharge agreement
+13. Continue with work
+14. Complete protocol with surcharge 15-20. Same invoice process
+Scenario 3: Multi-Visit Job
+
+
+
+
+1-5. Same as above
+6. Diagnostic: 3 visits needed
+7. Reason: Order spare part
+8. First visit protocol signed
+9. Schedule next visit date
+10. Visit 2: Start work
+11. Price check: Still same
+12. Partial work + protocol
+13. Visit 3: Complete work
+14. Final protocol
+15. Combined invoice process
+Edge Case Testing
+1. GPS Failure:
+* Disable location services
+* Start work anyway
+
+* Verify case created
+* Complete job normally
+2. No Internet:
+* Turn off WiFi/data
+* Try various actions
+* Verify error messages
+* Restore connection
+3. Paper Protocol:
+* Fail digital signature 3x
+* Choose paper option
+* Take photo of signed paper
+* Upload and verify processing
+4. Customer Unreachable:
+* Diagnostic with surcharge
+* Wait for "unreachable" status
+* Test both approval paths
+* Verify correct flow
+5. Price Change During Work:
+* Start with approved price
+* Discover additional issue
+* Change material cost
+* Verify calculator re-runs
+6. Invoice Dispute:
+* Complete job normally
+* Disagree with summary
+* Write dispute reason
+
+* Verify case creation
+16.2 Performance Requirements Response Times:
+* App launch: < 3 seconds
+* Login: < 3 seconds
+* Screen transitions: < 1 second
+* Status updates: < 2 seconds
+* Photo upload: Progress bar required
+* Calculator: < 30 seconds maximum
+* Protocol generation: < 5 seconds
+Data Sync:
+* Critical updates: Real-time (< 2 seconds)
+* Status changes: Immediate
+* New jobs: Within 5 seconds
+* Historical data: Batch acceptable
+Reliability:
+* 99.9% uptime during business hours
+* Automatic reconnection
+* Queue failed syncs
+* No data loss
+16.3 Support Documentation For Handymen
+Quick Start Guide:
+1. Download app from store
+2. Wait for activation email
+3. Login with credentials
+
+4. Accept permissions
+5. Start receiving jobs!
+Common Issues:
+"Cannot login"
+* Check internet connection
+* Verify email is correct
+* Try password reset
+* Contact admin if blocked
+"GPS not working"
+* Go to Settings ? App ? Location
+* Set to "Always Allow"
+* Restart app
+* Work continues even if fails
+"Cannot upload photos"
+* Check file size (max 10MB)
+* Try WiFi instead of mobile data
+* Use JPG or PNG format only
+* Take new photo if corrupted
+"Customer won't sign digitally"
+* Try again with clean screen
+* Explain it's legally binding
+* Use paper protocol option
+* Take clear photo of paper
+"Price changed during work"
+* Stop work immediately
+* Do not continue
+
+* Call office right away
+   * Wait for new approval For Office Support Team Daily Tasks:
+* Monitor new job assignments
+* Handle surcharge approvals
+* Resolve invoice disputes
+* Unlock blocked accounts
+* Process paper protocols
+Status Override Procedures:
+1. Open Salesforce deal
+2. Change HM_Status c field
+3. Add note with reason
+4. Inform handyman via message
+Common Support Requests: "Handyman locked out"
+1. Check HM App field in profile
+2. Set to "Active"
+3. Reset password if needed
+4. Confirm login works
+"GPS always failing"
+1. Check distance settings
+2. Verify address accuracy
+3. Create permanent override
+4. Document in deal notes
+"Invoice dispute"
+
+1. Review work summary
+2. Check protocol details
+3. Compare with diagnostic
+4. Contact handyman for clarification
+5. Adjust if necessary
+For Developers Architecture Notes:
+* WebView configuration critical
+* Handle deep links properly
+* Implement proper caching
+* Test offline scenarios
+Critical Implementation Points:
+* 
+
+o Real-time sync:Use WebSocket for status
+o Polling fallback required
+o Handle connection drops
+o Photo handling:Compress before upload
+o Progressive upload
+o Thumbnail generation
+o Security:Token refresh logic
+o Secure storage only
+o Certificate pinning
+o Performance:Lazy load screens
+o Minimize API calls
+o Cache static data
+o Optimize images
+
+16.4 Go-Live Checklist Pre-Launch Requirements
+? Salesforce Setup:
+* All custom fields created and tested
+* Automation rules active and verified
+* Test data prepared for pilot
+* User permissions configured correctly
+* Integration users created
+? Omnichannel Configuration:
+* Salesforce sync tested both ways
+* API endpoints verified secure
+* Real-time sync confirmed working
+* Error handling tested thoroughly
+* Performance load tested
+? AI Components:
+* Material categorization tested with 100+ examples
+* Calculator verified with all scenarios
+* Protocol OCR processing confirmed
+* All integrations end-to-end tested
+* Fallback procedures documented
+? Mobile App:
+* All workflows tested on both platforms
+* All 4 languages verified by native speakers
+* Performance acceptable on older devices
+* Error handling shows correct messages
+* Push notifications working
+
+? Training Materials:
+* Video tutorials recorded
+* Quick start guide printed
+* FAQ document prepared
+* Support scripts ready
+* Handyman training scheduled
+? Pilot Program:
+* 5-10 handymen selected
+* Different regions represented
+* Mix of tech-savvy and beginners
+* Feedback forms prepared
+* 2-week pilot timeline set
+16.5 Post-Launch Plan
+Week 1 - Intensive Monitoring:
+* Daily standup meetings at 9:00
+* Monitor all error logs in real-time
+* Immediate hotfix for critical bugs
+* Collect feedback from every user
+* Adjust calculator thresholds if needed
+Week 2-4 - Stabilization:
+* Twice-weekly review meetings
+* Performance optimization based on data
+* Feature adjustments from feedback
+* Gradual rollout to more handymen
+* Support team confidence building
+Month 2+ - Scale & Optimize:
+
+* Monthly review meetings
+* Plan Phase 2 features
+* Continuous improvement cycle
+* Full rollout to all handymen
+* ROI measurement begins
+Success Metrics:
+* 80% adoption rate in Month 1
+* < 5% support tickets per user
+* 50% reduction in job completion time
+* 95% digital vs paper protocols
+* 90% first-time invoice approval
+
+
+
+17. Future Enhancements (Phase 2) {#17-future-enhancements}
+17.1 Multi-Department Support
+When B2B and B2C departments are added:
+Department Selection:
+* Filter on home screen by department
+* Different colored job cards
+* Department badge on each job
+* Separate phone numbers per department
+Different Workflows:
+* B2B: No insurance calculator
+* B2C: Direct customer payment
+* Different protocol templates
+* Custom statuses per department
+UI Changes:
+
+
+
+
+
++-----------------------------+
+¦ Department: [? All	] ¦
+¦	¦
+¦ B2A Insurance (15)	¦
+¦ B2B Business (8)	¦
+¦ B2C Consumer (12)	¦
++-----------------------------+
+17.2 Advanced Features Roadmap (this is just AI suggestions, not that we would approve yet)
+Next 6 Months:
+1. Voice Dictation
+* All text fields support voice input
+* Multiple language recognition
+* Reduces typing by 80%
+* Especially useful for descriptions
+2. Offline Mode
+* Basic functionality without internet
+* View scheduled jobs
+* Fill diagnostic forms
+* Queue for sync when connected
+3. Route Optimization
+* AI suggests best route for day
+* Minimize travel time
+
+* Group nearby jobs
+* Save fuel costs
+4. Warranty Tracking
+* Flag warranty repairs
+* Link to original job
+* Different approval process
+* Automatic customer notification
+5. Customer Satisfaction
+* Post-job survey link
+* Rating system
+* Feedback collection
+* Performance bonuses
+Next 12 Months:
+1. Accounting Integration
+* Export to popular software
+* Automatic expense tracking
+* Mileage reports
+* Tax documentation
+2. Advanced Scheduling AI
+* Predict job duration
+* Automatic scheduling
+* Weather consideration
+* Traffic analysis
+3. Predictive Maintenance
+* Suggest future repairs
+* Customer notifications
+
+* Proactive scheduling
+* Increase revenue
+4. Video Documentation
+* Record repair process
+* Customer evidence
+* Training material
+* Insurance proof
+5. Multi-Language Voice
+* Voice commands
+* Hands-free operation
+* Safety improvement
+* Accessibility
+17.3 Additional Languages just AI did give us suggestions)
+Platform prepared for:
+* Hungarian (HU)
+* German (DE)
+* Ukrainian (UA)
+* Romanian (RO)
+   * Already included: English (EN) Each language requires:
+* UI translation (2 days)
+* Testing by native speaker (1 day)
+* Documentation translation (3 days)
+* Support training (1 day)
+17.4 White-Label Solution (just AI did give us suggestions)
+Future possibility to sell platform:
+
+* Customizable branding
+* Industry-specific workflows
+* Multi-tenant architecture
+   * SaaS licensing model Potential industries:
+* Plumbing companies
+* Electrical contractors
+* Cleaning services
+* Delivery companies
+* Field service management
+
+
+
+18. Conclusion {#18-conclusion}
+18.1 What Makes This App Revolutionary
+1. Impossible to Make Mistakes
+* Step-by-step navigation prevents errors
+* Can't skip required steps
+* Clear visual indicators
+* Automatic validations
+2. Real-Time Everything
+* Instant status updates
+* Live sync with office
+* Immediate notifications
+* No delays or confusion
+3. Paper Backup Always Available
+* Digital-first approach
+* Paper fallback when needed
+
+* Never stuck without options
+* Legal compliance maintained
+4. Multi-Language from Day One
+* 4 languages fully supported
+* Easy to add more
+* Culturally appropriate
+* Professional translations
+5. Built for Non-Tech Users
+* Simple as WhatsApp
+* Visual indicators
+* Clear instructions
+* Minimal typing
+18.2 Expected Outcomes (just AI did give us suggestions)
+
+
+For Handymen:
+* 50% less time on administration
+* Zero paper to manage
+* Clear payment tracking
+* Fewer phone calls needed
+* More jobs completed daily
+* Higher earnings potential
+For Company:
+* 90% paper elimination
+* 75% fewer payment disputes
+* Real-time job visibility
+* Automated invoicing
+
+* Happier customers
+* Lower operational costs
+For Customers:
+* Transparent pricing upfront
+* Digital documentation
+* Faster service completion
+* Professional experience
+* Email protocols
+* Trust in service
+18.3 Success Metrics (just AI did give us suggestions)
+
+
+Technical Success:
+* 99.9% uptime achieved
+* < 3 second response times
+* Zero data loss incidents
+* 100% sync accuracy
+* Smooth user experience
+Business Success:
+* 80% adoption in first month
+* 95% digital signatures
+* 50% fewer support calls
+* 30% faster job completion
+* 25% cost reduction
+User Satisfaction:
+* 4.5+ app store rating
+* 90% would recommend
+
+* < 5% support tickets
+* Positive feedback
+* High daily usage
+18.4 Final Message
+This documentation represents more than just an app specification. It's a blueprint for transforming how field service works in the insurance industry.
+By focusing relentlessly on user experience, we've created a system that:
+* Guides users through complex processes
+* Prevents errors before they happen
+* Saves time and reduces frustration
+* Increases professionalism
+* Improves customer satisfaction
+The app is designed to be so intuitive that a 16-year-old could use it, yet so comprehensive that it handles every scenario a professional handyman encounters.
+
+
+19. Document Information {#19-document-info} Document Details:
+* Version: Final 1.0
+* Date: July 2025
+* Pages: Comprehensive
+* Author: Documentation Team
+* Purpose: Complete specification for Handyman Mobile App
+For:
+* B2A Insurance Department
+* Hodinový Manžel / Zlatí Remeslníci
+* Development team
+* Project stakeholders
+
+Document Status:
+* User flows complete
+* All screens detailed
+* 4 languages included
+* Technical specs defined
+* Testing scenarios ready
+* Awaiting Katka's inputs (Section 15)
+* Ready for development
+Version History:
+* v0.1 - Initial draft
+* v0.5 - Meeting notes integrated
+* v0.8 - Technical details added
+* v0.9 - Language translations
+* v1.0 - Final complete version
+Next Steps:
+1. Katka provides missing items (Section 15)
+2. Technical team review (2 days)
+3. Development estimate (1 day)
+4. Sprint planning (1 day)
+5. Development start
+Distribution:
+* Development team
+* Project management
+* QA team
+* Support team
+
+* Selected pilot handymen
+
+
+
+20. Quick Reference Guide {#20-quick-reference}
+20.1 Status Flow Chart
+
+
+
+
+New Job Assigned
+?
+Schedule Appointment (Call Customer)
+?
+Job Scheduled ? Arrive at Location
+?
+Start Work ? GPS Verification
+?
+Fill Diagnostic ? Upload Photos
+?
+Submit ? Calculator Running
+?
++-? No Surcharge ? Continue Work
+¦
++-? Surcharge Needed ? Wait for Approval
+?
++-? Approved ? Sign Agreement ? Work
++-? Refused ? Diagnostic Protocol Only
++-? Unreachable ? Wait for Update
+
+?
+Create Protocol ? Digital/Paper Signature
+?
+15 min Wait ? Work Summary
+?
+Approve/Dispute ? Invoice Type (IFA/EFA)
+?
+Invoice Process ? Payment ? Complete
+20.2 Emergency Contacts Support Phone Numbers:
+* Slovakia B2A: +421 2 222 006 09
+* Czech B2A: +420 277 278 610
+* Poland B2A: [To be provided]
+Email Support:
+* General: support@company.com
+* Emergency: emergency@company.com
+* Technical: tech@company.com
+Working Hours:
+* Monday-Friday: 8:00 - 17:00
+* Saturday: 9:00 - 13:00 (emergency)
+* Sunday: Closed
+Escalation Path:
+1. App Support Message
+2. Phone Support
+3. Team Leader
+4. Department Manager
+
+20.3 Common Actions Quick Guide Schedule New Job:
+1. See job at top of list
+2. Click "Call Customer"
+3. Agree on date/time
+4. Enter in app
+5. Save
+Start Work:
+1. Arrive at location
+2. Click "Start Work"
+3. GPS check (automatic)
+4. Begin diagnostic
+Submit Diagnostic:
+1. Fill all fields
+2. Add materials
+3. Take photos (min 1)
+4. Click Submit
+5. Wait for calculation
+Create Protocol:
+1. Complete all fields
+2. Add after photos
+3. Get signature
+4. Or use paper option
+Complete Invoice:
+1. Wait 15 minutes
+2. Review summary
+
+3. Agree/Disagree
+4. Choose IFA/EFA
+5. Submit details
+20.4 Field Mappings Reference Time Tracking:
+* Start: Job_Start_Time_[1-5] c
+* End: Job_End_Time_[1-5]  c
+* Protocol: Date_on_Protocol_[1-5]  c
+Status Control:
+* App Status: HM_Status c
+* Surcharge: Komunikacia_doplatku  c
+* Invoice: Suhlas_majstra_s_fakturaciou  c
+* Diagnostic Only: Len_diagnostika  c
+Materials:
+* All Materials: Popis_a_cena_materialu_z_HM_APP c
+* Small Items: 1_Cena_za_drobny_material_hm  c
+* Spare Parts: 1_Cena_za_nahradne_diely_a_material_hm  c
+GPS:
+* Start Lat: GPS_Start_Latitude c
+* Start Long: GPS_Start_Longitude c
+* Distance: GPS_Distance_From_Customer  c
+20.5 Quick Troubleshooting Problem: Cannot login
+* Check internet connection
+* Verify credentials
+* Try password reset
+
+* Contact support
+Problem: GPS fails
+* Check location settings
+* Not in airplane mode
+* Restart app
+* Continue anyway
+Problem: Photos won't upload
+* Check file size < 10MB
+* Use JPG/PNG only
+* Better connection
+* Try one at a time
+Problem: Calculator timeout
+* Wait up to 60 seconds
+* Check internet
+* Try again
+* Call support
+Problem: No signature
+* Clean screen
+* Try landscape mode
+* Use paper protocol
+* Take clear photo
+
+
+
+END OF DOCUMENTATION
+This comprehensive documentation provides everything needed to build, test, and deploy the Handyman Mobile Application for the B2A Insurance Department.
+The app will revolutionize how handymen work, making their jobs easier, faster, and more professional while ensuring customer satisfaction and company efficiency.
+
+Ready for development!# Handyman Mobile Application Documentation
+B2A Insurance Department - Complete User Guide Document Version: Final 1.0
+Date: July 2025
+Purpose: Complete specification for mobile app development

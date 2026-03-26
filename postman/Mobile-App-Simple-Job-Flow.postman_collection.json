@@ -1,0 +1,794 @@
+{
+  "info": {
+    "name": "Mobile App - Simple Job Flow",
+    "description": "Backend APIs for handyman mobile app – simple job flow. Steps: 1–2 Schedule, 3 Start, 4 Diagnostic (photosBefore, customerSignature base64), 5 Price ready (SF or simulate-price-ready), 6 Price acknowledge, 7 Repair complete (afterPhotos base64), 8 Protocol (create/sign/upload), 10 Work summary (agree or dispute; dispute → office sends corrected via bulk-upsert → job:deal_updated → agree again), 11 Invoice (create=iFA, create_efa=EFA with file base64). Images: base64 inline; backend uploads to S3. SF updates via bulk-upsert → job:deal_updated.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "companyId", "value": "YOUR_COMPANY_ID" },
+    { "key": "dealId", "value": "DEAL_ID_OR_SF_ID" },
+    { "key": "mobileToken", "value": "Bearer YOUR_MOBILE_JWT" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"phone\": \"+421...\",\n  \"password\": \"...\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/auth/login"
+          }
+        },
+        {
+          "name": "Refresh token",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"refreshToken\": \"...\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/auth/refresh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Get jobs list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{baseUrl}}/api/mobile/jobs?companyId={{companyId}}"
+          }
+        },
+        {
+          "name": "Get job details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"}
+            ],
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}?companyId={{companyId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Simple Job Flow",
+      "item": [
+        {
+          "name": "1-2. Schedule appointment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"appointmentDate\": \"2026-02-22\",\n  \"appointmentTime\": \"09:00\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/schedule"
+          }
+        },
+        {
+          "name": "3. Start work (with GPS)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"gpsLocation\": {\n    \"latitude\": 32.07,\n    \"longitude\": 74.19,\n    \"accuracy\": 10\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/start"
+          }
+        },
+        {
+          "name": "4. Submit diagnostic form",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"estimatedWorkTime\": 2.5,\n  \"kilometersPerVisit\": 24,\n  \"estimatedVisits\": 1,\n  \"materials\": [\n    { \"name\": \"Parts\", \"quantity\": 1, \"price\": 20 }\n  ],\n  \"photosBefore\": [],\n  \"customerSignature\": \"data:image/png;base64,...\",\n  \"repairSubject\": \"Water leak fix\",\n  \"problemDescription\": \"Leak under sink\",\n  \"solutionProposal\": \"Replace seal and pipe\",\n  \"visitLocation\": \"Customer address\",\n  \"visitDate\": \"2026-02-21\",\n  \"technicianArrivalTime\": \"09:00\",\n  \"technicianDepartureTime\": \"11:30\",\n  \"fullName\": \"John Doe\",\n  \"phone\": \"+421...\",\n  \"address\": \"Street 1, City\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/diagnostic"
+          }
+        },
+        {
+          "name": "Upload image (optional)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"type\": \"before\",\n  \"file\": \"data:image/jpeg;base64,/9j/4AAQ...\",\n  \"contentType\": \"image/jpeg\",\n  \"filename\": \"photo.jpg\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/upload"
+          }
+        },
+        {
+          "name": "5. Simulate price ready (test)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/simulate-price-ready"
+          }
+        },
+        {
+          "name": "6. Price acknowledged",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/price-acknowledge"
+          }
+        },
+        {
+          "name": "7. Repair complete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"endTime\": \"2026-02-21T12:00:00.000Z\",\n  \"afterPhotos\": [\"data:image/jpeg;base64,...\"],\n  \"afterPhotoUrls\": []\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/repair-complete"
+          }
+        },
+        {
+          "name": "8. Protocol – create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\",\n  \"protocolData\": { \"type\": \"standard\" }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+          }
+        },
+        {
+          "name": "8. Protocol – sign (digital)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"sign\",\n  \"protocolData\": {\n    \"signature\": \"data:image/png;base64,...\",\n    \"customerName\": \"Customer Name\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+          }
+        },
+        {
+          "name": "8. Protocol – upload (paper photo)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"upload\",\n  \"protocolData\": {\n    \"file\": \"data:image/jpeg;base64,...\",\n    \"fileUrl\": \"https://bucket.s3.../signed-protocol.jpg\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+          }
+        },
+        {
+          "name": "10. Work summary – agree",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"agreed\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/work-summary"
+          }
+        },
+        {
+          "name": "10. Work summary – dispute",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"agreed\": false,\n  \"disputeReason\": \"Hours incorrect\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/work-summary"
+          }
+        },
+        {
+          "name": "11. Invoice – iFA (internal)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+          }
+        },
+        {
+          "name": "11. Invoice – eFA (external)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create_efa\",\n  \"invoiceData\": {\n    \"amountWithoutVAT\": 80,\n    \"vatRate\": 20,\n    \"deliveryDate\": \"2026-02-21\",\n    \"variableSymbol\": \"123\",\n    \"file\": \"data:application/pdf;base64,...\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+          }
+        },
+        {
+          "name": "Update job status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"status\": \"Continue work\",\n  \"endTime\": \"2026-02-21T12:00:00.000Z\"\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/status"
+          }
+        },
+        {
+          "name": "Update GPS",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "{{mobileToken}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"gpsLocation\": { \"latitude\": 32.07, \"longitude\": 74.19 }\n}"
+            },
+            "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/gps"
+          }
+        },
+        {
+          "name": "Bulk-upsert (simulate SF – price ready)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Continue work\",\n      \"Stage\": \"06. Kalkulácia\",\n      \"HM_Status\": \"Continue work\",\n      \"Celkova_cena_na_FA_majstra\": 150.5,\n      \"Celkova_cena_majstra_bez_DPH_iFA\": 124.38,\n      \"Cena_prace\": 80,\n      \"Cena_dopravy_m\": 25.5,\n      \"Cena_za_drobny_material_m\": 15,\n      \"Cena_za_nahradne_diely_a_material_m\": 30,\n      \"Pocet_hodin_prace_m\": 2.5,\n      \"Pocet_vyjazdov_m\": 1,\n      \"Pocet_km\": 24\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/deals/bulk-upsert"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Surcharge Flow",
+      "item": [
+        {
+          "name": "Approved path",
+          "item": [
+            {
+              "name": "1–2. Schedule appointment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"appointmentDate\": \"2026-02-22\",\n  \"appointmentTime\": \"09:00\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/schedule"
+              }
+            },
+            {
+              "name": "3. Start work (with GPS)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"gpsLocation\": {\n    \"latitude\": 32.07,\n    \"longitude\": 74.19,\n    \"accuracy\": 10\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/start"
+              }
+            },
+            {
+              "name": "4. Diagnostic (expensive repair → surcharge)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"estimatedWorkTime\": 4,\n  \"kilometersPerVisit\": 40,\n  \"estimatedVisits\": 1,\n  \"materials\": [\n    { \"name\": \"Expensive part\", \"quantity\": 1, \"price\": 250 }\n  ],\n  \"photosBefore\": [\"data:image/jpeg;base64,...\"],\n  \"customerSignature\": \"data:image/png;base64,...\",\n  \"repairSubject\": \"Expensive repair\",\n  \"problemDescription\": \"Major issue\",\n  \"solutionProposal\": \"Full replacement\",\n  \"visitLocation\": \"Customer address\",\n  \"visitDate\": \"2026-02-21\",\n  \"technicianArrivalTime\": \"09:00\",\n  \"technicianDepartureTime\": \"09:30\",\n  \"fullName\": \"Customer Name\",\n  \"phone\": \"+421...\",\n  \"address\": \"Street 1, City\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/diagnostic"
+              }
+            },
+            {
+              "name": "5. SF bulk-upsert – surcharge detected",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Waiting for approval\",\n      \"HM_Status\": \"Waiting for approval\",\n      \"Vypocitany_doplatok__c\": 75,\n      \"Komunikacia_doplatku__c\": \"Pending\"\n    }\n  ]\n}"
+                },
+                "url": "{{baseUrl}}/api/deals/bulk-upsert"
+              }
+            },
+            {
+              "name": "6. Status update – surcharge approved",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"status\": \"Continue work\",\n  \"surchargeAgreement\": true\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/status"
+              }
+            },
+            {
+              "name": "9. Surcharge protocol – sign (customer signature)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"sign\",\n  \"protocolData\": {\n    \"signature\": \"data:image/png;base64,...\",\n    \"customerName\": \"Customer Name\"\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+              }
+            },
+            {
+              "name": "10–12. Repair complete with AFTER photos",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"endTime\": \"2026-02-21T12:00:00.000Z\",\n  \"afterPhotos\": [\"data:image/jpeg;base64,...\"],\n  \"afterPhotoUrls\": []\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/repair-complete"
+              }
+            },
+            {
+              "name": "13. Work summary agree + invoice (IFA/EFA see Simple Job Flow)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"agreed\": true\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/work-summary"
+              }
+            },
+            {
+              "name": "13a. Invoice – iFA (internal, after surcharge approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            },
+            {
+              "name": "13b. Invoice – eFA (external, after surcharge approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create_efa\",\n  \"invoiceData\": {\n    \"amountWithoutVAT\": 80,\n    \"vatEnum\": \"Prenos DPH 21%\",\n    \"deliveryDate\": \"2026-02-21\",\n    \"variableSymbol\": \"123\",\n    \"file\": \"data:application/pdf;base64,...\"\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Refused path (diagnostic only)",
+          "item": [
+            {
+              "name": "1–2. Schedule appointment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"appointmentDate\": \"2026-02-22\",\n  \"appointmentTime\": \"09:00\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/schedule"
+              }
+            },
+            {
+              "name": "3. Start work (with GPS)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"gpsLocation\": {\n    \"latitude\": 32.07,\n    \"longitude\": 74.19,\n    \"accuracy\": 10\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/start"
+              }
+            },
+            {
+              "name": "4. Diagnostic (expensive repair → surcharge)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"estimatedWorkTime\": 4,\n  \"kilometersPerVisit\": 40,\n  \"estimatedVisits\": 1,\n  \"materials\": [\n    { \"name\": \"Expensive part\", \"quantity\": 1, \"price\": 250 }\n  ],\n  \"photosBefore\": [\"data:image/jpeg;base64,...\"],\n  \"customerSignature\": \"data:image/png;base64,...\",\n  \"repairSubject\": \"Expensive repair\",\n  \"problemDescription\": \"Major issue\",\n  \"solutionProposal\": \"Full replacement\",\n  \"visitLocation\": \"Customer address\",\n  \"visitDate\": \"2026-02-21\",\n  \"technicianArrivalTime\": \"09:00\",\n  \"technicianDepartureTime\": \"09:30\",\n  \"fullName\": \"Customer Name\",\n  \"phone\": \"+421...\",\n  \"address\": \"Street 1, City\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/diagnostic"
+              }
+            },
+            {
+              "name": "5. SF bulk-upsert – surcharge detected",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Waiting for approval\",\n      \"HM_Status\": \"Waiting for approval\",\n      \"Vypocitany_doplatok__c\": 75,\n      \"Komunikacia_doplatku__c\": \"Pending\"\n    }\n  ]\n}"
+                },
+                "url": "{{baseUrl}}/api/deals/bulk-upsert"
+              }
+            },
+            {
+              "name": "6. SF bulk-upsert – surcharge refused by customer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Diagnostic only\",\n      \"HM_Status\": \"Diagnostic only\",\n      \"Komunikacia_doplatku__c\": \"Refused\"\n    }\n  ]\n}"
+                },
+                "url": "{{baseUrl}}/api/deals/bulk-upsert"
+              }
+            },
+            {
+              "name": "10. Diagnostic-only protocol (reason, notices, photos, signature)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\",\n  \"protocolData\": {\n    \"type\": \"diagnostic\",\n    \"data\": {\n      \"reasonNotRepaired\": \"Customer refused to pay surcharge\",\n      \"photosAfter\": [\"data:image/jpeg;base64,...\"],\n      \"handymanNotice\": \"Diagnostic only - no repair\",\n      \"customerNotice\": \"I do not agree with extra payment\",\n      \"customerSignature\": \"data:image/png;base64,...\"\n    }\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+              }
+            },
+            {
+              "name": "11. Work summary – agree (diagnostic only)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"agreed\": true\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/work-summary"
+              }
+            },
+            {
+              "name": "12. Invoice – diagnostic only (iFA)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            },
+            {
+              "name": "12b. Invoice – diagnostic only (eFA)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create_efa\",\n  \"invoiceData\": {\n    \"amountWithoutVAT\": 40,\n    \"vatEnum\": \"Prenos DPH 21%\",\n    \"deliveryDate\": \"2026-02-21\",\n    \"variableSymbol\": \"DIAG123\",\n    \"file\": \"data:application/pdf;base64,...\"\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Unreachable path",
+          "item": [
+            {
+              "name": "1–2. Schedule appointment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"appointmentDate\": \"2026-02-22\",\n  \"appointmentTime\": \"09:00\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/schedule"
+              }
+            },
+            {
+              "name": "3. Start work (with GPS)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"gpsLocation\": {\n    \"latitude\": 32.07,\n    \"longitude\": 74.19,\n    \"accuracy\": 10\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/start"
+              }
+            },
+            {
+              "name": "4. Diagnostic (expensive repair → surcharge)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"estimatedWorkTime\": 4,\n  \"kilometersPerVisit\": 40,\n  \"estimatedVisits\": 1,\n  \"materials\": [\n    { \"name\": \"Expensive part\", \"quantity\": 1, \"price\": 250 }\n  ],\n  \"photosBefore\": [\"data:image/jpeg;base64,...\"],\n  \"customerSignature\": \"data:image/png;base64,...\",\n  \"repairSubject\": \"Expensive repair\",\n  \"problemDescription\": \"Major issue\",\n  \"solutionProposal\": \"Full replacement\",\n  \"visitLocation\": \"Customer address\",\n  \"visitDate\": \"2026-02-21\",\n  \"technicianArrivalTime\": \"09:00\",\n  \"technicianDepartureTime\": \"09:30\",\n  \"fullName\": \"Customer Name\",\n  \"phone\": \"+421...\",\n  \"address\": \"Street 1, City\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/diagnostic"
+              }
+            },
+            {
+              "name": "5. SF bulk-upsert – trying to reach customer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Waiting for approval\",\n      \"HM_Status\": \"Waiting for approval\",\n      \"Komunikacia_doplatku__c\": \"Trying to reach customer\"\n    }\n  ]\n}"
+                },
+                "url": "{{baseUrl}}/api/deals/bulk-upsert"
+              }
+            },
+            {
+              "name": "6. SF bulk-upsert – later approved (example)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"dealsData\": [\n    {\n      \"Id\": \"{{dealId}}\",\n      \"action\": \"update\",\n      \"Status\": \"Waiting for approval\",\n      \"HM_Status\": \"Waiting for approval\",\n      \"Vypocitany_doplatok__c\": 75,\n      \"Komunikacia_doplatku__c\": \"Approved\"\n    }\n  ]\n}"
+                },
+                "url": "{{baseUrl}}/api/deals/bulk-upsert"
+              }
+            },
+            {
+              "name": "7. Mobile status – continue work after approval SMS",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"status\": \"Continue work\",\n  \"surchargeAgreement\": true\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/status"
+              }
+            },
+            {
+              "name": "8. Surcharge protocol – sign (after unreachable → approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"sign\",\n  \"protocolData\": {\n    \"signature\": \"data:image/png;base64,...\",\n    \"customerName\": \"Customer Name\"\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/protocol"
+              }
+            },
+            {
+              "name": "9. Repair complete (after unreachable → approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"endTime\": \"2026-02-21T12:00:00.000Z\",\n  \"afterPhotos\": [\"data:image/jpeg;base64,...\"],\n  \"afterPhotoUrls\": []\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/repair-complete"
+              }
+            },
+            {
+              "name": "10. Work summary – agree (after unreachable → approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"agreed\": true\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/work-summary"
+              }
+            },
+            {
+              "name": "11. Invoice – iFA (after unreachable → approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create\"\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            },
+            {
+              "name": "11b. Invoice – eFA (after unreachable → approved)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "{{mobileToken}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"action\": \"create_efa\",\n  \"invoiceData\": {\n    \"amountWithoutVAT\": 80,\n    \"vatEnum\": \"Prenos DPH 21%\",\n    \"deliveryDate\": \"2026-02-21\",\n    \"variableSymbol\": \"123\",\n    \"file\": \"data:application/pdf;base64,...\"\n  }\n}"
+                },
+                "url": "{{baseUrl}}/api/mobile/jobs/{{dealId}}/invoice"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

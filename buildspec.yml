@@ -1,0 +1,39 @@
+# Change the following to your desired values:
+#   __ACCOUNT_NUMBER__
+#   __ECR_REGION__
+#   __ECR_REPOSITORY_NAME__
+#   __ECS_CONTAINER_NAME__
+# 374190487675.dkr.ecr.us-west-2.amazonaws.com/
+version: 0.2
+phases:
+  # install:
+  #   runtime-versions:
+  #     python: 3.9
+      
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - AWS_REGION="us-west-2"
+      - REPOSITORY_URI="374190487675.dkr.ecr.us-west-2.amazonaws.com/wisebot"
+      - aws --version
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Setting up ENV variables
+      - aws s3 cp s3://knowledgechatgpt/credentials/a/$CODEBUILD_GIT_BRANCH/.env .env
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t $REPOSITORY_URI:latest .
+#      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Logging in to ECR...
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+#      - docker push $REPOSITORY_URI:$IMAGE_TAG
+# artifacts:
+#   files: imagedefinitions.json
+#

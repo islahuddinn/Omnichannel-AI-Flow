@@ -1,0 +1,238 @@
+================================================================================
+              OWM (One Way Message) - Complete Test Data & Steps
+================================================================================
+
+
+STEP 0: CREATE AUTOMATION
+================================================================================
+Name:        Insurance Plan Reminder March 2026
+Department:  Insurance
+
+
+STEP 1: CHANNEL CONFIGURATION
+================================================================================
+
+Channel 1 (Primary): WhatsApp
+  - Channel Account:  Select your WhatsApp business account (e.g., "insurance whatsapp")
+  - Template:         Select an existing approved template (e.g., greeting or promo)
+
+Channel 2 (Fallback): SMS
+  - Channel Account:  Select your SMS account
+  - Custom Body:      Hi {{name}}, we have an exclusive insurance plan for you.
+                      Reply YES to learn more or CALL to schedule a callback.
+                      - Mexil Software Solutions
+
+Channel 3 (Fallback): Email
+  - Channel Account:  Select your email account
+  - Subject:          Exclusive Insurance Plan Offer - Mexil Software Solutions
+  - Custom Body:      Dear {{name}},
+
+                      We are reaching out to share an exclusive insurance plan
+                      tailored for you. Reply to this email if you're interested
+                      or would like to schedule a call.
+
+                      Best regards,
+                      Mexil Software Solutions
+
+
+STEP 2: TRIGGER CONDITIONS & TIMING
+================================================================================
+
+Contact Type: customer
+
+Conditions:
+  #   Entity    Field       Value         Operator
+  1   contact   status      active        AND
+  2   contact   city        Bratislava    AND
+  3   deal      dealStage   proposal      --
+
+Timing: delayed - 0 days, 0 hours, 5 minutes
+
+
+STEP 3: AI PROMPT
+================================================================================
+
+You are an insurance sales assistant for Mexil Software Solutions. Your goal is
+to determine the customer's interest level in our new insurance plan.
+
+Key rules:
+- Be polite and professional
+- If the customer shows interest, provide plan details and try to schedule a call
+- If the customer declines, thank them and do not push further
+- If the customer asks for a callback, confirm their preferred time
+- If the customer already has insurance, ask about their renewal date
+- Never share pricing without manager approval
+- Always respond in the same language the customer uses
+
+
+STEP 4: OUTCOMES
+================================================================================
+
+--- Outcome 1: Interested ---
+  Outcome Name:     Interested
+  Possible Outcome: Customer shows interest in the insurance plan, wants to know
+                    more, says yes, agrees, or asks for details
+  Action Type:      auto
+  Follow-up Action: Thank the customer for their interest. Share the basic plan
+                    overview: Coverage includes health, life, and accident
+                    insurance starting from 29 EUR/month. Ask if they would like to
+                    schedule a 15-minute call with our insurance specialist to
+                    discuss their specific needs.
+
+--- Outcome 2: Not Interested ---
+  Outcome Name:     Not Interested
+  Possible Outcome: Customer declines, says no, not interested, does not want the
+                    offer, refuses, or wants to unsubscribe
+  Action Type:      manual
+  Follow-up Action: Thank the customer for their time. Respect their decision and
+                    let them know they can reach out anytime in the future if they
+                    change their mind. Do not send follow-up messages.
+
+--- Outcome 3: Callback Requested ---
+  Outcome Name:     Callback Requested
+  Possible Outcome: Customer wants to be called back, asks for a phone call,
+                    requests a meeting, or says call me later
+  Action Type:      auto
+  Follow-up Action: Confirm the callback request. Ask the customer for their
+                    preferred date and time for the call. Let them know our
+                    specialist will call them at the agreed time. If no time is
+                    given, suggest tomorrow between 10 AM and 4 PM.
+
+--- Outcome 4: Already Has Insurance ---
+  Outcome Name:     Already Has Insurance
+  Possible Outcome: Customer says they already have insurance, are covered, have
+                    an existing policy, or mention another provider
+  Action Type:      auto
+  Follow-up Action: Acknowledge their existing coverage. Ask when their current
+                    policy renews and offer a free comparison of their existing
+                    plan with our offering. Mention that many customers save
+                    15-20% by switching.
+
+--- Outcome 5: Asks About Price ---
+  Outcome Name:     Asks About Price
+  Possible Outcome: Customer asks about cost, pricing, how much, fees, monthly
+                    payment, or premium amount
+  Action Type:      auto
+  Follow-up Action: Share the basic pricing tiers: Basic plan starts at
+                    29 EUR/month, Standard at 49 EUR/month, and Premium at
+                    79 EUR/month. Ask which tier interests them and offer to
+                    schedule a detailed consultation for a personalized quote.
+
+--- Outcome 6: No Response ---
+  Outcome Name:     No Response
+  Possible Outcome: Customer does not reply within 24 hours, message was delivered
+                    but no response received
+  Action Type:      manual
+  Follow-up Action: Wait 48 hours, then send a gentle follow-up reminder. If still
+                    no response after the second attempt, mark the contact for next
+                    month's campaign.
+
+
+STEP 5: PUBLISH
+================================================================================
+Set isPublished = true after all steps are complete.
+
+
+================================================================================
+                          TESTING PERSONAS
+================================================================================
+
+--- Persona 1: The Interested Customer ---
+  Name:   Ali Hassan
+  Phone:  +923001234567
+  Email:  ali.hassan@test.com
+
+  Test Reply:             "Yes I'm interested, tell me more about the plan"
+  Expected Outcome Match: Interested (confidence > 0.5)
+
+--- Persona 2: The Decliner ---
+  Name:   Sara Khan
+  Phone:  +923009876543
+  Email:  sara.khan@test.com
+
+  Test Reply:             "No thanks, I'm not interested"
+  Expected Outcome Match: Not Interested (confidence > 0.5)
+
+--- Persona 3: The Callback Requester ---
+  Name:   Ahmed Raza
+  Phone:  +923005551234
+  Email:  ahmed.raza@test.com
+
+  Test Reply:             "Can you call me tomorrow at 2pm?"
+  Expected Outcome Match: Callback Requested (confidence > 0.5)
+
+--- Persona 4: The Already Insured ---
+  Name:   Fatima Noor
+  Phone:  +923007778899
+  Email:  fatima.noor@test.com
+
+  Test Reply:             "I already have insurance with State Life, my policy renews in June"
+  Expected Outcome Match: Already Has Insurance (confidence > 0.5)
+
+--- Persona 5: The Price Checker ---
+  Name:   Usman Ali
+  Phone:  +923003332211
+  Email:  usman.ali@test.com
+
+  Test Reply:             "How much does it cost per month?"
+  Expected Outcome Match: Asks About Price (confidence > 0.5)
+
+--- Persona 6: The Silent One ---
+  Name:   Zara Sheikh
+  Phone:  +923006665544
+  Email:  zara.sheikh@test.com
+
+  Test Reply:             (don't reply - test No Response outcome)
+  Expected Outcome Match: No Response (manual match by agent)
+
+
+================================================================================
+                          TEST CHECKLIST
+================================================================================
+
+ #   Test                    What to Verify
+---  ----------------------  ------------------------------------------------
+ 1   Create automation       Name saved, type=owm, isPublished=false
+ 2   Add channels            All 3 channels saved with accounts/templates
+ 3   Set conditions          Contact type + conditions + timing saved
+ 4   Set AI prompt           AIPrompt created (moduleIdDescription='OWM')
+ 5   Add 6 outcomes          6 OWMOutcome + 6 AIPrompt docs created
+ 6   Publish                 isPublished=true, all 5 step indicators green
+ 7   Add 6 personas          6 TestingPersona docs created
+ 8   Send test messages      Messages queued, delivered via WhatsApp/SMS/Email
+ 9   Check outcome init      6 OWMOutcomeMatch per persona (status=0, stage=pending)
+10   Reply as Persona 1      "Interested" matched (status=1, stage=matched, source=ai)
+11   Reply as Persona 2      "Not Interested" matched
+12   Reply as Persona 3      "Callback Requested" matched
+13   Reply as Persona 4      "Already Has Insurance" matched
+14   Reply as Persona 5      "Asks About Price" matched
+15   Manual match Persona 6  Agent manually matches "No Response"
+16   Check stats             totalSent=6, outcomes: 5 AI + 1 manual matched
+
+
+================================================================================
+                     DATA RELATIONSHIPS
+================================================================================
+
+Automation (type: 'owm')
+  |-- Departments[]
+  |-- Channels[] (fallback chain: WhatsApp -> SMS -> Email)
+  |     |-- CompanyAccount
+  |     |-- Template
+  |-- AIPrompt (moduleIdDescription: 'OWM')
+  |-- OWMOutcome[] (6 outcomes)
+  |     |-- AIPrompt (moduleIdDescription: 'OWM_OUTCOME')
+  |-- TestingPersona[] (6 personas)
+        |-- Contact (linked or created)
+
+When executed:
+  Message (sendingModule: 'owm') -> Conversation -> Contact
+  OWMOutcomeMatch[] (6 per conversation, one per outcome)
+    |-- status: 0 (pending) or 1 (matched)
+    |-- stage: pending -> matched -> action_taken
+    |-- confidenceScore, matchSource, matchedMessageId
+
+
+================================================================================
+                     END OF DOCUMENT
+================================================================================

@@ -1,0 +1,50 @@
+# version: 0.0
+# os: linux
+# files:
+#   - source: /
+#     destination: /home/ubuntu/wisebot
+
+# permissions:
+#   - object: /home/ubuntu/wisebot/deploy.sh
+#     pattern: 755
+#     owner: ubuntu
+#     group: ubuntu
+
+# hooks:
+#   BeforeInstall:
+#     - location: deploy.sh
+#       timeout: 300
+#       runas: ubuntu
+
+version: 0.0  
+os: linux  
+# files:  
+#   - source: /  
+#     destination: /tmp
+permissions:
+  - object: deploy.sh
+    mode: 777
+    owner: ubuntu
+    type:
+      - file  
+
+hooks:  
+  AfterInstall:  
+    - location: deploy.sh
+      timeout: 3600 
+      runas: ubuntu
+
+  # AfterInstall:
+  #   - location: deploy.sh
+  #     timeout: 300
+  #     runas: ec2-user
+  #     content: |
+  #       #!/bin/bash
+
+  #       echo "Hello from inline Bash script!"
+  #       # Your main deployment script commands go here
+  #       # For example:
+  #       # docker pull your-image
+  #       # docker stop your-container
+  #       # docker rm your-container
+  #       # docker run -d --name your-container your-image

@@ -1,0 +1,4923 @@
+[
+  {
+    "name": "A_Kontrola_P_DM_ND_a_M__c",
+    "label": "A - Kontrola P, DM, ND a M",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "After_Job_Info__c",
+    "label": "After Job Info",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Form",
+      "07. B2A_HM_AfterJobCall",
+      "Omnichannel Chat"
+    ]
+  },
+  {
+    "name": "AI_Bot_Replay__c",
+    "label": "AI Bot Replay",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_Internal_Inv_Status__c",
+    "label": "AI Internal Inv Status",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Data send to AI",
+      "Yes - We have Inv",
+      "No - AI Error"
+    ]
+  },
+  {
+    "name": "AI_Internal_Inv_Status_Updated_DT__c",
+    "label": "AI Internal Inv Status Updated DT",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Ai_Invoice_PDF_Name__c",
+    "label": "Ai Invoice PDF Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_New_Internal_Invoice__c",
+    "label": "AI New Internal Invoice",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No yet",
+      "Ano uspesne",
+      "Chyba! Kontrola"
+    ]
+  },
+  {
+    "name": "AI_RATING_Error__c",
+    "label": "AI RATING OUTCOME",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_RATING_F_YES_NO__c",
+    "label": "AI RATING F YES/NO",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Yes"
+    ]
+  },
+  {
+    "name": "AI_RATING_STATUS__c",
+    "label": "AI RATING STATUS",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "AI Not Used",
+      "AI Odoslane",
+      "AI Hotovo",
+      "AI ERROR"
+    ]
+  },
+  {
+    "name": "AI_Review_ON_OFF__c",
+    "label": "AI Review ON/OFF",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "AI_Review_Status__c",
+    "label": "AI Review Status",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Did not started yet",
+      "In progress",
+      "In Process",
+      "No answer",
+      "Positive",
+      "Neutral",
+      "Negative",
+      "SMS not send/delivered"
+    ]
+  },
+  {
+    "name": "Akcia_k_ukonceniu__c",
+    "label": "Akcia k ukonceniu",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Kontaktovat Majstra",
+      "Majster kontaktovany",
+      "Majster nas Ignoruje"
+    ]
+  },
+  {
+    "name": "Akcia_na_termin__c",
+    "label": "Akcia na termin",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Kontaktovat majstra",
+      "Majster kontaktovany",
+      "Majster nas ignoruje"
+    ]
+  },
+  {
+    "name": "All_material_and_spare_parts__c",
+    "label": "Material a nahradne diely",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Appointment_Automation_Track__c",
+    "label": "Appointment Automation Track",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Appointment 1st Interval SMS Sent",
+      "Appointment 2nd Interval SMS Sent",
+      "Appointment 3rd Interval Final Task Created"
+    ]
+  },
+  {
+    "name": "Appointment_DateTime__c",
+    "label": "Appointment Date/Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Automation_Flow__c",
+    "label": "Automation Flow",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "Axa_krytie__c",
+    "label": "Axa krytie",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "A: Vyjazd, Praca a DM a ND a M - 2 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 4 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 5 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 7 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 10 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 12 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 14 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 21 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 75€",
+      "A: Vyjazd, Praca a DM a ND a M - 150€",
+      "A: Vyjazd, Praca a DM a ND a M - 300€",
+      "A: Vyjazd, Praca a DM a ND a M - 1000€",
+      "B: Vyjazd, Praca 3 000czk, DM 500czk, bez ND a M",
+      "B: Vyjazd, Praca 8 000czk, DM 500czk, bez ND a M",
+      "B: Vyjazd, Praca 9 000czk, DM 1 000czk, bez ND a M",
+      "B: Vyjazd, Praca 11 100czk, DM 250czk, bez ND a M",
+      "B: Vyjazd, Praca 15 000czk, DM 500czk, bez ND a M",
+      "B: Vyjazd, Praca 200€, DM 40€, bez ND a M",
+      "B: Vyjazd, Praca 330€, DM 20€, bez ND a M",
+      "C: Vyjazd, Praca a DM 7 000czk, bez ND a M",
+      "C: Vyjazd, Praca a DM 150€, bez ND a M",
+      "C: Vyjazd, Praca a DM 300€, bez ND a M",
+      "F: Vyjazd a Praca a ND a M - 25 000 CZK",
+      "G: Vyjazd a Praca 15 000czk, bez DM a ND a M",
+      "H: Vyjazd, Praca 2 000czk, bez DM a ND a M",
+      "H: Vyjazd, Praca 8 000czk, bez DM a ND a M",
+      "H: Vyjazd, Praca 15 000czk, bez DM a ND a M"
+    ]
+  },
+  {
+    "name": "B_Kontrola_ceny_DM__c",
+    "label": "B - Kontrola ceny DM",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "B_Kontrola_P__c",
+    "label": "B - Kontrola P",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "B2A_AiReview_SMS_Datetime__c",
+    "label": "B2A AiReview SMS Datetime",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_AiReview_SMS_Pending__c",
+    "label": "B2A AiReview SMS Pending",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Celkova_cena_na_FA__c",
+    "label": "(B2A) Celkova cena na FA",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_DealNotAssigned_in_10CET__c",
+    "label": "B2A DealNotAssigned in 10CET",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_DealNotAssigned_in_5hour__c",
+    "label": "B2A DealNotAssigned in 5hour",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_DealNotAssigned_in60min__c",
+    "label": "B2A DealNotAssigned in60min",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Feedback_Count__c",
+    "label": "B2A Feedback Count",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Positive",
+      "Negative"
+    ]
+  },
+  {
+    "name": "B2A_HM_AfterJobCall__c",
+    "label": "B2A HM AfterJobCall",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Not started",
+      "In progress",
+      "Successful",
+      "Unsuccessful"
+    ]
+  },
+  {
+    "name": "B2A_Provizia__c",
+    "label": "(B2A) Provizia",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Credit_Balance_Deposited_to_Handyman__c",
+    "label": "B2B Credit Balance Deposited to Handyman",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Fakturacia_Partnerovi__c",
+    "label": "B2B Fakturacia Partnerovi",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Feedback_Count__c",
+    "label": "B2B Feedback Count",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Positive",
+      "Negative"
+    ]
+  },
+  {
+    "name": "B2B_FileUpload_SMS_Datetime__c",
+    "label": "B2B FileUpload SMS Datetime",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Inv_Price__c",
+    "label": "B2B Inv Price",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Protokol_m__c",
+    "label": "Protokol (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Praca este neprebehla",
+      "Majster nenahral protokol",
+      "Mame protokol",
+      "Nemame, ale posuvame"
+    ]
+  },
+  {
+    "name": "B2B_Provizia__c",
+    "label": "B2B Provizia",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Superfaktura_Due_Date__c",
+    "label": "B2B Superfaktura Due Date",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Zadanie__c",
+    "label": "B2B Zadanie",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2bFlow_Handyman_Assigned_DateTime__c",
+    "label": "B2bFlow Handyman Assigned DateTime",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Deal_Price__c",
+    "label": "B2C Deal Price",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Deal_SMS_Date_time__c",
+    "label": "B2C Deal SMS Date time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Free_Deal__c",
+    "label": "B2C Free Deal",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Order_Number__c",
+    "label": "B2C Order Number",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Feedback_Count__c",
+    "label": "B2Cc Feedback Count",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Positive",
+      "Negative"
+    ]
+  },
+  {
+    "name": "B2Cc_HOTOVE__c",
+    "label": "B2Cc HOTOVE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nevieme (B2Cc)",
+      "Hotove (B2Cc)",
+      "Zrusene (B2Cc)"
+    ]
+  },
+  {
+    "name": "B2Cc_Price_of_work__c",
+    "label": "B2Cc Price of work",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Provizia__c",
+    "label": "B2Cc Provizia",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Feedback_Count__c",
+    "label": "B2Cu Feedback Count",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Positive",
+      "Negative"
+    ]
+  },
+  {
+    "name": "Balance__c",
+    "label": "Balance",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Bypass_B2C_Exp_Validation__c",
+    "label": "Bypass B2C Exp Validation",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Bypass_Change_B2C_Deal_Price__c",
+    "label": "Bypass Change B2C Deal Price",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Bypass_not_enough_CB__c",
+    "label": "Bypass not enough CB",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "C_Feedback__c",
+    "label": "C Feedback",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Did not started yet",
+      "In progress",
+      "No answer",
+      "Positive",
+      "Neutral",
+      "Negative"
+    ]
+  },
+  {
+    "name": "C_Kontrola_P_DM__c",
+    "label": "C - Kontrola P, DM",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "C_Preferred_Time__c",
+    "label": "C Preferred Time",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "C_Special_Request__c",
+    "label": "C Special Request",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Campaign__c",
+    "label": "Campaign",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Benesov",
+      "Beroun",
+      "Blansko",
+      "Brno",
+      "Brno Venkov Juh",
+      "Brno Venkov Sever",
+      "Breclav",
+      "Bruntal",
+      "Ceska Lipa",
+      "Ceske Budejovice",
+      "Cesky Krumlov",
+      "Cheb",
+      "Chomutov",
+      "Chrudim",
+      "Decin",
+      "Domazlice",
+      "Frydek-Mistek",
+      "Havlickuv Brod",
+      "Hodonin",
+      "Hradec Kralove",
+      "Jablonec nad Nisou",
+      "Jesenik",
+      "Jicin",
+      "Jihlava",
+      "Jindrichuv Hradec",
+      "Karlovy Vary",
+      "Karvina",
+      "Klatovy ",
+      "Kladno",
+      "Kolin",
+      "Kromeriz",
+      "Kutna Hora",
+      "Liberec",
+      "Litomerice",
+      "Louny",
+      "Melnik",
+      "Mlada Boleslav",
+      "Most",
+      "Nachod",
+      "Novy Jicin",
+      "Nymburk",
+      "Olomouc",
+      "Opava",
+      "Ostrava-mesto",
+      "Pardubice",
+      "Pelhrimov",
+      "Pisek",
+      "Plzen-jih",
+      "Plzen-mesto",
+      "Plzen-sever ",
+      "Prachatice",
+      "Praha",
+      "Praha JV",
+      "Praha JZ",
+      "Praha SV",
+      "Praha SZ",
+      "Prerov",
+      "Pribram",
+      "Prostejov",
+      "Rakovnik",
+      "Rokycany",
+      "Rychnov nad Kneznou",
+      "Semily",
+      "Sokolov",
+      "Strakonice",
+      "Sumperk",
+      "Svitavy",
+      "Tabor",
+      "Teplice",
+      "Tachov",
+      "Trebic",
+      "Trutnov",
+      "Uherske Hradiste",
+      "Usti nad Labem",
+      "Usti nad Orlici ",
+      "Vsetin",
+      "Vyskov",
+      "Zdar nad Sazavou",
+      "Zlin",
+      "Znojmo",
+      "Banovce nad Bebravou",
+      "Banska Bystrica",
+      "Banska Stiavnica",
+      "Bardejov",
+      "Bratislava",
+      "Brezno",
+      "Bytca",
+      "Cadca",
+      "Detva",
+      "Dolny Kubin",
+      "Dunajska Streda",
+      "Galanta",
+      "Gelnica ",
+      "Hlohovec",
+      "Humenne",
+      "Ilava",
+      "Kezmarok",
+      "Komarno",
+      "Kosice",
+      "Kosice zapad",
+      "Kosice vychod",
+      "Krupina",
+      "Kysucke Nove Mesto",
+      "Levice",
+      "Levoca",
+      "Liptovsky Mikulas",
+      "Lucenec",
+      "Malacky",
+      "Martin",
+      "Medzilaborce",
+      "Michalovce",
+      "Myjava",
+      "Namestovo",
+      "Nitra",
+      "Nove Mesto nad Vahom",
+      "Nove Zamky",
+      "Partizanske",
+      "Pezinok",
+      "Piestany",
+      "Poltar",
+      "Poprad",
+      "Povazska Bystrica",
+      "Presov",
+      "Prievidza",
+      "Puchov",
+      "Revuca",
+      "Rimavska Sobota",
+      "Roznava",
+      "Ruzomberok",
+      "Sabinov",
+      "Senec",
+      "Senica",
+      "Skalica",
+      "Snina",
+      "Sobrance",
+      "Spisska Nova Ves",
+      "Stara Lubovna",
+      "Stropkov",
+      "Svidnik",
+      "Sala",
+      "Topolcany",
+      "Trebisov",
+      "Trencin",
+      "Trnava",
+      "Turcianske Teplice",
+      "Tvrdosin",
+      "Velky Krtis",
+      "Vranov nad Toplou",
+      "Zlate Moravce",
+      "Zvolen",
+      "Zarnovica",
+      "Ziar nad Hronom",
+      "Zilina"
+    ]
+  },
+  {
+    "name": "Cas_ukon_enia_pr_ce_m__c",
+    "label": "Čas ukončenia práce (m)",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cas_za_iatku_pr_ce_m__c",
+    "label": "Čas začiatku práce (m)",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cas_zacatia_a_ukoncenia_prace_m__c",
+    "label": "Cas zacatia a ukoncenia prace (m)",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Category__c",
+    "label": "Category",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Handyman",
+      "01.1 Handyman",
+      "02. Electrician",
+      "03. Plumber",
+      "03.1 Plumber",
+      "04. Electronics",
+      "05. Gasman",
+      "06. Keyservice",
+      "07. Heating",
+      "08. Boilers",
+      "09. Painting",
+      "10. Craftsman",
+      "11. Plastenboard",
+      "12. Floors",
+      "13. IT",
+      "14. Cleaning",
+      "15. Moving",
+      "16. Wet Wacuum",
+      "17. Airconditioning",
+      "18. Roofs",
+      "19. Carpenter",
+      "20. Chimneyer",
+      "21. Sunblinds",
+      "22. Gardening",
+      "23. Security system",
+      "24.⁠ ⁠Metalworks",
+      "25.⁠ ⁠Height works",
+      "26.⁠ ⁠Excavation",
+      "98. Wrong Call",
+      "99. Other"
+    ]
+  },
+  {
+    "name": "Celkova_cena_majstra_na_iFA__c",
+    "label": "Celkova cena majstra na iFA",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_majstra_s_DPH_iFA__c",
+    "label": "Celkova cena majstra s DPH (iFA)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_na_FA_majstra_m__c",
+    "label": "Celkova cena na FA majstra (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_zakazky__c",
+    "label": "Celkova cena zakazky",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_suma_bez_DPH_efa__c",
+    "label": "Celkova suma bez DPH efa",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_suma_s_DPH_efa__c",
+    "label": "Celkova suma s DPH efa",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Celkove_naklady_majstra_iFA_z_Ai__c",
+    "label": "Celkove naklady majstra (iFA z Ai)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_dopravy_m__c",
+    "label": "Cena dopravy (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_materialu_m__c",
+    "label": "Cena materialu (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_na_FA_majstra_m__c",
+    "label": "Cena na FA majstra (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_prace_m__c",
+    "label": "Cena prace (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_za_drobny_material_m__c",
+    "label": "Cena za drobny material (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_za_nahradne_diely_a_material_m__c",
+    "label": "Cena za nahradne diely a material (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cena_za_pracu_m__c",
+    "label": "Cena za pracu (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cesta_iFA__c",
+    "label": "Cesta (iFA)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Cislo_objednavky__c",
+    "label": "Cislo objednavky",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Clickup_Ai_Action__c",
+    "label": "Clickup Ai Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. B2A_Intro_Call",
+      "02. B2A_HM_YesDate&Time?",
+      "03. B2A_HMnew_2hrs_BeforeJob",
+      "04. B2A_Cust_ReadyForJob?",
+      "05. B2A_Cust_AiReviewCall",
+      "07. B2A_HM_AfterJobCall",
+      "08. B2A_Cust_ExtraPayment",
+      "09. B2A_HM_NewDealOffer",
+      "01. B2B_Cust_AiReviewCall",
+      "98. B2A_Calc_Doplatok+SumaFA",
+      "99. B2A_AktualizaciaMajstrov",
+      "01. B2C_Cust_YesDate&Time?",
+      "02. B2C_HM_YesDate&Time?",
+      "03. B2C_Cust_AiReviewCall",
+      "04. B2C_Cust_DealCanceled",
+      "05. B2C_HM_JobFormRemind",
+      "02. B2B_HM_ProtocolRemind",
+      "07. B2C_Cust_Complaint",
+      "08. B2C_HM_Complaint",
+      "09. B2C_HM_NewDealOffer"
+    ]
+  },
+  {
+    "name": "ClickUp_Task_Id__c",
+    "label": "ClickUp Task Id",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission__c",
+    "label": "B2C Provizia",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Company_Name__c",
+    "label": "Company Name",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Contact_Name__c",
+    "label": "Customer",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "ContactByPhoneNumber__c",
+    "label": "Search by phone number",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Country__c",
+    "label": "Country",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Slovakia",
+      "Czech Republic"
+    ]
+  },
+  {
+    "name": "Coverage_Type_Description__c",
+    "label": "Coverage Type Description",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Create_Invoice__c",
+    "label": "Create Invoice",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "CU_Deal_Link__c",
+    "label": "CU Deal Link",
+    "type": "url",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "CurrencyIsoCode",
+    "label": "Currency ISO Code",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "CZK",
+      "EUR",
+      "HRK",
+      "PLN",
+      "RSD"
+    ]
+  },
+  {
+    "name": "Cust_Extra_Payment_p__c",
+    "label": "Cust Extra Payment (p)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Customer_SMS_Review__c",
+    "label": "Customer SMS Review",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "D_E_Kontrola_ND_a_M__c",
+    "label": "D, E - Kontrola ND a M",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "D_Kontrola_ND_a_M__c",
+    "label": "D - Kontrola ND a M",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "D_Kontrola_V_P_ND_a_M__c",
+    "label": "D - Kontrola V, P, ND a M",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "Data_na_FA_majstra__c",
+    "label": "Data na FA majstra",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nemame FA",
+      "Spravne data",
+      "Nespravne data"
+    ]
+  },
+  {
+    "name": "Datamigration_validation_bypass__c",
+    "label": "Datamigration validation bypass",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Date_of_Invoice_Delivery__c",
+    "label": "Date of Invoice Delivery",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_Protocol_1__c",
+    "label": "Date on Protocol 1",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_Protocol_2__c",
+    "label": "Date on Protocol 2",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_Protocol_3__c",
+    "label": "Date on Protocol 3",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_Protocol_4__c",
+    "label": "Date on Protocol 4",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_Protocol_5__c",
+    "label": "Date on Protocol 5",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Date_on_protocol_p__c",
+    "label": "Date on protocol (p)",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DateTime__c",
+    "label": "Date & Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_nastupu_do_prace_m_1__c",
+    "label": "Datum a cas nastupu do prace (m) 1",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_nastupu_do_prace_m_2__c",
+    "label": "Datum a cas nastupu do prace (m) 2",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_nastupu_do_prace_m_3__c",
+    "label": "Datum a cas nastupu do prace (m) 3",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_ukoncenia_prace_m_1__c",
+    "label": "Datum a cas ukoncenia prace (m) 1",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_ukoncenia_prace_m_2__c",
+    "label": "Datum a cas ukoncenia prace (m) 2",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_a_cas_ukoncenia_prace_m_3__c",
+    "label": "Datum a cas ukoncenia prace (m) 3",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_dodania__c",
+    "label": "Datum dodania",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_dodania_efa__c",
+    "label": "Datum dodania efa",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_dodania_na_iFA__c",
+    "label": "Datum dodania na iFA",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_dodania_sluzby_iFA__c",
+    "label": "Datum dodania sluzby (iFA)",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_dodania_sluzby_m__c",
+    "label": "Datum dodania sluzby (m)",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_splatnosti_B2B_FA_m__c",
+    "label": "Datum splatnosti B2B FA (m)",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_splatnosti_efa__c",
+    "label": "Datum splatnosti (efa)",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_splatnosti_iFA__c",
+    "label": "Datum splatnosti iFA",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_vystavenia_efa__c",
+    "label": "Datum vystavenia (efa)",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_vystavenia_FA_m__c",
+    "label": "Datum vystavenia FA (m)",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_vystavenia_iFA__c",
+    "label": "Datum vystavenia (iFA)",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Datum_vystavetnia_iFA__c",
+    "label": "Datum vystavenia iFA",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Deal_Community_URL__c",
+    "label": "Deal Community URL",
+    "type": "url",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Deal_From__c",
+    "label": "Deal From",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Unknown",
+      "GA form",
+      "SEO form",
+      "FB & IG",
+      "Messanger",
+      "Instagram",
+      "Whatsapp",
+      "Customer Base",
+      "OB",
+      "GA-ABTESTING",
+      "GA call",
+      "SEO call",
+      "SMS"
+    ]
+  },
+  {
+    "name": "Deal_Source__c",
+    "label": "Deal Source",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Email",
+      "InsuranceDealAiProcessor"
+    ]
+  },
+  {
+    "name": "Deal_Survey_URL__c",
+    "label": "Deal Survey URL",
+    "type": "url",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Deal_type__c",
+    "label": "Deal type",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "B2A",
+      "B2B",
+      "B2Cu",
+      "B2Cc"
+    ]
+  },
+  {
+    "name": "DealReviewComments__c",
+    "label": "Deal Review Comment",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DealReviewRatings__c",
+    "label": "Deal Review Rating",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Description__c",
+    "label": "Description",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Detailed_repair_description__c",
+    "label": "Detailed repair description",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Diagnostika__c",
+    "label": "Diagnostika",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Do_Not_Run_Automation__c",
+    "label": "Do Not Run Automation",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Dodavatel__c",
+    "label": "Dodavatel",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Correct",
+      "Incorrect"
+    ]
+  },
+  {
+    "name": "Doplatok_klienta_m__c",
+    "label": "Doplatok klienta (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Dorucenie_spotrebica__c",
+    "label": "Dorucenie spotrebica",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Dovod__c",
+    "label": "Dovod",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Dovod_dalsej_navstevy__c",
+    "label": "Dovod dalsej navstevy",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Náhradný diel na objednávku",
+      "Zložitá oprava",
+      "Nákup materiálu"
+    ]
+  },
+  {
+    "name": "Dovod_nespravnej_FA__c",
+    "label": "Dovod nespravnej FA",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Dovod_Poistovna__c",
+    "label": "Dovod Poistovna",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Poistovna zrusila",
+      "Klient opravil sam",
+      "Klient si nasiel svojho majstra",
+      "Porucha sama pominula",
+      "Nenasli sme majstra",
+      "Klient nechcel platit",
+      "Porucha nebola u klienta",
+      "Klient opravil po konzultacii s nami"
+    ]
+  },
+  {
+    "name": "Dovod_Uber__c",
+    "label": "Dovod Uber",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Klient nedviha",
+      "Klient opravil sam",
+      "Klient nejde riesit",
+      "Klient nechce platit",
+      "Vysoka cena",
+      "Porucha sama odstranena",
+      "Opravili po telefone",
+      "Klient ma ineho majstra",
+      "Oprava nerentabilna",
+      "Klient dohodu zrusil / Neseriozny",
+      "Cenova ponuka",
+      "Info o cene",
+      "Info o oprave",
+      "Info o sluzbe",
+      "V zaruke",
+      "Klient vybavuje za inych",
+      "Cas",
+      "Odbornost",
+      "Neskor budu riesit",
+      "Nikto nechce",
+      "Omyl",
+      "Romovia",
+      "Velka vzdialenost",
+      "Psycho klient",
+      "Zmena Majstra",
+      "Neaktualne"
+    ]
+  },
+  {
+    "name": "DPH__c",
+    "label": "DPH",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "E_Kontrola_V_P__c",
+    "label": "E - Kontrola V, P",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "PRESIAHNUTE KRYTIE!!!"
+    ]
+  },
+  {
+    "name": "EA_odhlaska__c",
+    "label": "EA odhlaska",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Schvalene EA",
+      "Cakame na odhlasenie",
+      "Nemame prehlasenie",
+      "Nemame fotky (urgovat tech cez uhrada majstrovi – nemame fotky)",
+      "Zkratena garancia",
+      "Garancia nad odhlasku",
+      "SK Manualna odhlaska",
+      "Manualne foto a prehlasenie",
+      "CZ Manualna odhlaska",
+      "Odhlasit ve WI"
+    ]
+  },
+  {
+    "name": "EA_schvalena_garancia__c",
+    "label": "EA schvalena garancia",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "eFA__c",
+    "label": "eFA",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "EFA_DPH__c",
+    "label": "EFA DPH",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Prenos DPH 0%",
+      "Prenos DPH 12%",
+      "Prenos DPH 21%",
+      "Prenos DPH 23%",
+      "Vycislena DPH 12%",
+      "Vycislena DPH 21%",
+      "Vycislena DPH 23%"
+    ]
+  },
+  {
+    "name": "Email_Body__c",
+    "label": "Email Body",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Emergency_callout__c",
+    "label": "Havarijny vyjazd",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Enable_Special_Commission__c",
+    "label": "Enable Special Commission",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Europ_krytie__c",
+    "label": "Europ krytie",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "A: Vyjazd, Praca a DM a ND a M - 10 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 15 000czk",
+      "A: Vyjazd, Praca a DM a ND a M - 200€",
+      "A: Vyjazd, Praca a DM a ND a M - 120€",
+      "C: Vyjazd, Praca a DM 5 000czk, bez ND a M",
+      "C: Vyjazd, Praca a DM 10 000czk, bez ND a M",
+      "C: Vyjazd, Praca a DM 150€, bez ND a M",
+      "C: Vyjazd, Praca a DM 150€, bez ND a M, spoluucast 20€",
+      "C: Vyjazd, Praca a DM 90€, bez ND a M",
+      "F: Vyjazd a Praca a ND a M - 300€",
+      "F: Vyjazd a Praca a ND a M -  5 000 CZK",
+      "F: Vyjazd a Praca a ND a M - unlimited",
+      "H: Vyjazd, Praca 10 000czk, bez DM a ND a M",
+      "I: Vyjazd, Praca(2 hod.) a DM a ND 10 000czk, bez M",
+      "J: Vyjazd, Praca(3 hod. na vyjazd /max 2 vyjazdy) a ND 5 000czk, bez DM a M",
+      "K: Vyjazd, Praca(3 hod. na vyjazd /max 2 vyjazdy) a DM 10 000czk, bez ND a M, PR 2x",
+      "L: Vyjazd, Praca(3 hod. na vyjazd /max 2 vyjazdy) a DM a ND 10 000czk, z toho max 2 500czk DM a ND, bez M, PR 2x"
+    ]
+  },
+  {
+    "name": "Europe_DD__c",
+    "label": "Europe DD",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Extra_payment_for_EC_24h_client__c",
+    "label": "Extra payment for EC 24h - client",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Extra_payment_for_EC_24h_us__c",
+    "label": "Extra payment for EC 24h - us",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Feedback_SMS_Date_Time__c",
+    "label": "Feedback SMS Date&Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Feedback_SMS_Pending__c",
+    "label": "Feedback SMS Pending",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Files_send_to_AI_to_check__c",
+    "label": "Files send to AI to check",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Not yet",
+      "Yes"
+    ]
+  },
+  {
+    "name": "FileUpload_Content_Version_Ids__c",
+    "label": "FileUpload Content Version Ids",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "FileUpload_ContentVersion_Invoice_Ids__c",
+    "label": "FileUpload ContentVersion Invoice Ids",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "First_Mail_Send_Date__c",
+    "label": "First Mail Send Date",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "First_Mail_Sent_to_Handyman__c",
+    "label": "First Mail Sent to Handyman",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Free_Deal_Pass__c",
+    "label": "Free Deal Pass",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes Free Deal",
+      "No Free Deal"
+    ]
+  },
+  {
+    "name": "Global_krytie__c",
+    "label": "Global krytie",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "F: Vyjazd a Praca a ND a M - 2 000czk",
+      "F: Vyjazd a Praca a ND a M - 3 000czk",
+      "F: Vyjazd a Praca a ND a M - 5 000czk",
+      "F: Vyjazd a Praca a ND a M - 7 000czk",
+      "F: Vyjazd a Praca a ND a M - 10 000czk",
+      "F: Vyjazd a Praca a ND a M - 12 000czk"
+    ]
+  },
+  {
+    "name": "GPS_Distance_From_Customer__c",
+    "label": "GPS Distance From Customer",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "GPS_End_Latitude__c",
+    "label": "GPS End Latitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "GPS_End_Longitude__c",
+    "label": "GPS End Longitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "GPS_Start_Latitude__c",
+    "label": "GPS Start Latitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "GPS_Start_Longitude__c",
+    "label": "GPS Start Longitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman__c",
+    "label": "Handyman",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Assigned_DateTime__c",
+    "label": "Handyman Assigned DateTime",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Average_Revenue_on_a_Send_Deal__c",
+    "label": "Handyman Average Revenue on a Send Deal",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Deal__c",
+    "label": "Handyman Deal",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Rating__c",
+    "label": "Handyman Rating",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Success_Rate__c",
+    "label": "Handyman Success Rate",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handymanpaysus__c",
+    "label": "Handyman pays us",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Historia_navstev__c",
+    "label": "Historia navstev",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_EBAN__c",
+    "label": "HM EBAN",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_Email__c",
+    "label": "HM Email",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_End_Price_Check__c",
+    "label": "HM End Price Check",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No data",
+      "Cena FA sedi",
+      "Chyba ceny FA! Kontrola"
+    ]
+  },
+  {
+    "name": "HM_Files_uploaded__c",
+    "label": "HM Files uploaded",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No files yet",
+      "We have files"
+    ]
+  },
+  {
+    "name": "HM_Invoice_Number__c",
+    "label": "HM Invoice Number",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_Job_End_Time__c",
+    "label": "HM Job End Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_Phone__c",
+    "label": "HM Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Hours_of_work_of_HM__c",
+    "label": "Hours of work of HM",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HPT_DaT_email__c",
+    "label": "HPT DaT email",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Ano",
+      "Nie"
+    ]
+  },
+  {
+    "name": "HPT_Done_email__c",
+    "label": "HPT Done email",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Ano",
+      "Nie"
+    ]
+  },
+  {
+    "name": "HPT_Svoz_email__c",
+    "label": "HPT Svoz email",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Ano",
+      "Nie"
+    ]
+  },
+  {
+    "name": "HPT_Zvoz__c",
+    "label": "HPT Zvoz",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Mala",
+      "Velka"
+    ]
+  },
+  {
+    "name": "identified_problem__c",
+    "label": "identified-problem",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Identified_problem_and_condition_descrip__c",
+    "label": "Identified problem and condition descrip",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "iFA__c",
+    "label": "iFA",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IFA_Payment_Date__c",
+    "label": "IFA Payment Date",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Insurance_case__c",
+    "label": "Insurance case",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Insurance_coverage__c",
+    "label": "Insurance coverage",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Insurance_deal__c",
+    "label": "Insurance deal",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Insurance_Deal_Email_Body__c",
+    "label": "Insurance Deal Email Body",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Insurance_number__c",
+    "label": "Cislo poistneho pripadu",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Interna_FA_ai__c",
+    "label": "Interna FA (ai)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Not ready to create iFA",
+      "iFA Vystavit",
+      "iFA Vystavena",
+      "iFA Zaplatena",
+      "iFA Error (Case)",
+      "eFA Zaplatena manualne"
+    ]
+  },
+  {
+    "name": "Invoice_number_efa__c",
+    "label": "Invoice number (efa)",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Is_Pipedrive_Data__c",
+    "label": "Is Pipedrive Data",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Is_Salesman__c",
+    "label": "Is Coordinator",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "isAWSS3FolderCreated__c",
+    "label": "isAWSS3FolderCreated",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IsErroAWSFileUpload__c",
+    "label": "IsErroAWSFileUpload",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IsFileUploadedtoAWS__c",
+    "label": "IsFileUploadedtoAWS",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Job_End_Time_1__c",
+    "label": "Job End Time 1",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_End_Time_2__c",
+    "label": "Job End Time 2",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_End_Time_3__c",
+    "label": "Job End Time 3",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_End_Time_4__c",
+    "label": "Job End Time 4",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_End_Time_5__c",
+    "label": "Job End Time 5",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_End_Time_p__c",
+    "label": "Job  End Time (p)",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_Time_1__c",
+    "label": "Job Start Time 1",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_Time_2__c",
+    "label": "Job Start Time 2",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_Time_3__c",
+    "label": "Job Start Time 3",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_Time_4__c",
+    "label": "Job Start Time 4",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_Time_5__c",
+    "label": "Job Start Time 5",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Start_time_p__c",
+    "label": "Job Start time (p)",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Kilometer_per_Visit__c",
+    "label": "Kilometer per Visit",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Klient_spokojny_m__c",
+    "label": "Klient spokojny (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nename data",
+      "Spokojny",
+      "Neviem",
+      "Nespokojny"
+    ]
+  },
+  {
+    "name": "Km_to_client__c",
+    "label": "Km to client",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Komunikacia_doplatku__c",
+    "label": "Komunikacia doplatku",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Schvalene",
+      "Neschvalene",
+      "Nedovolane"
+    ]
+  },
+  {
+    "name": "Kontrola_doplatku_klienta__c",
+    "label": "Kontrola doplatku klienta",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Kontrola este neprebehla",
+      "Doplatok sedi",
+      "Chyba! Doplatok nesedi"
+    ]
+  },
+  {
+    "name": "Kontrola_efa__c",
+    "label": "Kontrola efa",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "OK",
+      "KONTROLA!!!",
+      "Empty"
+    ]
+  },
+  {
+    "name": "Krytie_DM_s_DPH__c",
+    "label": "Krytie DM s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_na_P_a_DM_s_DPH__c",
+    "label": "Krytie na P a DM s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_ND_a_M__c",
+    "label": "Krytie ND a M",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "V cene prace",
+      "Plati klient",
+      "Max do",
+      "V CPaV, max do"
+    ]
+  },
+  {
+    "name": "Krytie_P_ND_a_M_s_DPH__c",
+    "label": "Krytie P, ND a M s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_P_s_DPH__c",
+    "label": "Krytie P s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_priradene__c",
+    "label": "Krytie priradene",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Ano",
+      "Nie"
+    ]
+  },
+  {
+    "name": "Krytie_VaP_s_DPH__c",
+    "label": "Krytie VaP s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "LeadSource__c",
+    "label": "Lead Source",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Unbounce"
+    ]
+  },
+  {
+    "name": "Len_diagnostika__c",
+    "label": "Len diagnostika",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "Len_diagnostika_checkbox__c",
+    "label": "Len diagnostika checkbox",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Location__c",
+    "label": "Location",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Lost_Reason__c",
+    "label": "Lost Reason",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No Handyman",
+      "HM Nerobime",
+      "HM Nezmysel",
+      "HM Zakaznik zrusil",
+      "HM Samo sa vyriesilo"
+    ]
+  },
+  {
+    "name": "Lost_Time__c",
+    "label": "Lost Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Main_Phone_Number__c",
+    "label": "Main Phone Number",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Majster_nahlasil_cenu_team__c",
+    "label": "Majster nahlasil cenu (team)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Majstra_pridelil__c",
+    "label": "Majstra pridelil",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Material_EA_AI_created__c",
+    "label": "Material EA (AI created)",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Material_iFA__c",
+    "label": "Material (iFA)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Material_name_quantity_unit_price__c",
+    "label": "Material name (quantity, unit price)",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Material_Required_Description_Price__c",
+    "label": "Material Required (Description + Price)",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Max_IFA_EFA__c",
+    "label": "Max IFA/EFA",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Max_z_krytia_NDaM_s_DPH__c",
+    "label": "Max z krytia NDaM s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Mesiac_dodania_iFA__c",
+    "label": "Mesiac dodania iFA",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Nahlasena_cena_majstra__c",
+    "label": "Nahlasena cena majstra",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nemame data",
+      "OK. Sedi to",
+      "Nesedi. Kontrola!"
+    ]
+  },
+  {
+    "name": "Name",
+    "label": "Deal Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Name_on_Review__c",
+    "label": "Name on Review",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Navysenie_ceny__c",
+    "label": "Navysenie ceny",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "NDaM_s_DPH__c",
+    "label": "NDaM s DPH",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Nemame_majstra_do_1_hod_mail_AXA_glob__c",
+    "label": "Nemame majstra do 1 hod - mail AXA, glob",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "NEMAME"
+    ]
+  },
+  {
+    "name": "No_of_callouts__c",
+    "label": "Pocet vyjazdov",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Note__c",
+    "label": "Note",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Under Test"
+    ]
+  },
+  {
+    "name": "Notes__c",
+    "label": "Notes",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Odberatel__c",
+    "label": "Odberatel",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Correct",
+      "Incorrect"
+    ]
+  },
+  {
+    "name": "Old_Campaign__c",
+    "label": "Old Campaign",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Bratislava",
+      "BA Bernolakovo",
+      "BA Samorin",
+      "BA Pezinok",
+      "BA Senec",
+      "BA Stupava",
+      "Bystrica",
+      "iZilina",
+      "iZvolen",
+      "Juzne Slovensko",
+      "Kosice",
+      "Michalovce",
+      "Nitra",
+      "Poprad",
+      "Ruzomberok",
+      "Slovensko",
+      "Trencin",
+      "Trnava",
+      "Zahorie",
+      "Prague",
+      "Praha",
+      "Praha 1, 2, 3, 7, 10",
+      "Praha Letnany 8, 9, 14, 18, 19,20",
+      "Praha Zlicin 5, 6, 17, 13,",
+      "Praha Chodov 4, 11, 12, 15, 16, 22",
+      "Praha Cerny Most 14, 20, 21 ",
+      "Brno",
+      "Czech republic",
+      "Belgrade",
+      "Novi Sad",
+      "Beograd",
+      "Nis",
+      "Subotica",
+      "Zagreb",
+      "Rijeka",
+      "Split",
+      "Zadar",
+      "Pula",
+      "Osijek",
+      "Varazdin",
+      "Karlovac",
+      "Makarska",
+      "Baska Voda",
+      "Slavonski Brod",
+      "Alicante",
+      "Barcelona",
+      "Bilbao",
+      "Madrid",
+      "Malaga",
+      "Seville",
+      "Valencia",
+      "Zaragoza",
+      "Warszawa",
+      "Bialystok",
+      "Bydgoszcz",
+      "Czestochowa",
+      "Gdansk",
+      "Katowice",
+      "Krakow",
+      "Lodz",
+      "Lublin",
+      "Olsztyn",
+      "Poznan",
+      "Szczecin",
+      "Wroclaw",
+      "Ostrava",
+      "Olomouc",
+      "Plzen",
+      "Jihlava",
+      "Liberec",
+      "Hradec Kralove",
+      "Pardubice",
+      "Ceske Budejovice",
+      "Usti nad Labem",
+      "﻿Mlada Boleslav",
+      "Zlin",
+      "Karlovy Vary",
+      "﻿﻿Podebrady",
+      "Opava",
+      "Uherske Hradiste",
+      "﻿Pribram",
+      "﻿Pisek",
+      "Strakonice",
+      "Chlumec",
+      "﻿﻿Sokolov",
+      "Kolin",
+      "Martin",
+      "D. Kubin",
+      "Presov",
+      "L. Mikulas",
+      "Prievidza",
+      "Komarno",
+      "Levice",
+      "Rimavska Sobota",
+      "Piestany",
+      "Roznava",
+      "Brezno",
+      "Bardejov",
+      "Humenne",
+      "Dubnica nad Vahom",
+      "Snina",
+      "Sahy",
+      "Dunajska Streda",
+      "Sumperk",
+      "Svitavy",
+      "Havlickuv Brod",
+      "Benesov",
+      "Tabor",
+      "Klatovy",
+      "Melnik",
+      "Chomutov",
+      "Trutnov",
+      "Mikulov",
+      "Znojmo",
+      "Most",
+      "Kladno",
+      "Cheb"
+    ]
+  },
+  {
+    "name": "OldPayment__c",
+    "label": "Old Payment",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Insurance",
+      "Cash",
+      "YIT",
+      "Spolocne Byvanie",
+      "Invoice to partner",
+      "Invoice 2C - we pay",
+      "Invoice 2C - We receive"
+    ]
+  },
+  {
+    "name": "OrderId__c",
+    "label": "OrderId",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OwnerId",
+    "label": "Owner ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Pay_To_Handyman_hm__c",
+    "label": "Pay To Handyman (hm)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Payment__c",
+    "label": "Payment",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "EU VAT",
+      "EU",
+      "U.S",
+      "Cash"
+    ]
+  },
+  {
+    "name": "Pictures_of_work__c",
+    "label": "Pictures of work",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No picutres yet",
+      "Correct",
+      "Wrong - Check!"
+    ]
+  },
+  {
+    "name": "Pipedrive_Deal_Name__c",
+    "label": "Pipedrive Deal Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pipedrive_ID__c",
+    "label": "Pipedrive ID",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_Automation_Track__c",
+    "label": "Planned Automation Track",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Planned 1st Interval SMS Sent",
+      "Planned 2nd Interval SMS Sent",
+      "Planned 3rd Interval Final Task Created"
+    ]
+  },
+  {
+    "name": "Planned_date_1__c",
+    "label": "Planned date 1",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_date_2__c",
+    "label": "Planned date 2",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_date_3__c",
+    "label": "Planned date 3",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_date_4__c",
+    "label": "Planned date 4",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_date_5__c",
+    "label": "Planned date 5",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Planned_DateTime__c",
+    "label": "Planned Date/Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Po_et_hod_na_zakazke__c",
+    "label": "Počet hod na zakazke",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Po_et_km_na_1_vyjazde_spolu_oba_smery__c",
+    "label": "Počet km na 1 vyjazde spolu (oba smery)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pocet_hodin_nakupu_materialu_m__c",
+    "label": "Pocet hodin nakupu materialu (m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pocet_hodin_prace_m__c",
+    "label": "Pocet hodin prace (m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pocet_km__c",
+    "label": "Pocet km",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pocet_km_na_1_navstevu__c",
+    "label": "Pocet km na 1 navstevu",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pocet_vyjazdov_m__c",
+    "label": "Pocet vyjazdov (m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Popis_a_cena_materialu_z_HM_APP__c",
+    "label": "Popis a cena materialu z HM APP",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Positive_FollowUp__c",
+    "label": "Positive FollowUp",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Waiting for 5 stars",
+      "Help the customer",
+      "Positive - no name",
+      "Positive - yes name",
+      "5 Stars - yes"
+    ]
+  },
+  {
+    "name": "Positive_FollowUp_Waiting_Date_Time__c",
+    "label": "Positive FollowUp Waiting Date Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poznamka_m__c",
+    "label": "Poznamka (m)",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Praca_iFA__c",
+    "label": "Praca (iFA)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Praca_ukoncena_m__c",
+    "label": "Praca ukoncena (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nemame data",
+      "Nemame datum a cas",
+      "Planovana",
+      "Ma byt hotova",
+      "Majster nepotvrdil",
+      "Hotova",
+      "Nie je hotova",
+      "Zrusena"
+    ]
+  },
+  {
+    "name": "Price_of_callout__c",
+    "label": "Cena 1 vyjazdu",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_Helper__c",
+    "label": "Naklad pomocnika",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_Material__c",
+    "label": "Cena materialu",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_material_of_HM__c",
+    "label": "Price of material of HM",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work__c",
+    "label": "Cena prace",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work_and_material__c",
+    "label": "Price of work and material",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work_and_material_hm1__c",
+    "label": "Price of work and material hm1",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work_and_material_of_HM__c",
+    "label": "Price_of_work_and_material_of_HM_demo",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work_and_ride__c",
+    "label": "Cena prace a vyjazdu spolu",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Price_of_work_of_HM__c",
+    "label": "Price of work of HM",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Processed__c",
+    "label": "Processed",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Protocol_Email_To_Handyman__c",
+    "label": "Protocol Email To Handyman",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Email not sent",
+      "Email sent"
+    ]
+  },
+  {
+    "name": "Rating__c",
+    "label": "Rating",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "Reason_for_Diagreement__c",
+    "label": "Reason for Diagreement",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Reason_for_next_visit__c",
+    "label": "Reason for next visit",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Recording__c",
+    "label": "Recording",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "RecordTypeId",
+    "label": "Record Type ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Related_Coordinator__c",
+    "label": "Related Coordinator",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Related_Handyman__c",
+    "label": "Related Handyman",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Reliable_Handyman_Automation_Done__c",
+    "label": "Reliable Handyman Automation Done",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Repair_Subject__c",
+    "label": "Repair Subject",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Replay_to_C__c",
+    "label": "Replay to C",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No replay yet",
+      "Odoslana"
+    ]
+  },
+  {
+    "name": "Replay_to_CS_SMS__c",
+    "label": "Replay to CS – SMS",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nemame odpoved",
+      "Mame odpoved",
+      "Neodoslaná SMS"
+    ]
+  },
+  {
+    "name": "Req_To_AI_for_New_Inv__c",
+    "label": "Req To AI for New Inv",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "S_Category__c",
+    "label": "S-Category",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Handyman",
+      "01.1 Handyman",
+      "02. Electrician",
+      "03. Plumber",
+      "03.1 Plumber",
+      "04. Electronics",
+      "05. Gasman",
+      "06. Keyservice",
+      "07. Heating",
+      "08. Boilers",
+      "09. Painting",
+      "10. Craftsman",
+      "11. Plastenboard",
+      "12. Floors",
+      "13. IT",
+      "14. Cleaning",
+      "15. Moving",
+      "16. Wet Wacuum",
+      "17. Airconditioning",
+      "18. Roofs",
+      "19. Carpenter",
+      "20. Chimneyer",
+      "21. Sunblinds",
+      "22. Gardening",
+      "23. Security system",
+      "98. Wrong Call",
+      "99. Other"
+    ]
+  },
+  {
+    "name": "S_Sub_category__c",
+    "label": "S-Sub category",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Small House Works",
+      "02. All Assembly",
+      "03. Furniture Assembly",
+      "04. Kitchen Assembly",
+      "05. Fix furniture & Small Fixes",
+      "06. Marquee Assembly",
+      "07. Doors & Windows",
+      "08. Cut Furniture / Kitchenboard",
+      "09. Wallpaper",
+      "10. Welding & Iron",
+      "11. Glass",
+      "12. Other",
+      "01. Small Electric Works",
+      "02. Basic Electrician",
+      "03. Lamps",
+      "04. Plug/Unplug El. App",
+      "05. El. Emergency",
+      "06. El. Cable Install",
+      "07. El. Breaker Box",
+      "08. El. Installation",
+      "09. El. Boiler Fix (el.)",
+      "10. Cameras",
+      "11. Sunblind",
+      "12. Fix El. Floor Heating",
+      "13. Install El. Foor Heating",
+      "14. El. revision",
+      "15. Lightning conductor",
+      "16. Electric Garage Gate",
+      "17. Other (Electrician)",
+      "01. Small Water Works",
+      "02. Fix WC - Classic",
+      "03. Fix WC - Geberit",
+      "04. Water Tap",
+      "05. Siphon",
+      "06. Velve",
+      "07. Plumbing",
+      "08. Water Connection",
+      "09. Silicone",
+      "10. Unblocking",
+      "11. Big Unblocking",
+      "12. WC Unblocking",
+      "13. Wall / Pipe Water Leak",
+      "14. Showher / Bath Water Leak",
+      "15. WC Replace",
+      "16. Shower / Bath",
+      "17. Sink & Sanitary",
+      "18. Water Pump",
+      "19. Water Meter",
+      "20. Water Assambladge (Filter, Drvicz...)",
+      "21. Camera Water Leak Search",
+      "22. No Water Pressure",
+      "23. Pressure Test",
+      "24. El. Boiler Fix (water)",
+      "25. Boiler Assemblage",
+      "26. Big Water Connection",
+      "27. Other",
+      "01. Washing",
+      "02. Dishwashing",
+      "03. Dryer",
+      "04. El. Owen",
+      "05. Hood",
+      "06. Fridge",
+      "07. Other",
+      "01. Plug In Gas Owen",
+      "02. Gas Leak Check / Fix",
+      "03. Plug Off Gas Owen",
+      "04. Move Gas Pipe",
+      "05. Gas Installation (Int)",
+      "06. Gas Installation (Ext)",
+      "07. Terminate Gas Pipe",
+      "08. Gas Revision",
+      "09. Fix Gas Owen / Burners",
+      "10. Other",
+      "01. Slammed Door",
+      "02. Locked Door / Broken Key",
+      "03. Lock Change",
+      "04. Locked Car",
+      "05. Make new key",
+      "06. Maky new Car key",
+      "07. Mail Box",
+      "08. Garage Door",
+      "09. Other",
+      "01. Small Heating Works",
+      "02. Valve on Heating",
+      "03. Heater Leaking Fix",
+      "04. Heater Assambladge",
+      "05. Heater Problem (Noise, Heats only, Not Heating)",
+      "06. Heater Disassamblage",
+      "07. Leak From Heating Pipe",
+      "08. Heating Installation",
+      "09. Circulation Heater",
+      "10. Fix / Install Floor Heating (water)",
+      "11. Floor Heating Install (electric)",
+      "12. Fix Termostat",
+      "13. Not Gas Boiler",
+      "14. Other",
+      "01. All Gas Boiler Fix",
+      "02. Gas Boiler Service",
+      "03. Boiler Assembly",
+      "04. Boiler Set Up",
+      "05. Boiler Disable",
+      "06. Other",
+      "01. Painting only",
+      "02. Painting & patching",
+      "03. Painting & smoothing",
+      "04. Painting exterier",
+      "05. Smoothing",
+      "06. Plaster",
+      "07. Patching",
+      "08. Wallpaper",
+      "09. Scraping Walls",
+      "10. Facade Painting",
+      "11. Other",
+      "01. Craft & Mason Works",
+      "02. Small Reconstruction",
+      "03. Whole Reconstruction",
+      "04. Bathroom Reconstruction",
+      "05. Kitchen Reconstruction",
+      "06. Isolation",
+      "07. Nivel floor",
+      "08. Insulation",
+      "09. Facade fix",
+      "10. Interior Pavement",
+      "11. Exterior Pavement",
+      "12. Oversize Pavement",
+      "13. Demolation Works",
+      "14. Interlocking paving",
+      "15. Covering / Glazing",
+      "16. Railing",
+      "17. Other",
+      "01. Assembly Plastenboard",
+      "02. Fix Plastenboard",
+      "03. Other",
+      "01. Laminate Floor",
+      "02. Wood Floor",
+      "03. Fix floor",
+      "04. Linoleum",
+      "05. Carpet",
+      "06. Grinding",
+      "07. Rails & Doorstep",
+      "01. Windows Software",
+      "02. Apple Software",
+      "03. Other Software",
+      "04. Windows Hardware",
+      "05. Hardware Apple",
+      "06. Wifi Router",
+      "07. Printer",
+      "08. Other",
+      "01. Deep cleaning - flat",
+      "02. Small cleaning",
+      "03. Window cleaning",
+      "04. Big cleaning - hall",
+      "05. Throbbing - cars, sofas, carpets, mattresses",
+      "06. Floor cleaning - various surfaces",
+      "07. Deep cleaning - after reconstruction",
+      "08. High-level cleaning of windows",
+      "09. Cleaning facades",
+      "10. Cleaning of blinds",
+      "01. Moving",
+      "02. Empty room",
+      "03. Stuff out",
+      "01. Wet Vacuum",
+      "01. Assembly Aircon.",
+      "02. Servise Aircon.",
+      "03. Fix Aircon.",
+      "01. Roofs new",
+      "02. Fix roofs",
+      "03. Roof insulation",
+      "04. Clean roof",
+      "01. Kitchen manufacture",
+      "02. Rolldor manufacture",
+      "03. Furnitute manufacture",
+      "04. Other carpenter work",
+      "01. Chimney cleaning",
+      "02. Chimney revision",
+      "03. Chimney repair/fixing",
+      "04. Chimney implementation",
+      "05. Chimney lining",
+      "01. Blinds",
+      "02. Sunblind",
+      "03. Insect Net",
+      "04. Other",
+      "01. Small garden work",
+      "02. Small mowing up to 200 m2",
+      "03. Medium mowing 200 - 400 m2",
+      "04. Mowing larger than 400 m2",
+      "05. Big modification (mulching, fertilizing, cutting...)",
+      "06. Irrigation system/design, assembly, project",
+      "07. Irrigation system - Irrigation filling/setting",
+      "08. Irrigation system - setting",
+      "09. Irrigation system - moving sprinklers",
+      "10. Irrigation system - pump replacement",
+      "11. Irrigation system - electrovalve replacement",
+      "12. Irrigation system - replacement of nozzles",
+      "13. Irrigation system - discharge of irrigation",
+      "14. Irrigation system - Diagnostics",
+      "15. Garden design without realization",
+      "16. Garden designs and implementation",
+      "17. Designs and implementation of swimming pools",
+      "18. Lawn carpets",
+      "19. Preparation for the pool and implementation",
+      "20. Sawing trees in the highlands",
+      "01. Camera systems",
+      "02. Alarms",
+      "03. Video intercoms",
+      "04. Satellite technology",
+      "05. Cable distribution and networks",
+      "01. All Other",
+      "20. Chimneyer",
+      "02. App Monthly Fee",
+      "01. No HM",
+      "02. Far Away",
+      "03. Wrong Call",
+      "06. Structured cabling"
+    ]
+  },
+  {
+    "name": "Salesman__c",
+    "label": "Coordinator",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Salesman_Commission__c",
+    "label": "Provizia (koordinator)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Salesman_Deal__c",
+    "label": "Coordinator Deal",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Salesman_Enable_Special_Commission__c",
+    "label": "Coordinator Enable Special Commission",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Salesman_Price_of_work_and_ride__c",
+    "label": "Cena koordinatora",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Salesman_Special_Commission__c",
+    "label": "Coordinator Special Commission",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Schvalenie_FA_majstra__c",
+    "label": "Schvalenie FA majstra",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nemame data",
+      "Schvalena",
+      "Zle! Kontrola!"
+    ]
+  },
+  {
+    "name": "Sec_krytie__c",
+    "label": "Sec krytie",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "A: Vyjazd, Praca a DM a ND a M - 4 000czk",
+      "D: Vyjazd a praca 5 000czk, z toho max 700czk ND a M",
+      "D: Vyjazd a praca 10 000czk, z toho max 700czk ND a M",
+      "D: Vyjazd a praca 200€, z toho max 25€ ND a M",
+      "D: Vyjazd a praca 200€, z toho max 40€ ND a M",
+      "D: Vyjazd a praca 400€, z toho max 25€ ND a M",
+      "D: Vyjazd a praca 800€, z toho max 80€ ND a M",
+      "E: Vyjazd a praca 100€, 20€ ND a M",
+      "F: Vyjazd a Praca a ND a M - 5000 CZK",
+      "F: Vyjazd a Praca a ND a M - 7000 CZK",
+      "F: Vyjazd a Praca a ND a M - 8000 CZK",
+      "F: Vyjazd a Praca a ND a M - 65 EUR",
+      "F: Vyjazd a Praca a ND a M - 200 EUR",
+      "F: Vyjazd a Praca a ND a M - 800 EUR",
+      "G: Vyjazd a praca 400€, bez ND a M"
+    ]
+  },
+  {
+    "name": "SEO_URL__c",
+    "label": "SEO URL",
+    "type": "url",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Set_Expiration_Date_for_Tiny_URL__c",
+    "label": "Set Expiration Date for Tiny URL",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "SF_Deal_Link__c",
+    "label": "SF Deal Link",
+    "type": "url",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Skip_ClickUp_Sync__c",
+    "label": "Skip ClickUp Sync",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Small_material__c",
+    "label": "Drobny material",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "SMS__c",
+    "label": "SMS",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No SMS!!!"
+    ]
+  },
+  {
+    "name": "Special_Commission__c",
+    "label": "Special Commission",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Special_Deal_Type__c",
+    "label": "Special Deal Type",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Handyman",
+      "Coordinator"
+    ]
+  },
+  {
+    "name": "SpecialNote__c",
+    "label": "Special Note",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Stage__c",
+    "label": "Stage",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "To Do",
+      "Coordinator",
+      "Deal Assigned",
+      "Appointment",
+      "No appointment",
+      "Do Price Offer",
+      "Price Offer Send",
+      "Planned",
+      "In Progress",
+      "Done",
+      "Cancelled",
+      "Invoiced",
+      "HM - COO Eur",
+      "Paid",
+      "01. NEW DEAL",
+      "02. PRIRADIT",
+      "03. SOLVE IT ASAP",
+      "04. PLANNED - NEW",
+      "05. PLANNED",
+      "06. SHOULD BE DONE",
+      "06. MA BYT HOTOVE",
+      "07. DONE",
+      "08. TO APPROVE",
+      "08. ZAPLATIT MAJSTROVI",
+      "09. CHECK AGAIN",
+      "09. VYSTAVIT FA",
+      "10. ISSUE AN INVOICE",
+      "10. VYSTAVENE FA",
+      "11. ISSUED INVOICE",
+      "11. AFTER DUE DATE",
+      "12. AFTER DUE DATE",
+      "12. PAID",
+      "13. PAID",
+      "13. CANCELLED",
+      "14. CANCELLED",
+      "04. PRIRADENE",
+      "05. V ROKOVANI",
+      "06. NAPLANOVANE",
+      "07. PREBIEHA",
+      "08. MA BYT HOTOVE",
+      "09. HOTOVE",
+      "10. ZAPLATENE",
+      "11. ZRUSENE"
+    ]
+  },
+  {
+    "name": "Status__c",
+    "label": "Status",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Lost",
+      "Won",
+      "Open"
+    ]
+  },
+  {
+    "name": "Sub_Category__c",
+    "label": "Sub Category",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Small House Works",
+      "02. All Assembly",
+      "03. Furniture Assembly",
+      "04. Kitchen Assembly",
+      "05. Fix furniture & Small Fixes",
+      "06. Marquee Assembly",
+      "07. Doors & Windows",
+      "08. Cut Furniture / Kitchenboard",
+      "09. Wallpaper",
+      "10. Welding & Iron",
+      "11. Glass",
+      "12. Other",
+      "01. Small Electric Works",
+      "02. Basic Electrician",
+      "03. Lamps",
+      "04. Plug/Unplug El. App",
+      "05. El. Emergency",
+      "06. El. Cable Install",
+      "07. El. Breaker Box",
+      "08. El. Installation",
+      "09. El. Boiler Fix (el.)",
+      "10. Cameras",
+      "11. Sunblind",
+      "12. Fix El. Floor Heating",
+      "13. Install El. Foor Heating",
+      "14. El. revision",
+      "15. Lightning conductor",
+      "16. Electric Garage Gate",
+      "17. Other (Electrician)",
+      "01. Small Water Works",
+      "02. Fix WC - Classic",
+      "03. Fix WC - Geberit",
+      "04. Water Tap",
+      "05. Siphon",
+      "06. Velve",
+      "07. Plumbing",
+      "08. Water Connection",
+      "09. Silicone",
+      "10. Unblocking",
+      "11. Big Unblocking",
+      "12. WC Unblocking",
+      "13. Wall / Pipe Water Leak",
+      "14. Showher / Bath Water Leak",
+      "15. WC Replace",
+      "16. Shower / Bath",
+      "17. Sink & Sanitary",
+      "18. Water Pump",
+      "19. Water Meter",
+      "20. Water Assambladge (Filter, Drvicz...)",
+      "21. Camera Water Leak Search",
+      "22. No Water Pressure",
+      "23. Pressure Test",
+      "24. El. Boiler Fix (water)",
+      "25. Boiler Assemblage",
+      "26. Big Water Connection",
+      "27. Other",
+      "01. Washing",
+      "02. Dishwashing",
+      "03. Dryer",
+      "04. El. Owen",
+      "05. Hood",
+      "06. Fridge",
+      "07. Other",
+      "01. Plug In Gas Owen",
+      "02. Gas Leak Check / Fix",
+      "03. Plug Off Gas Owen",
+      "04. Move Gas Pipe",
+      "05. Gas Installation (Int)",
+      "06. Gas Installation (Ext)",
+      "07. Terminate Gas Pipe",
+      "08. Gas Revision",
+      "09. Fix Gas Owen / Burners",
+      "10. Other",
+      "01. Slammed Door",
+      "02. Locked Door / Broken Key",
+      "03. Lock Change",
+      "04. Locked Car",
+      "05. Make new key",
+      "06. Maky new Car key",
+      "07. Mail Box",
+      "08. Garage Door",
+      "09. Other",
+      "01. Small Heating Works",
+      "02. Valve on Heating",
+      "03. Heater Leaking Fix",
+      "04. Heater Assambladge",
+      "05. Heater Problem (Noise, Heats only, Not Heating)",
+      "06. Heater Disassamblage",
+      "07. Leak From Heating Pipe",
+      "08. Heating Installation",
+      "09. Circulation Heater",
+      "10. Fix / Install Floor Heating (water)",
+      "11. Floor Heating Install (electric)",
+      "12. Fix Termostat",
+      "13. Not Gas Boiler",
+      "14. Other",
+      "01. All Gas Boiler Fix",
+      "02. Gas Boiler Service",
+      "03. Boiler Assembly",
+      "04. Boiler Set Up",
+      "05. Boiler Disable",
+      "06. Other",
+      "01. Painting only",
+      "02. Painting & patching",
+      "03. Painting & smoothing",
+      "04. Painting exterier",
+      "05. Smoothing",
+      "06. Plaster",
+      "07. Patching",
+      "08. Wallpaper",
+      "09. Scraping Walls",
+      "10. Facade Painting",
+      "11. Other",
+      "01. Craft & Mason Works",
+      "02. Small Reconstruction",
+      "03. Whole Reconstruction",
+      "04. Bathroom Reconstruction",
+      "05. Kitchen Reconstruction",
+      "06. Isolation",
+      "07. Nivel floor",
+      "08. Insulation",
+      "09. Facade fix",
+      "10. Interior Pavement",
+      "11. Exterior Pavement",
+      "12. Oversize Pavement",
+      "13. Demolation Works",
+      "14. Interlocking paving",
+      "15. Covering / Glazing",
+      "16. Railing",
+      "17. Other",
+      "01. Assembly Plastenboard",
+      "02. Fix Plastenboard",
+      "03. Other",
+      "01. Laminate Floor",
+      "02. Wood Floor",
+      "03. Fix floor",
+      "04. Linoleum",
+      "05. Carpet",
+      "06. Grinding",
+      "07. Rails & Doorstep",
+      "01. Windows Software",
+      "02. Apple Software",
+      "03. Other Software",
+      "04. Windows Hardware",
+      "05. Hardware Apple",
+      "06. Wifi Router",
+      "07. Printer",
+      "08. Other",
+      "01. Deep cleaning - flat",
+      "02. Small cleaning",
+      "03. Window cleaning",
+      "04. Big cleaning - hall",
+      "05. Throbbing - cars, sofas, carpets, mattresses",
+      "06. Floor cleaning - various surfaces",
+      "07. Deep cleaning - after reconstruction",
+      "08. High-level cleaning of windows",
+      "09. Cleaning facades",
+      "10. Cleaning of blinds",
+      "01. Moving",
+      "02. Empty room",
+      "03. Stuff out",
+      "01. Wet Vacuum",
+      "01. Assembly Aircon.",
+      "02. Servise Aircon.",
+      "03. Fix Aircon.",
+      "01. Roofs new",
+      "02. Fix roofs",
+      "03. Roof insulation",
+      "04. Clean roof",
+      "01. Kitchen manufacture",
+      "02. Rolldor manufacture",
+      "03. Furnitute manufacture",
+      "04. Other carpenter work",
+      "01. Chimney cleaning",
+      "02. Chimney revision",
+      "03. Chimney repair/fixing",
+      "04. Chimney implementation",
+      "05. Chimney lining",
+      "01. Blinds",
+      "02. Sunblind",
+      "03. Insect Net",
+      "04. Other",
+      "01. Small garden work",
+      "02. Small mowing up to 200 m2",
+      "03. Medium mowing 200 - 400 m2",
+      "04. Mowing larger than 400 m2",
+      "05. Big modification (mulching, fertilizing, cutting...)",
+      "06. Irrigation system/design, assembly, project",
+      "07. Irrigation system - Irrigation filling/setting",
+      "08. Irrigation system - setting",
+      "09. Irrigation system - moving sprinklers",
+      "10. Irrigation system - pump replacement",
+      "11. Irrigation system - electrovalve replacement",
+      "12. Irrigation system - replacement of nozzles",
+      "13. Irrigation system - discharge of irrigation",
+      "14. Irrigation system - Diagnostics",
+      "15. Garden design without realization",
+      "16. Garden designs and implementation",
+      "17. Designs and implementation of swimming pools",
+      "18. Lawn carpets",
+      "19. Preparation for the pool and implementation",
+      "20. Sawing trees in the highlands",
+      "01. Camera systems",
+      "02. Alarms",
+      "03. Video intercoms",
+      "04. Satellite technology",
+      "05. Cable distribution and networks",
+      "01. All Other",
+      "20. Chimneyer",
+      "02. App Monthly Fee",
+      "01. No HM",
+      "02. Far Away",
+      "03. Wrong Call",
+      "06. Structured cabling",
+      "01. Metalwork",
+      "Height works",
+      "Excavation"
+    ]
+  },
+  {
+    "name": "SubmitterIP__c",
+    "label": "Submitter IP",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Suhlas_majstra_s_fakturaciou__c",
+    "label": "Suhlas majstra s fakturaciou",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Súhlasím",
+      "Nesúhlasím"
+    ]
+  },
+  {
+    "name": "Suhlassospracovanim__c",
+    "label": "Suhlas so spracovanim",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Superfaktura_Invoiced__c",
+    "label": "Superfaktura Invoiced",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Sync_with_ClickUp__c",
+    "label": "Sync with ClickUp",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Technician_arrival_Time_1__c",
+    "label": "Technician arrival Time 1",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_arrival_Time_2__c",
+    "label": "Technician arrival Time 2",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_arrival_Time_3__c",
+    "label": "Technician arrival Time 3",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_arrival_Time_4__c",
+    "label": "Technician arrival Time 4",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_arrival_Time_5__c",
+    "label": "Technician arrival Time 5",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_departure_Time_1__c",
+    "label": "Technician departure Time 1",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_departure_Time_2__c",
+    "label": "Technician departure Time 2",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_departure_Time_3__c",
+    "label": "Technician departure Time 3",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_departure_Time_4__c",
+    "label": "Technician departure Time 4",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Technician_departure_Time_5__c",
+    "label": "Technician departure Time 5",
+    "type": "time",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Termin_potvrdeny__c",
+    "label": "Termin potvrdeny",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Ano",
+      "Nie"
+    ]
+  },
+  {
+    "name": "Test_Measure__c",
+    "label": "Test Measure",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Deal Assigned",
+      "Not Appointment",
+      "Appointment",
+      "Planned",
+      "Done",
+      "Invoiced",
+      "Paid",
+      "Cancelled"
+    ]
+  },
+  {
+    "name": "Tiper__c",
+    "label": "Tiper",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Tiperi__c",
+    "label": "Tiperi %",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Adamec 10% poslal",
+      "Adamec 10% vyplatene",
+      "Angelov 10% poslal",
+      "Angelov 10% vyplatene",
+      "Antolik 10% poslal",
+      "Antolik 10% vyplatene",
+      "Bodi 10% poslal",
+      "Bodi 10% vyplatene",
+      "Bleho 10% poslal",
+      "Bleho 10% vyplatene",
+      "Brenner 10% poslala",
+      "Brenner 10% vyplatene",
+      "Csanda 10% poslal",
+      "Csanda 10% vyplatene",
+      "Forgac 10% poslal",
+      "Forgac 10% vyplatene",
+      "Filo 10% poslal",
+      "Filo 10% vyplatene",
+      "Galba Laco 10% poslal",
+      "Galba Laco 10% vyplatene",
+      "Gladis 10% poslal",
+      "Handymanzel 10% poslal",
+      "Handymanzel 10% vyplatene",
+      "Hidbani 10% poslal",
+      "Hidbani 10% vyplatene",
+      "Kerekes 10% poslal",
+      "Kerekes 10% vyplatene",
+      "Lukin 10% poslal",
+      "Lukin 10% vyplatene",
+      "Kukla 10% poslal",
+      "Kukla 10% vyplatene",
+      "Ocenas 10% poslal",
+      "Ocenas 10% vyplatene",
+      "Paulo 10% poslal",
+      "Paulo 10% vyplatene",
+      "Reisz 10% poslal",
+      "Reisz 10% vyplatene",
+      "Sebak 10% poslal",
+      "Sebak 10% vyplatene",
+      "Slama 10% poslal",
+      "Slama 10% vyplatene",
+      "Spodniak 10% poslal",
+      "Spodniak 10% vyplatene",
+      "Ulrich 10% poslal",
+      "Ulrich 10% vyplatene"
+    ]
+  },
+  {
+    "name": "Tiperpaid__c",
+    "label": "Tiper paid",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Not yet",
+      "Yes paid"
+    ]
+  },
+  {
+    "name": "Triedenie_iFA__c",
+    "label": "Triedenie iFA",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbouncePageID__c",
+    "label": "Unbounce Page ID",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbouncePageVariant__c",
+    "label": "Unbounce Page Variant",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceSubmissionDate__c",
+    "label": "Unbounce Submission Date",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceSubmissionTime__c",
+    "label": "Unbounce Submission Time",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceURL__c",
+    "label": "Unbounce URL",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Variable_Symbol__c",
+    "label": "Variable_Symbol",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VBypass_Restrict_Stage_Changes__c",
+    "label": "VBypass Restrict Stage Changes",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Visit_1_Admin_Action__c",
+    "label": "Visit 1 Admin Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "None",
+      "Delete Visit",
+      "Force Complete",
+      "Reset Status"
+    ]
+  },
+  {
+    "name": "Visit_1_Admin_Note__c",
+    "label": "Visit 1 Admin Note",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Visit_1_Deleted_History__c",
+    "label": "Visit 1 Deleted History",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Visit_2_Admin_Action__c",
+    "label": "Visit 2 Admin Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "None",
+      "Delete Visit",
+      "Force Complete",
+      "Reset Status"
+    ]
+  },
+  {
+    "name": "Visit_3_Admin_Action__c",
+    "label": "Visit 3 Admin Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "None",
+      "Delete Visit",
+      "Force Complete",
+      "Reset Status"
+    ]
+  },
+  {
+    "name": "Visit_4_Admin_Action__c",
+    "label": "Visit 4 Admin Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "None",
+      "Delete Visit",
+      "Force Complete",
+      "Reset Status"
+    ]
+  },
+  {
+    "name": "Visit_5_Admin_Action__c",
+    "label": "Visit 5 Admin Action",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "None",
+      "Delete Visit",
+      "Force Complete",
+      "Reset Status"
+    ]
+  },
+  {
+    "name": "Visit_Number__c",
+    "label": "Visit Number",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VOLAT_MAJSTRA__c",
+    "label": "VOLAT MAJSTRA",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VOLAT_ZAKAZNIKA__c",
+    "label": "VOLAT ZAKAZNIKA",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VS_efa__c",
+    "label": "VS efa",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VS_iFA__c",
+    "label": "VS iFA",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Vyjazd__c",
+    "label": "Vyjazd",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Vyplatene_majstrovi__c",
+    "label": "Vyplatene majstrovi",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Dobit CREDIT",
+      "CREDIT dobity",
+      "E FA Nezaplatena",
+      "E FA Zaplatena",
+      "iFA Vystavit",
+      "iFA Vystavena",
+      "iFA Zaplatena",
+      "iFA Nezaplatena"
+    ]
+  },
+  {
+    "name": "Vypocitany_doplatok__c",
+    "label": "Vypocitany doplatok",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Weekend_Holiday_p__c",
+    "label": "Weekend/Holiday (p)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No info yet",
+      "Work day",
+      "Weekend/Holiday"
+    ]
+  },
+  {
+    "name": "Wepaytohandyman__c",
+    "label": "We pay to handyman",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "What_needs_to_be_completed_1__c",
+    "label": "What needs to be completed 1",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "What_needs_to_be_completed_2__c",
+    "label": "What needs to be completed 2",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "What_needs_to_be_completed_3__c",
+    "label": "What needs to be completed 3",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "What_needs_to_be_completed_4__c",
+    "label": "What needs to be completed 4",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "What_needs_to_be_completed_5__c",
+    "label": "What needs to be completed 5",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "When_you_will_return_Date_and_Time__c",
+    "label": "When you will return (Date and Time)",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Why_Delete_this_visit__c",
+    "label": "Why Delete this visit",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Won_Time__c",
+    "label": "Won Time",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Work_description__c",
+    "label": "Work description",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Cena_dopravy_hm__c",
+    "label": "1 Cena dopravy (hm)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Cena_za_drobny_material_hm__c",
+    "label": "1 Cena za drobny material (hm)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Cena_za_nahradne_diely_a_material_hm__c",
+    "label": "1 Cena za nahradne diely a material (hm)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Cena_za_pracu_hm__c",
+    "label": "1 Cena za pracu (hm)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Pocet_hodin_nakupu_materialu_hm__c",
+    "label": "1 Pocet hodin nakupu materialu (hm)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Pocet_hodin_prace_hm__c",
+    "label": "1 Pocet hodin prace (hm)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_Pocet_vyjazdov_hm__c",
+    "label": "1 Pocet vyjazdov (hm)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1st_Interval_Task_Created__c",
+    "label": "Reliable Handyman Automation Track",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "1st Interval Task Created",
+      "1st Interval SMS Sent",
+      "2nd Interval Task Created",
+      "2nd Interval SMS Sent",
+      "3rd Interval Task Created",
+      "3rd Interval Final Task Created"
+    ]
+  },
+  {
+    "name": "X1st_od_06_00_do_17_00__c",
+    "label": "1st - od 06:00 do 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X1st_po_17_00__c",
+    "label": "1st - po 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X1st_po_20_00__c",
+    "label": "1st - po 20:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X1st_vikend_sviatok__c",
+    "label": "1st - vikend / sviatok",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X2nd_od_06_00_do_17_00__c",
+    "label": "2nd - od 06:00 do 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X2nd_po_17_00__c",
+    "label": "2nd - po 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X2nd_po_20_00__c",
+    "label": "2nd - po 20:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X2nd_vikend_sviatok__c",
+    "label": "2nd - vikend / sviatok",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X3rd_od_06_00_do_17_00__c",
+    "label": "3rd - od 06:00 do 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X3rd_po_17_00__c",
+    "label": "3rd - po 17:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X3rd_po_20_00__c",
+    "label": "3rd - po 20:00",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "X3rd_vikend_sviatok__c",
+    "label": "3rd - vikend / sviatok",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "ZAKAZNIK__c",
+    "label": "ZAKAZNIK",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "VYMENIT TECHNIKA",
+      "ZISTIT STAV",
+      "HOTOVE",
+      "HLADAME MAJSTRA",
+      "CAKAME NA STAV",
+      "ZRUSENE",
+      "PROBLEM - RIESIT",
+      "NEZDVIHOL/NEDOSTUPNY",
+      "POTVRDENE",
+      "CAKAME NA POTVRDENIE OD MAJSTRA - VOLAT",
+      "UPOMINAT TECHNIKA",
+      "DODATOK K PRIPADU",
+      "RIEŠIŤ HNEĎ RÁNO",
+      "SAMOPLATCA",
+      "VYSTAVIT POTVRDENIE KLIENTOVI",
+      "VOLAT DNES NA OVERENIE",
+      "CAKAME POTVRDENIE CP OD KLIENTA",
+      "PROVIZIA PRE NAS",
+      "CAKAME PODKLADY OD KLIENTA",
+      "VYFAKTUROVAT ASAP",
+      "CAKAME NA ND",
+      "KOMUNIKOVAT CEN PONUKU",
+      "CAKAME NA INFO OD POISTOVNE",
+      "CAKAM TERMIN OD TECHNIKA",
+      "NAPISANY WA TECHNIKOVI",
+      "REKLAMACIA",
+      "CAKAME NA PODKLADY OD TECHNIKA",
+      "POTVRDIT U KLIENTA TERMIN",
+      "CAKAME CENOVU PONUKU"
+    ]
+  },
+  {
+    "name": "Zmenu_vykonal__c",
+    "label": "Zmenu vykonal",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Adj_Commission__c",
+    "label": "Adj Commission",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "AdjCommissionDealCurrency__c",
+    "label": "Adj Commission (Deal Currency)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "as_ukon_enia_pr_ce_m_Text__c",
+    "label": "Čas ukončenia práce (m) Text",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "as_za_iatku_pr_ce_m_Text__c",
+    "label": "Čas začiatku práce (m) Text",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Assigned__c",
+    "label": "Assigned",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Average_Revenue_on_a_Send_Deal__c",
+    "label": "Average Revenue on a Send Deal",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Callout__c",
+    "label": "Vyjazd",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Cancelled__c",
+    "label": "Cancelled",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Cash_Flow_Difference_1__c",
+    "label": "Cash Flow Difference 1",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Cash_Flow_Difference_2__c",
+    "label": "Cash Flow Difference 2",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_majstra_bez_DPH_iFA__c",
+    "label": "Celkova cena majstra bez DPH (iFA)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_majstra_na_iFA_s_DPH__c",
+    "label": "Celkova cena majstra na iFA s DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Celkova_cena_na_FA_majstra__c",
+    "label": "Celkova cena na FA majstra",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Celkovy_pocet_hodin_hm__c",
+    "label": "Celkovy pocet hodin (hm)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Celkovy_pocet_hodin_m__c",
+    "label": "Celkovy pocet hodin",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Cena_spolu_m__c",
+    "label": "Cena spolu (m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Closed_Deal__c",
+    "label": "Closed Deal",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Commission_Formula__c",
+    "label": "Commission Formula",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Commissionafterpaytohandyman__c",
+    "label": "Commission after pay to handyman",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "CommissionDealCurrency__c",
+    "label": "Commission (Deal Currency)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "ContactCity__c",
+    "label": "Contact City",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "ContactStateProvince__c",
+    "label": "Contact State/Province",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "ContactStreetAddress__c",
+    "label": "Contact Street Address",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "ContactZipPostalCode__c",
+    "label": "Contact Zip/Postal Code",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "CreatedById",
+    "label": "Created By ID",
+    "type": "reference",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "CreatedDate",
+    "label": "Created Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Done__c",
+    "label": "Done",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Krytie_DM_bez_DPH__c",
+    "label": "€ - Krytie DM bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Krytie_na_P_a_DM_bez_DPH__c",
+    "label": "€ - Krytie na P a DM bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Krytie_P_bez_DPH__c",
+    "label": "€ - Krytie P bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Krytie_P_ND_a_M_bez_DPH__c",
+    "label": "€ - Krytie P, ND a M bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Krytie_VaP_bez_DPH__c",
+    "label": "€ - Krytie VaP bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "EUR_Max_z_krytia_na_ND_a_M_bez_DPH__c",
+    "label": "€ - Max z krytia na ND a M bez DPH",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "HandymanDealLink__c",
+    "label": "Handyman Deal Link",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Id",
+    "label": "Record ID",
+    "type": "id",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Insurance_Balance__c",
+    "label": "Insurance Balance",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Insurance_Special_Commission__c",
+    "label": "Insurance Special Commission",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Invoiced__c",
+    "label": "Invoiced",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "IsDeleted",
+    "label": "Deleted",
+    "type": "boolean",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Kontrola_ceny_fakturacie__c",
+    "label": "Kontrola ceny fakturacie",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_DM_bez_DPH__c",
+    "label": "Krytie DM bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_na_P_a_DM_bez_DPH__c",
+    "label": "Krytie na P a DM bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_P_bez_DPH__c",
+    "label": "Krytie P bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_P_ND_a_M_bez_DPH__c",
+    "label": "Krytie P, ND a M bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Krytie_VaP_bez_DPH__c",
+    "label": "Krytie VaP bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastActivityDate",
+    "label": "Last Activity Date",
+    "type": "date",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastModifiedById",
+    "label": "Last Modified By ID",
+    "type": "reference",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "LastModifiedDate",
+    "label": "Last Modified Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "LastReferencedDate",
+    "label": "Last Referenced Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastViewedDate",
+    "label": "Last Viewed Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Max_z_krytia_na_ND_a_M_bez_DPH__c",
+    "label": "Max z krytia na ND a M bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "NDaM_bez_DPH__c",
+    "label": "NDaM bez DPH",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Not_Assigned__c",
+    "label": "Not Assigned",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "OpenAdj__c",
+    "label": "Open Adj",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Paid__c",
+    "label": "Paid",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Planned__c",
+    "label": "Planned",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Pomocna_Celkova_cena_na_FA__c",
+    "label": "Pomocna Celkova cena na FA",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Pomocna_celkova_cena_vyjazdov_majstra__c",
+    "label": "Pomocna celkova cena vyjazdov majstra",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Pomocna_cena_za_pracu__c",
+    "label": "Pomocna cena za pracu",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Pomocny_DM__c",
+    "label": "Pomocny DM",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Pomocny_ND_a_M__c",
+    "label": "Pomocny ND a M",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "POMOCNY_POCET_HODIN_NAKUPU_MAT__c",
+    "label": "POMOCNY POCET HODIN NAKUPU MAT",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "POMOCNY_POCET_HODIN_PRACE__c",
+    "label": "POMOCNY POCET HODIN PRACE",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "POMOCNY_POCET_VYJAZDOV__c",
+    "label": "POMOCNY POCET VYJAZDOV",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Prepocitany_pocet_hodin_1_m__c",
+    "label": "Prepocitany pocet hodin 1 (m)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Prepocitany_pocet_hodin_2_m__c",
+    "label": "Prepocitany pocet hodin 2 (m)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Prepocitany_pocet_hodin_3_m__c",
+    "label": "Prepocitany pocet hodin 3 (m)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Prepocitany_pocet_hodin_m__c",
+    "label": "Prepocitany pocet hodin (m)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "RentingCity__c",
+    "label": "Renting City",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "RentingStateProvince__c",
+    "label": "Renting State/Province",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "RentingStreetAddress__c",
+    "label": "Renting Street Address",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "RentingZipPostalCode__c",
+    "label": "Renting Zip/Postal Code",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Success_Rate__c",
+    "label": "Success Rate",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SUM_P_DM_ND_a_M__c",
+    "label": "SUM - P, DM, ND a M",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SUM_Praca__c",
+    "label": "SUM - Praca",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SUM_Praca_DM__c",
+    "label": "SUM - Praca, DM",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SUM_V_P__c",
+    "label": "SUM - V, P",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SUM_V_P_ND_a_M__c",
+    "label": "SUM - V, P, ND a M",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SystemModstamp",
+    "label": "System Modstamp",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Total_for_emergency_callout_24h__c",
+    "label": "Total for emergency callout 24h",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Total_Invoice_Price__c",
+    "label": "Celkova cena na fakture",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Total_Job_Time_p__c",
+    "label": "Total Job Time (p)",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Total_Price_For_All__c",
+    "label": "Celkova cena (Ukupna cijena)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "WonAdj__c",
+    "label": "Won Adj",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "WonAdjCommission__c",
+    "label": "Won Adj Commission",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  }
+]

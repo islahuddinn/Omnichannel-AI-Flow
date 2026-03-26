@@ -1,0 +1,4237 @@
+[
+  {
+    "name": "AccountId",
+    "label": "Account ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_BOT_ACTION__c",
+    "label": "AI BOT ACTION",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01_B2A_HM_HiringBot1",
+      "02_B2A_HM_HiringBot2",
+      "03_B2B_HM_HiringBot1",
+      "04_B2B_HM_HiringBot2",
+      "05_B2C_HM_HiringBot1",
+      "06_B2C_HM_HiringBot2"
+    ]
+  },
+  {
+    "name": "Ai_Bot_Callout_DateTime__c",
+    "label": "Ai Bot Callout DateTime",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_Bot_Schedule_D_T__c",
+    "label": "AI Bot Schedule D&T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_Bot_Summary__c",
+    "label": "AI Bot Summary",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AI_Bot_Type_Schedule__c",
+    "label": "AI Bot Type Schedule",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Not active yet",
+      "No action",
+      "HM Not Pick Up Phone",
+      "HM Was Not Hired",
+      "AI Bot Is Busy - Check",
+      "HM Always Reschedule",
+      "01_B2A_HM_HiringBot1",
+      "02_B2A_HM_HiringBot2",
+      "03_B2B_HM_HiringBot1",
+      "04_B2B_HM_HiringBot2",
+      "05_B2C_HM_HiringBot1",
+      "06_B2C_HM_HiringBot2"
+    ]
+  },
+  {
+    "name": "AI_poznamky__c",
+    "label": "AI - poznamky",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AssistantName",
+    "label": "Assistant's Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "AssistantPhone",
+    "label": "Asst. Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Automation__c",
+    "label": "Automation",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "Average_Revenue_on_a_Send_Deal__c",
+    "label": "Average Revenue on a Send Deal",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Active_Inactive__c",
+    "label": "B2A Active/Inactive",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Aktivny",
+      "Neaktivny"
+    ]
+  },
+  {
+    "name": "B2A_ADJ_DONE_DEALS__c",
+    "label": "B2A ADJ DONE DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_ADJ_TOTAL_DEALS__c",
+    "label": "B2A ADJ TOTAL DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_AI_Rating__c",
+    "label": "B2A AI Rating",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP",
+      "PREFER"
+    ]
+  },
+  {
+    "name": "B2A_BEST_EARNER__c",
+    "label": "B2A BEST EARNER",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Category_Exclude__c",
+    "label": "B2A Category Exclude",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Handyman",
+      "02. Electrician",
+      "03. Plumber",
+      "04. Electronics",
+      "05. Gasman",
+      "06. Keyservice",
+      "07. Heating",
+      "08. Boilers",
+      "09. Painting",
+      "10. Craftsman",
+      "11. Plastenboard",
+      "12. Floors",
+      "13. IT",
+      "14. Cleaning",
+      "15. Moving",
+      "16. Wet Wacuum",
+      "17. Airconditioning",
+      "18. Roofs",
+      "19. Carpenter",
+      "20. Chimneyer",
+      "21. Sunblinds",
+      "22. Gardening",
+      "23. Security system",
+      "24.⁠ ⁠Metalworks",
+      "25.⁠ ⁠Height works",
+      "26.⁠ ⁠Excavation",
+      "98. Wrong Call",
+      "99. Other"
+    ]
+  },
+  {
+    "name": "B2A_Dataset_for_Deal_Category__c",
+    "label": "B2A Dataset for Deal Category",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Deals_1m__c",
+    "label": "B2A Deals 1m",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Deals_7d__c",
+    "label": "B2A Deals 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Deals_Today__c",
+    "label": "B2A Deals Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_DONE_DEALS_10__c",
+    "label": "B2A DONE DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Exclude_From_Evaluation__c",
+    "label": "B2A Exclude From Evaluation",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Include",
+      "Exclude"
+    ]
+  },
+  {
+    "name": "B2A_Exp__c",
+    "label": "B2A Exp",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "New",
+      "Reliable",
+      "Top",
+      "Not defined"
+    ]
+  },
+  {
+    "name": "B2A_Holidays_manual__c",
+    "label": "B2A Holidays (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2A_Include__c",
+    "label": "B2A Include Category",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Handyman",
+      "02. Electrician",
+      "03. Plumber",
+      "04. Electronics",
+      "05. Gasman",
+      "06. Keyservice",
+      "07. Heating",
+      "08. Boilers",
+      "09. Painting",
+      "10. Craftsman",
+      "11. Plastenboard",
+      "12. Floors",
+      "13. IT",
+      "14. Cleaning",
+      "15. Moving",
+      "16. Wet Wacuum",
+      "17. Airconditioning",
+      "18. Roofs",
+      "19. Carpenter",
+      "20. Chimneyer",
+      "21. Sunblinds",
+      "22. Gardening",
+      "23. Security system",
+      "24.⁠ ⁠Metalworks",
+      "25.⁠ ⁠Height works",
+      "26.⁠ ⁠Excavation",
+      "98. Wrong Call",
+      "99. Other",
+      "27. Unblocking",
+      "28. Thermal pumps",
+      "29. Solar panels",
+      "30. Smart home"
+    ]
+  },
+  {
+    "name": "B2A_Manual_Holiday__c",
+    "label": "B2A Manual Holiday",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Manual_STOP__c",
+    "label": "B2A Manual STOP",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Manual_Weekend__c",
+    "label": "B2A Manual Weekend",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_ManualSTOP__c",
+    "label": "B2A ManualSTOP",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP"
+    ]
+  },
+  {
+    "name": "B2A_Max_1d_Deals__c",
+    "label": "B2A Max 1d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Max_7d__c",
+    "label": "B2A Max 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Max_7d_Deals__c",
+    "label": "B2A Max 7d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Max_Today__c",
+    "label": "B2A Max Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Negative_C_12m__c",
+    "label": "B2A Negative C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_Calls__c",
+    "label": "B2A No Calls",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_No_calls_1_End_D_T__c",
+    "label": "B2A No calls 1 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_1_Start_D_T__c",
+    "label": "B2A No calls 1 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_2_End_D_T__c",
+    "label": "B2A No calls 2 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_2_Start_D_T__c",
+    "label": "B2A No calls 2 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_3_End_D_T__c",
+    "label": "B2A No calls 3 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_3_Start_D_T__c",
+    "label": "B2A No calls 3 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_4_End_D_T__c",
+    "label": "B2A No calls 4 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_4_Start_D_T__c",
+    "label": "B2A No calls 4 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_5_End_D_T__c",
+    "label": "B2A No calls 5 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_calls_5_Start_D_T__c",
+    "label": "B2A No calls 5 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_No_payment__c",
+    "label": "B2A No payment",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Old_Negative_Count__c",
+    "label": "B2A Old Negative Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Old_Positive_Count__c",
+    "label": "B2A Old Positive Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Positive_C_12m__c",
+    "label": "B2A Positive C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Prefere_New__c",
+    "label": "B2A Prefere New",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_Prefere_Surviving__c",
+    "label": "B2A Prefere Surviving",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_PREFERENCE__c",
+    "label": "B2A PREFERENCE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "5 Star",
+      "4 Star",
+      "3 Star",
+      "2 Star",
+      "1 Star"
+    ]
+  },
+  {
+    "name": "B2A_Reklamacia__c",
+    "label": "B2A Reklamacia",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2A_SEND_DEALS_n_12m__c",
+    "label": "B2A SEND DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Surviving_1m__c",
+    "label": "B2A Surviving (1m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "1 every 7 days",
+      "1 every 14 days",
+      "1 every 21 days",
+      "1 every 30 days"
+    ]
+  },
+  {
+    "name": "B2A_Total_Deals__c",
+    "label": "B2A Total Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_TOTAL_DEALS_10__c",
+    "label": "B2A TOTAL DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Weekends_manual__c",
+    "label": "B2A Weekends (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2A_WON_DEALS_n_12m__c",
+    "label": "B2A WON DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_WON_REVENUE_12m__c",
+    "label": "B2A WON REVENUE € (12m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Active_Inactive__c",
+    "label": "B2B Active/Inactive",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Aktivny",
+      "Neaktivny"
+    ]
+  },
+  {
+    "name": "B2B_ADJ_DONE_DEALS__c",
+    "label": "B2B ADJ DONE DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_ADJ_TOTAL_DEALS__c",
+    "label": "B2B ADJ TOTAL DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_AI_Rating__c",
+    "label": "B2B AI Rating",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP",
+      "PREFER"
+    ]
+  },
+  {
+    "name": "B2B_BEST_EARNER__c",
+    "label": "B2B BEST EARNER",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Deals_1m__c",
+    "label": "B2B Deals 1m",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Deals_7d__c",
+    "label": "B2B Deals 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Deals_Today__c",
+    "label": "B2B Deals Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_DONE_DEALS_10__c",
+    "label": "B2B DONE DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Exclude_From_Evaluation__c",
+    "label": "B2B Exclude From Evaluation",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Include",
+      "Exclude"
+    ]
+  },
+  {
+    "name": "B2B_Exp__c",
+    "label": "B2B Exp",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "New",
+      "Reliable",
+      "Top",
+      "Not defined"
+    ]
+  },
+  {
+    "name": "B2B_Holidays_manual__c",
+    "label": "B2B Holidays (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2B_Inv_Price_m__c",
+    "label": "B2B Inv Price (m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Manual_Holiday__c",
+    "label": "B2B Manual Holiday",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Manual_STOP__c",
+    "label": "B2B Manual STOP",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Manual_Weekend__c",
+    "label": "B2B Manual Weekend",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_ManualSTOP__c",
+    "label": "B2B ManualSTOP",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP"
+    ]
+  },
+  {
+    "name": "B2B_Max_1d_Deals__c",
+    "label": "B2B Max 1d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Max_7d__c",
+    "label": "B2B Max 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Max_7d_Deals__c",
+    "label": "B2B Max 7d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Max_Today__c",
+    "label": "B2B Max Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Negative_C_12m__c",
+    "label": "B2B Negative C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Nema_uhradene__c",
+    "label": "B2B Nema uhradene",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_No_Calls__c",
+    "label": "B2B No Calls",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_No_calls_1_End_D_T__c",
+    "label": "B2B No calls 1 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_1_Start_D_T__c",
+    "label": "B2B No calls 1 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_2_End_D_T__c",
+    "label": "B2B No calls 2 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_2_Start_D_T__c",
+    "label": "B2B No calls 2 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_3_End_D_T__c",
+    "label": "B2B No calls 3 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_3_Start_D_T__c",
+    "label": "B2B No calls 3 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_4_End_D_T__c",
+    "label": "B2B No calls 4 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_4_Start_D_T__c",
+    "label": "B2B No calls 4 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_5_End_D_T__c",
+    "label": "B2B No calls 5 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_No_calls_5_Start_D_T__c",
+    "label": "B2B No calls 5 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Old_Negative_Count__c",
+    "label": "B2B Old Negative Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Old_Positive_Count__c",
+    "label": "B2B Old Positive Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Positive_C_12m__c",
+    "label": "B2B Positive C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Prefere_New__c",
+    "label": "B2B Prefere New",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_Prefere_Surviving__c",
+    "label": "B2B Prefere Surviving",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_PREFERENCE__c",
+    "label": "B2B PREFERENCE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "5 Star",
+      "4 Star",
+      "3 Star",
+      "2 Star",
+      "1 Star"
+    ]
+  },
+  {
+    "name": "B2B_Reklamacia__c",
+    "label": "B2B Reklamacia",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2B_SEND_DEALS_n_12m__c",
+    "label": "B2B SEND DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Surviving_1m__c",
+    "label": "B2B Surviving (1m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "1 every 7 days",
+      "1 every 14 days",
+      "1 every 21 days",
+      "1 every 30 days"
+    ]
+  },
+  {
+    "name": "B2B_Total_Deals__c",
+    "label": "B2B Total Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_TOTAL_DEALS_10__c",
+    "label": "B2B TOTAL DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Weekends_manual__c",
+    "label": "B2B Weekends (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2B_WON_DEALS_n_12m__c",
+    "label": "B2B WON DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2B_WON_REVENUE_12m__c",
+    "label": "B2B WON REVENUE € (12m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Deals_Price__c",
+    "label": "B2C Deals Price",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "High Price List BA",
+      "Average Price List BA",
+      "High Price List SK",
+      "Average Price List SK",
+      "High Price List CZ",
+      "Average Price List CZ",
+      "Average Price List Praha",
+      "Average Price list Brno"
+    ]
+  },
+  {
+    "name": "B2C_Emergency__c",
+    "label": "B2C Emergency",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No",
+      "Yes"
+    ]
+  },
+  {
+    "name": "B2C_Exclude_From_Evaluation__c",
+    "label": "B2C Exclude From Evaluation",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Include",
+      "Exclude"
+    ]
+  },
+  {
+    "name": "B2C_Exp__c",
+    "label": "B2C Exp",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "New",
+      "Reliable",
+      "Top",
+      "No"
+    ]
+  },
+  {
+    "name": "B2C_Free_Deals__c",
+    "label": "B2C Free Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Nema_uhradene__c",
+    "label": "B2C Nema uhradene",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2C_No_calls_1_End_D_T__c",
+    "label": "B2C No calls 1 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_1_Start_D_T__c",
+    "label": "B2C No calls 1 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_2_End_D_T__c",
+    "label": "B2C No calls 2 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_2_Start_D_T__c",
+    "label": "B2C No calls 2 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_3_End_D_T__c",
+    "label": "B2C No calls 3 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_3_Start_D_T__c",
+    "label": "B2C No calls 3 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_4_End_D_T__c",
+    "label": "B2C No calls 4 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_4_Start_D_T__c",
+    "label": "B2C No calls 4 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_5_End_D_T__c",
+    "label": "B2C No calls 5 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_No_calls_5_Start_D_T__c",
+    "label": "B2C No calls 5 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Reklamacia__c",
+    "label": "B2C Reklamacia",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2C_SubCategory_Exclude__c",
+    "label": "B2C SubCategory Exclude",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "01. Small House Works",
+      "02. All Assembly",
+      "03. Furniture Assembly",
+      "04. Kitchen Assembly",
+      "05. Fix furniture & Small Fixes",
+      "06. Marquee Assembly",
+      "07. Doors & Windows",
+      "08. Cut Furniture / Kitchenboard",
+      "09. Wallpaper",
+      "10. Welding & Iron",
+      "11. Glass",
+      "12. Other",
+      "01. Small Electric Works",
+      "02. Basic Electrician",
+      "03. Lamps",
+      "04. Plug/Unplug El. App",
+      "05. El. Emergency",
+      "06. El. Cable Install",
+      "07. El. Breaker Box",
+      "08. El. Installation",
+      "09. El. Boiler Fix (el.)",
+      "10. Cameras",
+      "11. Sunblind",
+      "12. Fix El. Floor Heating",
+      "13. Install El. Foor Heating",
+      "14. El. revision",
+      "15. Lightning conductor",
+      "16. Electric Garage Gate",
+      "17. Other (Electrician)",
+      "01. Small Water Works",
+      "02. Fix WC - Classic",
+      "03. Fix WC - Geberit",
+      "04. Water Tap",
+      "05. Siphon",
+      "06. Velve",
+      "07. Plumbing",
+      "08. Water Connection",
+      "09. Silicone",
+      "10. Unblocking",
+      "11. Big Unblocking",
+      "12. WC Unblocking",
+      "13. Wall / Pipe Water Leak",
+      "14. Showher / Bath Water Leak",
+      "15. WC Replace",
+      "16. Shower / Bath",
+      "17. Sink & Sanitary",
+      "18. Water Pump",
+      "19. Water Meter",
+      "20. Water Assambladge (Filter, Drvicz...)",
+      "21. Camera Water Leak Search",
+      "22. No Water Pressure",
+      "23. Pressure Test",
+      "24. El. Boiler Fix (water)",
+      "25. Boiler Assemblage",
+      "26. Big Water Connection",
+      "27. Other",
+      "01. Washing",
+      "02. Dishwashing",
+      "03. Dryer",
+      "04. El. Owen",
+      "05. Hood",
+      "06. Fridge",
+      "07. Other",
+      "01. Plug In Gas Owen",
+      "02. Gas Leak Check / Fix",
+      "03. Plug Off Gas Owen",
+      "04. Move Gas Pipe",
+      "05. Gas Installation (Int)",
+      "06. Gas Installation (Ext)",
+      "07. Terminate Gas Pipe",
+      "08. Gas Revision",
+      "09. Fix Gas Owen / Burners",
+      "10. Other",
+      "01. Slammed Door",
+      "02. Locked Door / Broken Key",
+      "03. Lock Change",
+      "04. Locked Car",
+      "05. Make new key",
+      "06. Maky new Car key",
+      "07. Mail Box",
+      "08. Garage Door",
+      "09. Other",
+      "01. Small Heating Works",
+      "02. Valve on Heating",
+      "03. Heater Leaking Fix",
+      "04. Heater Assambladge",
+      "05. Heater Problem (Noise, Heats only, Not Heating)",
+      "06. Heater Disassamblage",
+      "07. Leak From Heating Pipe",
+      "08. Heating Installation",
+      "09. Circulation Heater",
+      "10. Fix / Install Floor Heating (water)",
+      "11. Floor Heating Install (electric)",
+      "12. Fix Termostat",
+      "13. Not Gas Boiler",
+      "14. Other",
+      "01. All Gas Boiler Fix",
+      "02. Gas Boiler Service",
+      "03. Boiler Assembly",
+      "04. Boiler Set Up",
+      "05. Boiler Disable",
+      "06. Other",
+      "01. Painting only",
+      "02. Painting & patching",
+      "03. Painting & smoothing",
+      "04. Painting exterier",
+      "05. Smoothing",
+      "06. Plaster",
+      "07. Patching",
+      "08. Wallpaper",
+      "09. Scraping Walls",
+      "10. Facade Painting",
+      "11. Other",
+      "01. Craft & Mason Works",
+      "02. Small Reconstruction",
+      "03. Whole Reconstruction",
+      "04. Bathroom Reconstruction",
+      "05. Kitchen Reconstruction",
+      "06. Isolation",
+      "07. Nivel floor",
+      "08. Insulation",
+      "09. Facade fix",
+      "10. Interior Pavement",
+      "11. Exterior Pavement",
+      "12. Oversize Pavement",
+      "13. Demolation Works",
+      "14. Interlocking paving",
+      "15. Covering / Glazing",
+      "16. Railing",
+      "17. Other",
+      "01. Assembly Plastenboard",
+      "02. Fix Plastenboard",
+      "03. Other",
+      "01. Laminate Floor",
+      "02. Wood Floor",
+      "03. Fix floor",
+      "04. Linoleum",
+      "05. Carpet",
+      "06. Grinding",
+      "07. Rails & Doorstep",
+      "01. Windows Software",
+      "02. Apple Software",
+      "03. Other Software",
+      "04. Windows Hardware",
+      "05. Hardware Apple",
+      "06. Wifi Router",
+      "07. Printer",
+      "08. Other",
+      "01. Deep cleaning - flat",
+      "02. Small cleaning",
+      "03. Window cleaning",
+      "04. Big cleaning - hall",
+      "05. Throbbing - cars, sofas, carpets, mattresses",
+      "06. Floor cleaning - various surfaces",
+      "07. Deep cleaning - after reconstruction",
+      "08. High-level cleaning of windows",
+      "09. Cleaning facades",
+      "10. Cleaning of blinds",
+      "01. Moving",
+      "02. Empty room",
+      "03. Stuff out",
+      "01. Wet Vacuum",
+      "01. Assembly Aircon.",
+      "02. Servise Aircon.",
+      "03. Fix Aircon.",
+      "01. Roofs new",
+      "02. Fix roofs",
+      "03. Roof insulation",
+      "04. Clean roof",
+      "01. Kitchen manufacture",
+      "02. Rolldor manufacture",
+      "03. Furnitute manufacture",
+      "04. Other carpenter work",
+      "01. Chimney cleaning",
+      "02. Chimney revision",
+      "03. Chimney repair/fixing",
+      "04. Chimney implementation",
+      "05. Chimney lining",
+      "01. Blinds",
+      "02. Sunblind",
+      "03. Insect Net",
+      "04. Other",
+      "01. Small garden work",
+      "02. Small mowing up to 200 m2",
+      "03. Medium mowing 200 - 400 m2",
+      "04. Mowing larger than 400 m2",
+      "05. Big modification (mulching, fertilizing, cutting...)",
+      "06. Irrigation system/design, assembly, project",
+      "07. Irrigation system - Irrigation filling/setting",
+      "08. Irrigation system - setting",
+      "09. Irrigation system - moving sprinklers",
+      "10. Irrigation system - pump replacement",
+      "11. Irrigation system - electrovalve replacement",
+      "12. Irrigation system - replacement of nozzles",
+      "13. Irrigation system - discharge of irrigation",
+      "14. Irrigation system - Diagnostics",
+      "15. Garden design without realization",
+      "16. Garden designs and implementation",
+      "17. Designs and implementation of swimming pools",
+      "18. Lawn carpets",
+      "19. Preparation for the pool and implementation",
+      "20. Sawing trees in the highlands",
+      "01. Camera systems",
+      "02. Alarms",
+      "03. Video intercoms",
+      "04. Satellite technology",
+      "05. Cable distribution and networks",
+      "01. All Other",
+      "20. Chimneyer",
+      "02. App Monthly Fee",
+      "01. No HM",
+      "02. Far Away",
+      "03. Wrong Call",
+      "06. Structured cabling",
+      "01. Metalwork",
+      "Height works",
+      "Excavation"
+    ]
+  },
+  {
+    "name": "B2Cc_Active_Inactive__c",
+    "label": "B2Cc Active/Inactive",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Aktivny",
+      "Neaktivny"
+    ]
+  },
+  {
+    "name": "B2Cc_ADJ_DONE_DEALS__c",
+    "label": "B2Cc ADJ DONE DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_ADJ_TOTAL_DEALS__c",
+    "label": "B2Cc ADJ TOTAL DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_AI_Rating__c",
+    "label": "B2Cc AI Rating",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP",
+      "PREFER"
+    ]
+  },
+  {
+    "name": "B2Cc_BEST_EARNER__c",
+    "label": "B2Cc BEST EARNER",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Deals_1m__c",
+    "label": "B2Cc Deals (1m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Deals_7d__c",
+    "label": "B2Cc Deals 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Deals_Today__c",
+    "label": "B2Cc Deals Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_DONE_DEALS_10__c",
+    "label": "B2Cc DONE DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Exp__c",
+    "label": "B2Cc Exp",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No Crafts Deals (0)",
+      "New (3)",
+      "Approved (10)",
+      "Reliable (20)",
+      "Experienced (20+)"
+    ]
+  },
+  {
+    "name": "B2Cc_Give_him_today__c",
+    "label": "B2Cc Give him today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Holidays_manual__c",
+    "label": "B2Cc Holidays (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2Cc_Manual_Holiday__c",
+    "label": "B2Cc Manual Holiday",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Manual_STOP__c",
+    "label": "B2Cc Manual STOP",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Manual_Weekend__c",
+    "label": "B2Cc Manual Weekend",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_ManualSTOP__c",
+    "label": "B2Cc ManualSTOP",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP"
+    ]
+  },
+  {
+    "name": "B2Cc_Max_1d_Deals__c",
+    "label": "B2Cc Max 1d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Max_7d__c",
+    "label": "B2Cc Max 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Max_7d_Deals__c",
+    "label": "B2Cc Max 7d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Max_Open__c",
+    "label": "B2Cc Max Open",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Max_Open_Deals__c",
+    "label": "B2Cc Max Open Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Max_Today__c",
+    "label": "B2Cc Max Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Negative_C_12m__c",
+    "label": "B2Cc Negative C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_New_HM_Max__c",
+    "label": "B2Cc New HM Max",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_Calls__c",
+    "label": "B2Cc No Calls",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_No_calls_1_End_D_T__c",
+    "label": "B2Cc No calls 1 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_1_Start_D_T__c",
+    "label": "B2Cc No calls 1 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_2_End_D_T__c",
+    "label": "B2Cc No calls 2 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_2_Start_D_T__c",
+    "label": "B2Cc No calls 2 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_3_End_D_T__c",
+    "label": "B2Cc No calls 3 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_3_Start_D_T__c",
+    "label": "B2Cc No calls 3 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_4_End_D_T__c",
+    "label": "B2Cc No calls 4 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_4_Start_D_T__c",
+    "label": "B2Cc No calls 4 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_5_End_D_T__c",
+    "label": "B2Cc No calls 5 End D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_No_calls_5_Start_D_T__c",
+    "label": "B2Cc No calls 5 Start D/T",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Old_Negative_Count__c",
+    "label": "B2Cc Old Negative Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Old_Positive_Count__c",
+    "label": "B2Cc Old Positive Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Open_Deals__c",
+    "label": "B2Cc Open Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Positive_C_12m__c",
+    "label": "B2Cc Positive C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Prefere_New__c",
+    "label": "B2Cc Prefere New",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_Prefere_Surviving__c",
+    "label": "B2Cc Prefere Surviving",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cc_PREFERENCE__c",
+    "label": "B2Cc PREFERENCE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "5 Star",
+      "4 Star",
+      "3 Star",
+      "2 Star",
+      "1 Star"
+    ]
+  },
+  {
+    "name": "B2Cc_SEND_DEALS_n_12m__c",
+    "label": "B2Cc SEND DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Surviving_1m__c",
+    "label": "B2Cc Surviving (1m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "1 every 7 days",
+      "1 every 14 days",
+      "1 every 21 days",
+      "1 every 30 days"
+    ]
+  },
+  {
+    "name": "B2Cc_Total_Deals__c",
+    "label": "B2Cc Total Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_TOTAL_DEALS_10__c",
+    "label": "B2Cc TOTAL DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Weekends_manual__c",
+    "label": "B2Cc Weekends (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2Cc_WON_DEALS_n_12m__c",
+    "label": "B2Cc WON DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_WON_REVENUE_12m__c",
+    "label": "B2Cc WON REVENUE € (12m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_zrusena__c",
+    "label": "B2Cc zrusena",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Active_Inactive__c",
+    "label": "B2Cu Active/Inactive",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Aktivny",
+      "Neaktivny"
+    ]
+  },
+  {
+    "name": "B2Cu_ADJ_DONE_DEALS__c",
+    "label": "B2Cu ADJ DONE DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_ADJ_TOTAL_DEALS__c",
+    "label": "B2Cu ADJ TOTAL DEALS",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_AI_Rating__c",
+    "label": "B2Cu AI Rating",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP",
+      "PREFER"
+    ]
+  },
+  {
+    "name": "B2Cu_BEST_EARNER__c",
+    "label": "B2Cu BEST EARNER",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Deals_1m__c",
+    "label": "B2Cu Deals 1m",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Deals_7d__c",
+    "label": "B2Cu Deals 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Deals_Today__c",
+    "label": "B2Cu Deals Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_DONE_DEALS_10__c",
+    "label": "B2Cu DONE DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Give_him_today__c",
+    "label": "B2Cu Give him today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Holidays_manual__c",
+    "label": "B2Cu Holidays (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2Cu_Manual_Holiday__c",
+    "label": "B2Cu Manual Holiday",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Manual_STOP__c",
+    "label": "B2Cu Manual STOP",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Manual_Weekend__c",
+    "label": "B2Cu Manual Weekend",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_ManualSTOP__c",
+    "label": "B2Cu ManualSTOP",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "GO",
+      "STOP"
+    ]
+  },
+  {
+    "name": "B2Cu_Max_1d_Deals__c",
+    "label": "B2Cu Max 1d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Max_7d__c",
+    "label": "B2Cu Max 7d",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Max_7d_Deals__c",
+    "label": "B2Cu Max 7d Deals",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Max_Today__c",
+    "label": "B2Cu Max Today",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Negative_C_12m__c",
+    "label": "B2Cu Negative C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_New_HM_Max__c",
+    "label": "B2Cu New HM Max",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_No_Calls__c",
+    "label": "B2Cu No Calls",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Old_Negative_Count__c",
+    "label": "B2Cu Old Negative Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Old_Positive_Count__c",
+    "label": "B2Cu Old Positive Count",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Positive_C_12m__c",
+    "label": "B2Cu Positive C (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Prefere_New__c",
+    "label": "B2Cu Prefere New",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_Prefere_Surviving__c",
+    "label": "B2Cu Prefere Surviving",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "B2Cu_PREFERENCE__c",
+    "label": "B2Cu PREFERENCE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "5 Star",
+      "4 Star",
+      "3 Star",
+      "2 Star",
+      "1 Star"
+    ]
+  },
+  {
+    "name": "B2Cu_SEND_DEALS_n_12m__c",
+    "label": "B2Cu SEND DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Surviving_1m__c",
+    "label": "B2Cu Surviving (1m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "1 every 7 days",
+      "1 every 14 days",
+      "1 every 21 days",
+      "1 every 30 days"
+    ]
+  },
+  {
+    "name": "B2Cu_Total_Deals__c",
+    "label": "B2Cu Total Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_TOTAL_DEALS_10__c",
+    "label": "B2Cu TOTAL DEALS (10)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Weekends_manual__c",
+    "label": "B2Cu Weekends (manual)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nie",
+      "Ano"
+    ]
+  },
+  {
+    "name": "B2Cu_WON_DEALS_n_12m__c",
+    "label": "B2Cu WON DEALS n (12m)",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_WON_REVENUE_12m__c",
+    "label": "B2Cu WON REVENUE € (12m)",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Bank_Code__c",
+    "label": "Bank Code",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Bank_number__c",
+    "label": "Bank number",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Birthdate",
+    "label": "Birthdate",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Business_Name__c",
+    "label": "Business Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Bypass_validation__c",
+    "label": "Bypass_validation",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Campaign__c",
+    "label": "HM Campaign (m)",
+    "type": "multipicklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Benesov",
+      "Beroun",
+      "Blansko",
+      "Brno",
+      "Brno Venkov Juh",
+      "Brno Venkov Sever",
+      "Breclav",
+      "Bruntal",
+      "Ceska Lipa",
+      "Ceske Budejovice",
+      "Cesky Krumlov",
+      "Cheb",
+      "Chomutov",
+      "Chrudim",
+      "Decin",
+      "Domazlice",
+      "Frydek-Mistek",
+      "Havlickuv Brod",
+      "Hodonin",
+      "Hradec Kralove",
+      "Jablonec nad Nisou",
+      "Jesenik",
+      "Jicin",
+      "Jihlava",
+      "Jindrichuv Hradec",
+      "Karlovy Vary",
+      "Karvina",
+      "Klatovy",
+      "Kladno",
+      "Kolin",
+      "Kromeriz",
+      "Kutna Hora",
+      "Liberec",
+      "Litomerice",
+      "Louny",
+      "Melnik",
+      "Mlada Boleslav",
+      "Most",
+      "Nachod",
+      "Novy Jicin",
+      "Nymburk",
+      "Olomouc",
+      "Opava",
+      "Ostrava-mesto",
+      "Pardubice",
+      "Pelhrimov",
+      "Pisek",
+      "Plzen-jih",
+      "Plzen-mesto",
+      "Plzen-sever",
+      "Prachatice",
+      "Praha",
+      "Praha JV",
+      "Praha JZ",
+      "Praha SV",
+      "Praha SZ",
+      "Prerov",
+      "Pribram",
+      "Prostejov",
+      "Rakovnik",
+      "Rokycany",
+      "Rychnov nad Kneznou",
+      "Semily",
+      "Sokolov",
+      "Strakonice",
+      "Sumperk",
+      "Svitavy",
+      "Tabor",
+      "Teplice",
+      "Tachov",
+      "Trebic",
+      "Trutnov",
+      "Uherske Hradiste",
+      "Usti nad Labem",
+      "Usti nad Orlici",
+      "Vsetin",
+      "Vyskov",
+      "Zdar nad Sazavou",
+      "Zlin",
+      "Znojmo",
+      "Banovce nad Bebravou",
+      "Banska Bystrica",
+      "Banska Stiavnica",
+      "Bardejov",
+      "Bratislava",
+      "Brezno",
+      "Bytca",
+      "Cadca",
+      "Detva",
+      "Dolny Kubin",
+      "Dunajska Streda",
+      "Galanta",
+      "Gelnica",
+      "Hlohovec",
+      "Humenne",
+      "Ilava",
+      "Kezmarok",
+      "Komarno",
+      "Kosice",
+      "Kosice zapad",
+      "Kosice vychod",
+      "Krupina",
+      "Kysucke Nove Mesto",
+      "Levice",
+      "Levoca",
+      "Liptovsky Mikulas",
+      "Lucenec",
+      "Malacky",
+      "Martin",
+      "Medzilaborce",
+      "Michalovce",
+      "Myjava",
+      "Namestovo",
+      "Nitra",
+      "Nove Mesto nad Vahom",
+      "Nove Zamky",
+      "Partizanske",
+      "Pezinok",
+      "Piestany",
+      "Poltar",
+      "Poprad",
+      "Povazska Bystrica",
+      "Presov",
+      "Prievidza",
+      "Puchov",
+      "Revuca",
+      "Rimavska Sobota",
+      "Roznava",
+      "Ruzomberok",
+      "Sabinov",
+      "Senec",
+      "Senica",
+      "Skalica",
+      "Snina",
+      "Sobrance",
+      "Spisska Nova Ves",
+      "Stara Lubovna",
+      "Stropkov",
+      "Svidnik",
+      "Sala",
+      "Topolcany",
+      "Trebisov",
+      "Trencin",
+      "Trnava",
+      "Turcianske Teplice",
+      "Tvrdosin",
+      "Velky Krtis",
+      "Vranov nad Toplou",
+      "Zlate Moravce",
+      "Zvolen",
+      "Zarnovica",
+      "Ziar nad Hronom",
+      "Zilina"
+    ]
+  },
+  {
+    "name": "Commission_if_less_than_100_EUR__c",
+    "label": "Commission if less than 100 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission_if_more_than_100_EUR__c",
+    "label": "Commission if more than 100 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission_if_more_than_1000_EUR__c",
+    "label": "Commission if more than 1000 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission_if_more_than_2000_EUR__c",
+    "label": "Commission if more than 2000 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission_if_more_than_3000_EUR__c",
+    "label": "Commission if more than 3000 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Commission_if_more_than_500_EUR__c",
+    "label": "Commission if more than 500 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Company__c",
+    "label": "Company",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Company_ID__c",
+    "label": "Company ID",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Contact_Pipedrive_ID__c",
+    "label": "Contact Pipedrive ID",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Contact_Source__c",
+    "label": "Contact Source",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Email"
+    ]
+  },
+  {
+    "name": "Crafts__c",
+    "label": "Crafts",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "CREDIT_BALANCE__c",
+    "label": "CREDIT BALANCE",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_Less_then_3800_Kuna_500e__c",
+    "label": "Croatia Less then 3800 Kuna (500e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_Less_then_750_Kuna_100e__c",
+    "label": "Croatia Less then 750 Kuna (100e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_More_then_15150_Kuna_2000e__c",
+    "label": "Croatia More then 15150 Kuna (2000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_More_then_22700_Kuna_3000e__c",
+    "label": "Croatia More then 22700 Kuna (3000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_More_then_3800_Kuna_500e__c",
+    "label": "Croatia More then 3800 Kuna (500e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_More_then_750_Kuna_100e__c",
+    "label": "Croatia More then 750 Kuna (100e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Croatia_More_then_7500_Kuna_1000e__c",
+    "label": "Croatia More then 7500 Kuna (1000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "CurrencyIsoCode",
+    "label": "Contact Currency",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "CZK",
+      "EUR",
+      "HRK",
+      "PLN",
+      "RSD"
+    ]
+  },
+  {
+    "name": "Customer_Rewards__c",
+    "label": "Customer Rewards",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Bonus (€/CZK)",
+      "Discount"
+    ]
+  },
+  {
+    "name": "Czech_Republic_Less_then_2500_CZK__c",
+    "label": "Czech Republic Less then 2500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Czech_Republic_More_then_13000_CZK__c",
+    "label": "Czech Republic More then 13000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Czech_Republic_More_then_2500_CZK__c",
+    "label": "Czech Republic More then 2500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Czech_Republic_More_then_26000_CZK__c",
+    "label": "Czech Republic More then 26000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Czech_Republic_More_then_52000_CZK__c",
+    "label": "Czech Republic More then 52000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Czech_Republic_More_then_78500_CZK__c",
+    "label": "Czech Republic More then 78500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Dataset_for_Deal_Category__c",
+    "label": "Dataset for Deal Category",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DEBIT_MAX__c",
+    "label": "DEBIT MAX",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Department",
+    "label": "Department",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Description",
+    "label": "Contact Description",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DIC__c",
+    "label": "DIC",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DONE_DEALS__c",
+    "label": "DONE DEALS",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DoNotCall",
+    "label": "Do Not Call",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Dovod__c",
+    "label": "Dovod",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "DPH__c",
+    "label": "DPH",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Neplatca DPH",
+      "Platca DPH",
+      "Na ruku"
+    ]
+  },
+  {
+    "name": "DPH_Odvadzame__c",
+    "label": "DPH Odvadzame",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Toto pole neplati",
+      "My",
+      "Majster"
+    ]
+  },
+  {
+    "name": "Email",
+    "label": "Email",
+    "type": "email",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "EmailBouncedDate",
+    "label": "Email Bounced Date",
+    "type": "datetime",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "EmailBouncedReason",
+    "label": "Email Bounced Reason",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Fax",
+    "label": "Business Fax",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "FB_Campaign__c",
+    "label": "FB Campaign",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "First_Pre_Invoice_Send_Date__c",
+    "label": "First Pre Invoice  Send Date",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "FirstName",
+    "label": "First Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Formatted_Phone_Duplicate__c",
+    "label": "Formatted Phone Duplicate",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Freshbooks_Client_Id__c",
+    "label": "Freshbooks Client Id",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Number__c",
+    "label": "Handyman_Number",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Handyman_Numbers__c",
+    "label": "Handyman Numbers",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HandymanNote__c",
+    "label": "Handyman Note",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HasOptedOutOfEmail",
+    "label": "Email Opt Out",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "HasOptedOutOfFax",
+    "label": "Fax Opt Out",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Havarijne_vyjazdy_m__c",
+    "label": "Havarijne vyjazdy (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "HM_Craft_Seniority__c",
+    "label": "HM Craft Seniority",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "New (3)",
+      "Approved (5)",
+      "Reliable (10)",
+      "Top (20)",
+      "No Crafts Deals (0)"
+    ]
+  },
+  {
+    "name": "HM_Department__c",
+    "label": "HM Department",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HM_EBAN__c",
+    "label": "HM EBAN",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Holidays_m__c",
+    "label": "Holidays (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No set",
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "HomePhone",
+    "label": "Home Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HPT_Pay_to_HM__c",
+    "label": "HPT Pay to HM",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Kredit",
+      "Externa FA",
+      "Interna FA"
+    ]
+  },
+  {
+    "name": "HPT_Pay_to_HM_e__c",
+    "label": "HPT Pay to HM e",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "HPT_Take_Away__c",
+    "label": "HPT Take Away",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Nezvaza",
+      "Malu",
+      "Velku"
+    ]
+  },
+  {
+    "name": "IBAN__c",
+    "label": "IBAN",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "IC_DPH__c",
+    "label": "IC DPH",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "ICO__c",
+    "label": "ICO",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "IndividualId",
+    "label": "Individual ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Int_FA_to_HM_email__c",
+    "label": "Int FA to HM email",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes send",
+      "Do not send"
+    ]
+  },
+  {
+    "name": "Invoice_Count_B2B__c",
+    "label": "Invoice Count B2B",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Is_Pipedrive_Data__c",
+    "label": "Is Pipedrive Data",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IsActive__c",
+    "label": "Is Active",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "isAWSS3FolderCreated__c",
+    "label": "isAWSS3FolderCreated",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IsErroAWSFileUpload__c",
+    "label": "IsErroAWSFileUpload",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "IsFileUploadedtoAWS__c",
+    "label": "IsFileUploadedtoAWS",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Jigsaw",
+    "label": "Data.com Key",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Job_Form_Active_Status__c",
+    "label": "Job Form Active Status",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Job_Specification__c",
+    "label": "Job Specification",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Krajina__c",
+    "label": "Krajina",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Slovakia",
+      "Czech republic"
+    ]
+  },
+  {
+    "name": "Last_Proceeded_Date__c",
+    "label": "Last Proceeded Date",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "LastName",
+    "label": "Last Name",
+    "type": "string",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "LeadSource",
+    "label": "Lead Source",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Advertisement",
+      "Customer Event",
+      "Employee Referral",
+      "Google AdWords",
+      "Other",
+      "Partner",
+      "Purchased List",
+      "Trade Show",
+      "Webinar",
+      "Website",
+      "Unbounce"
+    ]
+  },
+  {
+    "name": "LoyalCustomer__c",
+    "label": "Loyal Customer",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "LoyalCustomerDiscount__c",
+    "label": "Loyal Customer Discount",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "5% Discount",
+      "10% Discount"
+    ]
+  },
+  {
+    "name": "MailingCity",
+    "label": "Home City 1",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingCountry",
+    "label": "Country",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingGeocodeAccuracy",
+    "label": "Mailing Geocode Accuracy",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Address",
+      "NearAddress",
+      "Block",
+      "Street",
+      "ExtendedZip",
+      "Zip",
+      "Neighborhood",
+      "City",
+      "County",
+      "State",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "MailingLatitude",
+    "label": "Home Latitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingLongitude",
+    "label": "Home Longitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingPostalCode",
+    "label": "Zip/Postal Code",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingState",
+    "label": "Home State/Province 1",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MailingStreet",
+    "label": "Home Street 1",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Manual_Exp_Override__c",
+    "label": "Manual Exp Override",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Max_B2Cc_Deals__c",
+    "label": "Max B2Cc Deals",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "MobilePhone",
+    "label": "Mobile Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Monthly_App_Fee__c",
+    "label": "Monthly App Fee",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Navysenie_ceny__c",
+    "label": "Navysenie ceny",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "NAY_Pay_to_HM__c",
+    "label": "NAY Pay to HM",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Kredit",
+      "Externa FA",
+      "Interna FA"
+    ]
+  },
+  {
+    "name": "NAY_Pay_to_HM_e__c",
+    "label": "NAY Pay to HM e",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Neposielaj_iFA__c",
+    "label": "Neposielaj iFA",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Notes__c",
+    "label": "Notes",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Number_of_Pre_Invoice_Circles__c",
+    "label": "Number of Pre-Invoice Circles",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Number_of_Pre_Invoices_Count__c",
+    "label": "Number of Pre-Invoices Count",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "of_Crafts_Commission__c",
+    "label": "% of Crafts Commission",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Old_TBALANCE__c",
+    "label": "Old TBALANCE",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherCity",
+    "label": "Home City 2",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherCountry",
+    "label": "Country",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherGeocodeAccuracy",
+    "label": "Other Geocode Accuracy",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Address",
+      "NearAddress",
+      "Block",
+      "Street",
+      "ExtendedZip",
+      "Zip",
+      "Neighborhood",
+      "City",
+      "County",
+      "State",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "OtherLatitude",
+    "label": "Work Latitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherLongitude",
+    "label": "Work Longitude",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherPhone",
+    "label": "Work Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherPostalCode",
+    "label": "Zip/Postal Code",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherState",
+    "label": "Home State/Province 2",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OtherStreet",
+    "label": "Home Street 2",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "OwnerId",
+    "label": "Owner ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Phone",
+    "label": "Business Phone",
+    "type": "phone",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Podmienky_spoluprace__c",
+    "label": "Podmienky spoluprace",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_Less_then_400_z__c",
+    "label": "Poland Less then 400 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_More_then_12000_z__c",
+    "label": "Poland More then 12000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_More_then_2000_z__c",
+    "label": "Poland More then 2000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_More_then_400_z__c",
+    "label": "Poland More then 400 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_More_then_4000_z__c",
+    "label": "Poland More then 4000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Poland_More_then_8000_z__c",
+    "label": "Poland More then 8000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pravidelne_dobijanie_za__c",
+    "label": "Pravidelne dobijanie za",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Pre_Invoice_Feature__c",
+    "label": "Pre-Invoice Feature",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Processed__c",
+    "label": "Processed",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Rating__c",
+    "label": "Rating",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "RecordTypeId",
+    "label": "Record Type ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Reliable_Seniority_Handyman_Type__c",
+    "label": "Reliable Seniority Handyman Type",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No SF",
+      "INS",
+      "New SF",
+      "Top",
+      "Others"
+    ]
+  },
+  {
+    "name": "ReportsToId",
+    "label": "Reports To ID",
+    "type": "reference",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_less_than_100_EUR__c",
+    "label": "Sales Commission if less than 100 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_more_than_100_EUR__c",
+    "label": "Sales Commission if more than 100 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_more_than_1000_EU__c",
+    "label": "Sales Commission if more than 1000 EU",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_more_than_2000_EUR__c",
+    "label": "Sales Commission if more than 2000 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_more_than_3000_EUR__c",
+    "label": "Sales Commission if more than 3000 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Commission_if_more_than_500_EUR__c",
+    "label": "Sales Commission if more than 500 EUR",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_Less_then_3800_Kuna_500e__c",
+    "label": "Sales Croatia Less then 3800 Kuna (500e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_Less_then_750_Kuna_100e__c",
+    "label": "Sales Croatia Less then 750 Kuna (100e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_More_then_15150_Kuna_2000e__c",
+    "label": "Sales Croatia More then 15150Kuna(2000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_More_then_22700_Kuna_3000e__c",
+    "label": "Sales Croatia More then 22700Kuna(3000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_More_then_3800_Kuna_500e__c",
+    "label": "Sales Croatia More then 3800 Kuna (500e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_More_then_750_Kuna_100e__c",
+    "label": "Sales Croatia More then 750 Kuna (100e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Croatia_More_then_7500_Kuna_1000e__c",
+    "label": "Sales Croatia More then 7500 Kuna(1000e)",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_Less_then_2500_CZK__c",
+    "label": "Sales Czech Republic Less then 2500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_More_then_13000_CZK__c",
+    "label": "Sales Czech Republic More then 13000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_More_then_2500_CZK__c",
+    "label": "Sales Czech Republic More then 2500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_More_then_26000_CZK__c",
+    "label": "Sales Czech Republic More then 26000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_More_then_52000_CZK__c",
+    "label": "Sales Czech Republic More then 52000 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Czech_Republic_More_then_78500_CZK__c",
+    "label": "Sales Czech Republic More then 78500 CZK",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_Less_then_400_z__c",
+    "label": "Sales Poland Less then 400 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_More_then_12000_z__c",
+    "label": "Sales Poland More then 12000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_More_then_2000_z__c",
+    "label": "Sales Poland More then 2000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_More_then_400_z__c",
+    "label": "Sales Poland More then 400 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_More_then_4000_z__c",
+    "label": "Sales Poland More then 4000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Poland_More_then_8000_z__c",
+    "label": "Sales Poland More then 8000 zł",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_Less_then_11750_RSD__c",
+    "label": "Sales Serbia Less then 11750 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_More_than_11750_RSD__c",
+    "label": "Sales Serbia More than 11750 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_More_than_117502_RSD__c",
+    "label": "Sales Serbia More than 117502 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_More_than_235005_RSD__c",
+    "label": "Sales Serbia More than 235005 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_More_than_352507_RSD__c",
+    "label": "Sales Serbia More than 352507 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Serbia_More_than_58751_RSD__c",
+    "label": "Sales Serbia More than 58751 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_Less_then_100_eur__c",
+    "label": "Sales Slovakia Less then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_More_then_100_eur__c",
+    "label": "Sales Slovakia More then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_More_then_1000_eur__c",
+    "label": "Sales Slovakia More then 1000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_More_then_2000_eur__c",
+    "label": "Sales Slovakia More then 2000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_More_then_3000_eur__c",
+    "label": "Sales Slovakia More then 3000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Slovakia_More_then_500_eur__c",
+    "label": "Sales Slovakia More then 500 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_Less_then_100_eur__c",
+    "label": "Sales Spain Less then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_More_then_100_eur__c",
+    "label": "Sales Spain More then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_More_then_1000_eur__c",
+    "label": "Sales Spain More then 1000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_More_then_2000_eur__c",
+    "label": "Sales Spain More then 2000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_More_then_3000_eur__c",
+    "label": "Sales Spain More then 3000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sales_Spain_More_then_500_eur__c",
+    "label": "Sales Spain More then 500 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Salesman__c",
+    "label": "Coordinator",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "Salutation",
+    "label": "Salutation",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Stop",
+      "Mr.",
+      "Ms.",
+      "Mrs.",
+      "Dr.",
+      "Prof."
+    ]
+  },
+  {
+    "name": "Seniority_of_Handyman__c",
+    "label": "Seniority of Handyman",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "New",
+      "Reliable"
+    ]
+  },
+  {
+    "name": "Serbia_Less_then_11750_RSD__c",
+    "label": "Serbia Less then 11750 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Serbia_More_than_11750_RSD__c",
+    "label": "Serbia More than 11750 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Serbia_More_than_117502_RSD__c",
+    "label": "Serbia More than 117502 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Serbia_More_than_235005_RSD__c",
+    "label": "Serbia More than 235005 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Serbia_More_than_352507_RSD__c",
+    "label": "Serbia More than 352507 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Serbia_More_than_58751_RSD__c",
+    "label": "Serbia More than 58751 RSD",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_Less_then_100_eur__c",
+    "label": "Slovakia Less then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_More_then_100_eur__c",
+    "label": "Slovakia More then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_More_then_1000_eur__c",
+    "label": "Slovakia More then 1000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_More_then_2000_eur__c",
+    "label": "Slovakia More then 2000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_More_then_3000_eur__c",
+    "label": "Slovakia More then 3000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Slovakia_More_then_500_eur__c",
+    "label": "Slovakia More then 500 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Som_nie_som_platca_DPH_m__c",
+    "label": "Som/nie som platca DPH (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Som platca DPH",
+      "Nie som platca DPH",
+      "Nemám živnosť alebo firmu",
+      "Jsem plátce DPH",
+      "Nejsem plátce DPH",
+      "Nemám živnost nebo firmu"
+    ]
+  },
+  {
+    "name": "Spain_Less_then_100_eur__c",
+    "label": "Spain Less then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Spain_More_then_100_eur__c",
+    "label": "Spain More then 100 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Spain_More_then_1000_eur__c",
+    "label": "Spain More then 1000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Spain_More_then_2000_eur__c",
+    "label": "Spain More then 2000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Spain_More_then_3000_eur__c",
+    "label": "Spain More then 3000 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Spain_More_then_500_eur__c",
+    "label": "Spain More then 500 eur",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "SubmitterIP__c",
+    "label": "Submitter IP",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Success_Rate__c",
+    "label": "Success Rate",
+    "type": "percent",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Suhlassospracovanim__c",
+    "label": "Suhlas so spracovanim",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sukromie_majstra__c",
+    "label": "Sukromie majstra",
+    "type": "textarea",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "SuperFaktura_Client_Id__c",
+    "label": "SuperFaktura Client Id",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Sync_to_Freshbooks__c",
+    "label": "Sync to Freshbooks",
+    "type": "boolean",
+    "updateable": true,
+    "nillable": false
+  },
+  {
+    "name": "TBALANCE_DISCIPLINE__c",
+    "label": "TBALANCE DISCIPLINE",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "TB Credit > 200€",
+      "TB Credit < 200€",
+      "TB Credit < 100€",
+      "TB Credit < 50€",
+      "TB = 0€",
+      "TB Debit > -50€",
+      "TB Debit > -100€",
+      "TB Debit > -200€"
+    ]
+  },
+  {
+    "name": "Temp_Country__c",
+    "label": "Temp Country",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Title",
+    "label": "Title",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "TOTAL_BALANCE__c",
+    "label": "TOTAL BALANCE",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "TOTAL_BALNCE_GO_STOP__c",
+    "label": "TOTAL BALNCE GO/STOP",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "STOP - NO CREDIT",
+      "GO - YES CREDIT"
+    ]
+  },
+  {
+    "name": "Total_Number_of_Days_for_PreInvoice__c",
+    "label": "Total Number of Days for PreInvoice",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Transaction_email__c",
+    "label": "Transaction email",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "UnbouncePageID__c",
+    "label": "Unbounce Page ID",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbouncePageVariant__c",
+    "label": "Unbounce Page Variant",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceSubmissionDate__c",
+    "label": "Unbounce Submission Date",
+    "type": "date",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceSubmissionTime__c",
+    "label": "Unbounce Submission Time",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "UnbounceURL__c",
+    "label": "Unbounce URL",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VAT_Number__c",
+    "label": "VAT Number",
+    "type": "double",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "VS_FA_Majstra_B2B__c",
+    "label": "VS FA Majstra (B2B)",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Vyska_DPH_iFA__c",
+    "label": "Vyska DPH (iFA)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "12%",
+      "21%",
+      "23%",
+      "0%",
+      "empty %",
+      "This field is not valid"
+    ]
+  },
+  {
+    "name": "Weekends_m__c",
+    "label": "Weekends (m)",
+    "type": "picklist",
+    "updateable": true,
+    "nillable": true,
+    "picklistValues": [
+      "No set",
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "X1_hour_rate__c",
+    "label": "1. hour rate",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X1_km_rate__c",
+    "label": "1 km rate",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "X2_hour_rate__c",
+    "label": "2. hour rate",
+    "type": "currency",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "Zmenu_vykonal__c",
+    "label": "Zmenu vykonal",
+    "type": "string",
+    "updateable": true,
+    "nillable": true
+  },
+  {
+    "name": "B2A_AVG_REV_ON_SEND_DEAL_12m__c",
+    "label": "B2A AVG REV ON SEND DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2A_AVG_REV_ON_WON_DEAL_12m__c",
+    "label": "B2A AVG REV ON WON DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2A_HAPPY_Cust__c",
+    "label": "B2A % HAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2A_Recent_success_rate__c",
+    "label": "B2A Recent success rate",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2A_SUCCESS_RATE__c",
+    "label": "B2A SUCCESS RATE %",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2A_UNHAPPY_Cust__c",
+    "label": "B2A % UNHAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_AVG_REV_ON_SEND_DEAL_12m__c",
+    "label": "B2B AVG REV ON SEND DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_AVG_REV_ON_WON_DEAL_12m__c",
+    "label": "B2B AVG REV ON WON DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_HAPPY_Cust__c",
+    "label": "B2B % HAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_Recent_success_rate__c",
+    "label": "B2B Recent success rate",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_SUCCESS_RATE__c",
+    "label": "B2B SUCCESS RATE %",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2B_UNHAPPY_Cust__c",
+    "label": "B2B % UNHAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2C_Payment_Discipline__c",
+    "label": "B2C Payment Discipline",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_AVG_REV_ON_SEND_DEAL_12m__c",
+    "label": "B2Cc AVG REV ON SEND DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_AVG_REV_ON_WON_DEAL_12m__c",
+    "label": "B2Cc AVG REV ON WON DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_HAPPY_Cust__c",
+    "label": "B2Cc % HAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_Recent_success_rate__c",
+    "label": "B2Cc Recent success rate",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_SUCCESS_RATE__c",
+    "label": "B2Cc SUCCESS RATE %",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cc_UNHAPPY_Cust__c",
+    "label": "B2Cc % UNHAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_AVG_REV_ON_SEND_DEAL_12m__c",
+    "label": "B2Cu AVG REV ON SEND DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_AVG_REV_ON_WON_DEAL_12m__c",
+    "label": "B2Cu AVG REV ON WON DEAL (12m)",
+    "type": "currency",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_HAPPY_Cust__c",
+    "label": "B2Cu % HAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_Recent_success_rate__c",
+    "label": "B2Cu Recent success rate",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_SUCCESS_RATE__c",
+    "label": "B2Cu SUCCESS RATE %",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "B2Cu_UNHAPPY_Cust__c",
+    "label": "B2Cu % UNHAPPY Cust",
+    "type": "percent",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Contact_Full_Name__c",
+    "label": "Contact Full Name",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Contact_Type__c",
+    "label": "Contact Type",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "CreatedById",
+    "label": "Created By ID",
+    "type": "reference",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "CreatedDate",
+    "label": "Created Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Formatted_Phone_Number__c",
+    "label": "Formatted Phone Number",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "HandymanLookupValue__c",
+    "label": "Handyman Lookup Value",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Id",
+    "label": "Contact ID",
+    "type": "id",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "IsDeleted",
+    "label": "Deleted",
+    "type": "boolean",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "IsEmailBounced",
+    "label": "Is Email Bounced",
+    "type": "boolean",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "JigsawContactId",
+    "label": "Jigsaw Contact ID",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Job_Form_URL_Edit__c",
+    "label": "Job Form URL Edit",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Job_Form_URL_View__c",
+    "label": "Job Form URL View",
+    "type": "string",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastActivityDate",
+    "label": "Last Activity",
+    "type": "date",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastCURequestDate",
+    "label": "Last Stay-in-Touch Request Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastCUUpdateDate",
+    "label": "Last Stay-in-Touch Save Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastModifiedById",
+    "label": "Last Modified By ID",
+    "type": "reference",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "LastModifiedDate",
+    "label": "Last Modified Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "LastReferencedDate",
+    "label": "Last Referenced Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "LastViewedDate",
+    "label": "Last Viewed Date",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "MailingAddress",
+    "label": "Home Address 1",
+    "type": "address",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "MasterRecordId",
+    "label": "Master Record ID",
+    "type": "reference",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Name",
+    "label": "Full Name",
+    "type": "string",
+    "updateable": false,
+    "nillable": false
+  },
+  {
+    "name": "Number_of_Days__c",
+    "label": "Number of Days",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "Number_of_Days_for_Pre_Invoice__c",
+    "label": "Number of Days for Pre-Invoice",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "OtherAddress",
+    "label": "Home Address 2",
+    "type": "address",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "PhotoUrl",
+    "label": "Photo URL",
+    "type": "url",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "PRE_INVOCES_DISCIPLINE__c",
+    "label": "PRE-INVOCES DISCIPLINE",
+    "type": "double",
+    "updateable": false,
+    "nillable": true
+  },
+  {
+    "name": "SystemModstamp",
+    "label": "System Modstamp",
+    "type": "datetime",
+    "updateable": false,
+    "nillable": false
+  }
+]
